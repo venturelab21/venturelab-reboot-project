@@ -66,6 +66,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				thapar: {
+					DEFAULT: '#F97316', // Bright Orange
+					light: '#FEC6A1',   // Soft Orange
+					dark: '#EA580C',    // Darker Orange
 				}
 			},
 			borderRadius: {

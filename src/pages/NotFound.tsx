@@ -22,7 +22,7 @@ const NotFound = () => {
       <main className="flex-grow flex items-center justify-center bg-gray-50 py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto text-center">
-            <h1 className="text-7xl font-display font-bold mb-4 text-blue-600">404</h1>
+            <h1 className="text-7xl font-display font-bold mb-4 text-thapar">404</h1>
             <p className="text-2xl text-gray-800 mb-6">Oops! Page not found</p>
             <p className="text-gray-600 mb-8">
               The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.

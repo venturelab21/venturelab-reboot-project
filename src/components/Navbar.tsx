@@ -48,7 +48,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
       <div className="container mx-auto px-4 py-4 md:py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="text-xl font-display font-bold text-blue-600">VentureLab</span>
+          <span className="text-xl font-display font-bold text-thapar">VentureLab Thapar</span>
         </Link>
         
         {/* Mobile Menu Button */}
@@ -79,7 +79,7 @@ const Navbar = () => {
                         <Link
                           key={dropdownItem.name}
                           to={dropdownItem.link}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-thapar"
                           onClick={() => setOpenDropdown(null)}
                         >
                           {dropdownItem.name}
@@ -120,12 +120,12 @@ const Navbar = () => {
                     </Button>
                     
                     {openDropdown === item.name && (
-                      <div className="pl-4 border-l-2 border-blue-100 ml-4 mb-2">
+                      <div className="pl-4 border-l-2 border-thapar-light ml-4 mb-2">
                         {item.dropdownItems.map(dropdownItem => (
                           <Link
                             key={dropdownItem.name}
                             to={dropdownItem.link}
-                            className="block py-2 text-gray-600 hover:text-blue-600"
+                            className="block py-2 text-gray-600 hover:text-thapar"
                             onClick={toggleMenu}
                           >
                             {dropdownItem.name}
@@ -137,7 +137,7 @@ const Navbar = () => {
                 ) : (
                   <Link 
                     to={item.link} 
-                    className="block py-3 text-gray-800 hover:text-blue-600"
+                    className="block py-3 text-gray-800 hover:text-thapar"
                     onClick={toggleMenu}
                   >
                     {item.name}
