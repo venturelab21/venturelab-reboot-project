@@ -21,11 +21,11 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl pl-4 md:pl-8">
-          {/* Institute label */}
+          {/* Institute label - Updated text */}
           <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full mb-6">
             <span className="flex items-center">
               <div className="w-2 h-2 bg-blue-900 rounded-full mr-2"></div>
-              Thapar Institute of Engineering & Technology
+              Thapar Innovate
             </span>
           </div>
           
