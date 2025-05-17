@@ -1,46 +1,71 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { BadgeDollarSign, Handshake, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Check } from "lucide-react";
 
 interface ProgramProps {
   title: string;
+  label?: string;
   description: string;
   icon: React.ReactNode;
+  duration: string;
+  participants: string;
   benefits: string[];
   link: string;
-  delay: number;
 }
 
-const Program = ({ title, description, icon, benefits, link, delay }: ProgramProps) => {
+const Program = ({ title, label, description, icon, duration, participants, benefits, link }: ProgramProps) => {
   return (
-    <div 
-      className={`bg-white rounded-xl p-6 border border-gray-100 shadow-soft hover:shadow-hover transition-all duration-300 animate-fade-in-delay-${delay}`}
-    >
-      <div className="flex items-center mb-4">
-        <div className="bg-blue-50 p-3 rounded-lg mr-4">
-          {icon}
+    <Card className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+      <div className="h-1 bg-gradient-to-r from-blue-600 to-teal-400"></div>
+      <CardHeader className="pt-6">
+        <div className="flex items-center mb-2">
+          <div className="text-teal-500 mr-3">{icon}</div>
+          <div>
+            <div className="text-xl font-display font-semibold">{title}</div>
+            {label && (
+              <span className="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-sm">
+                {label}
+              </span>
+            )}
+          </div>
         </div>
-        <h3 className="text-xl font-display font-semibold">{title}</h3>
-      </div>
+        <p className="text-gray-600 text-sm">{description}</p>
+      </CardHeader>
       
-      <p className="text-gray-600 mb-4">{description}</p>
+      <CardContent>
+        <div className="flex mb-4 text-sm">
+          <div className="flex items-center mr-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600 mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+            {duration}
+          </div>
+          <div className="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600 mr-2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            {participants}
+          </div>
+        </div>
+        
+        <div className="text-sm font-medium mb-2">Program Benefits:</div>
+        <ul className="space-y-2">
+          {benefits.map((benefit, index) => (
+            <li key={index} className="flex items-center text-gray-700 text-sm">
+              <Check size={16} className="text-teal-500 mr-2 flex-shrink-0" />
+              <span>{benefit}</span>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
       
-      <ul className="space-y-2 mb-6">
-        {benefits.map((benefit, index) => (
-          <li key={index} className="flex items-center text-gray-700">
-            <span className="text-blue-500 mr-2">•</span> {benefit}
-          </li>
-        ))}
-      </ul>
-      
-      <Button asChild variant="outline" className="w-full group">
-        <Link to={link}>
-          Learn More
-          <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-        </Link>
-      </Button>
-    </div>
+      <CardFooter>
+        <Button asChild variant="outline" className="w-full group border-blue-600 text-blue-600 hover:bg-blue-50">
+          <Link to={link} className="flex items-center justify-center">
+            Program Details <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };
 
@@ -48,59 +73,75 @@ const ProgramsSection = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
+        <div className="flex justify-center mb-2">
+          <div className="w-20 h-1 bg-teal-500"></div>
+        </div>
+        
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Programs</h2>
+          <div className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full mb-4 text-sm">
+            Our Programs
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-800">Comprehensive Startup Support</h2>
           <p className="text-gray-600">
-            From ideation to scale, we provide tailored support at every stage of your entrepreneurial journey.
+            We offer structured programs tailored to entrepreneurs at every stage of their journey, from idea validation to market expansion.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Program 
-            title="Pre-Incubation" 
-            description="For early-stage founders with innovative ideas ready to be validated."
-            icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>}
+            title="VentureLab Program" 
+            label="Open"
+            description="Our flagship 12-month program designed for early-stage startups with validated prototypes ready to build a scalable business model and secure initial customers."
+            icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2H9a2 2 0 0 0-2 2v2m15 14V6a2 2 0 0 0-2-2h-2"></path><path d="M15 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V2"></path><path d="M18 14H4a2 2 0 0 0-2 2v6h14"></path><path d="m22 18-3 3-3-3"></path></svg>}
+            duration="12 Months"
+            participants="12 Startups"
             benefits={[
-              "Idea validation workshops",
-              "Market research support",
-              "MVP development guidance",
-              "Networking opportunities"
+              "Fully equipped workspace access",
+              "Up to ₹10 lakhs seed funding",
+              "Dedicated industry mentors",
+              "Legal and compliance support",
+              "Business model refinement"
             ]}
-            link="/programs#pre-incubation"
-            delay={1}
+            link="/programs#venture-lab-program"
           />
           
           <Program 
-            title="Incubation" 
-            description="For startups with validated products seeking growth support and investment."
-            icon={<Handshake className="text-blue-600" size={24} />}
+            title="Meity" 
+            label="Applications Open June 15"
+            description="An intensive 6-month program for growth-stage startups with market traction seeking to expand operations, optimize unit economics, and secure Series A funding."
+            icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg>}
+            duration="6 Months"
+            participants="8 Startups"
             benefits={[
-              "Workspace access",
-              "Mentorship from industry experts",
-              "Legal & compliance support",
-              "Investor introductions"
+              "Growth strategy blueprint",
+              "Investor connections",
+              "Sales and marketing support",
+              "Operations scaling guidance",
+              "Leadership development"
             ]}
-            link="/programs#incubation"
-            delay={2}
+            link="/programs#meity"
           />
           
           <Program 
-            title="Acceleration" 
-            description="For established startups ready to scale operations and expand market reach."
-            icon={<BadgeDollarSign className="text-blue-600" size={24} />}
+            title="SISFS" 
+            label="Open"
+            description="A 3-month pre-incubation program for first-time founders to test their concepts, build MVPs, conduct market validation, and prepare for formal incubation."
+            icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a5 5 0 0 0 5 5"></path></svg>}
+            duration="3 Months"
+            participants="20 Startups"
             benefits={[
-              "Growth strategy development",
-              "Series A funding preparation",
-              "Market expansion support",
-              "Strategic partnerships"
+              "Lean startup methodology",
+              "MVP development support",
+              "Customer discovery guidance",
+              "Business model canvas",
+              "Pitching skills development"
             ]}
-            link="/programs#acceleration"
-            delay={3}
+            link="/programs#sisfs"
           />
         </div>
         
         <div className="mt-12 text-center">
-          <Button asChild size="lg">
+          <Button asChild size="lg" className="bg-blue-800 hover:bg-blue-900 rounded-full">
             <Link to="/apply">Apply to Our Programs</Link>
           </Button>
         </div>

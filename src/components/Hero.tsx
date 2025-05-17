@@ -6,9 +6,11 @@ import { ArrowRight } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-r from-gray-50 to-blue-50">
+      {/* Background pattern - grid lines */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20 z-0"></div>
+      
       {/* Large circle background elements */}
-      <div className="absolute left-0 top-0 w-[600px] h-[600px] rounded-full bg-blue-50 -translate-x-1/2 -translate-y-1/2 z-0"></div>
-      <div className="absolute right-0 bottom-0 w-[600px] h-[600px] rounded-full bg-blue-50 translate-x-1/2 translate-y-1/2 z-0"></div>
+      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-100 to-blue-300 opacity-20 z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl">
@@ -22,7 +24,7 @@ const Hero = () => {
           
           {/* Main headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Where <span className="text-blue-600">Innovation</span> Meets <span className="text-thapar">Opportunity</span>
+            Where <span className="text-blue-600">Innovation</span> Meets <span className="text-teal-500">Opportunity</span>
           </h1>
           
           {/* Subheading */}
@@ -33,12 +35,12 @@ const Hero = () => {
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="font-medium">
+            <Button asChild size="lg" className="bg-blue-800 hover:bg-blue-900 rounded-full font-medium">
               <Link to="/apply" className="flex items-center">
                 Submit Your Proposal <ArrowRight className="ml-1" size={18} />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-50">
+            <Button asChild size="lg" variant="outline" className="border-teal-500 text-teal-500 hover:bg-teal-50 rounded-full">
               <Link to="/programs">Explore Programs</Link>
             </Button>
           </div>

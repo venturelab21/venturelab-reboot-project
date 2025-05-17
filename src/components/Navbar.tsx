@@ -49,7 +49,7 @@ const Navbar = () => {
             </Link>
           ))}
           
-          <Button asChild className="bg-blue-600 hover:bg-blue-700">
+          <Button asChild className="bg-blue-800 text-white hover:bg-blue-900 rounded-full">
             <Link to="/apply">Get Started</Link>
           </Button>
         </nav>
@@ -72,7 +72,7 @@ const Navbar = () => {
               </div>
             ))}
             <div className="py-4">
-              <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
+              <Button asChild className="w-full bg-blue-800 hover:bg-blue-900 rounded-full">
                 <Link to="/apply" onClick={toggleMenu}>Get Started</Link>
               </Button>
             </div>

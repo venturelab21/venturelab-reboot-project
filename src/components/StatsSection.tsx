@@ -5,10 +5,9 @@ interface StatItemProps {
   value: number;
   label: string;
   suffix?: string;
-  delay: number;
 }
 
-const StatItem = ({ value, label, suffix = "+", delay }: StatItemProps) => {
+const StatItem = ({ value, label, suffix = "+" }: StatItemProps) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -19,21 +18,17 @@ const StatItem = ({ value, label, suffix = "+", delay }: StatItemProps) => {
     
     let currentFrame = 0;
     
-    const timer = setTimeout(() => {
-      const counter = setInterval(() => {
-        currentFrame++;
-        setCount(Math.min(Math.round(increment * currentFrame), value));
-        
-        if (currentFrame === totalFrames) {
-          clearInterval(counter);
-        }
-      }, frameRate);
+    const counter = setInterval(() => {
+      currentFrame++;
+      setCount(Math.min(Math.round(increment * currentFrame), value));
       
-      return () => clearInterval(counter);
-    }, delay);
+      if (currentFrame === totalFrames) {
+        clearInterval(counter);
+      }
+    }, frameRate);
     
-    return () => clearTimeout(timer);
-  }, [value, delay]);
+    return () => clearInterval(counter);
+  }, [value]);
 
   return (
     <div className="text-center">
@@ -49,18 +44,21 @@ const StatsSection = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
+        <div className="flex justify-center mb-2">
+          <div className="w-20 h-1 bg-teal-500"></div>
+        </div>
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Impact</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-800">Our Impact</h2>
           <p className="text-gray-600">
             VentureLab has been empowering entrepreneurs and startups on their journey to success.
           </p>
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          <StatItem value={150} label="Startups Incubated" delay={0} />
-          <StatItem value={30} label="Million $ Raised" suffix="M+" delay={200} />
-          <StatItem value={80} label="Expert Mentors" delay={400} />
-          <StatItem value={95} label="Success Rate" suffix="%" delay={600} />
+          <StatItem value={150} label="Startups Incubated" />
+          <StatItem value={30} label="Million $ Raised" suffix="M+" />
+          <StatItem value={80} label="Expert Mentors" />
+          <StatItem value={95} label="Success Rate" suffix="%" />
         </div>
       </div>
     </section>
