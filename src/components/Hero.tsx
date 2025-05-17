@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-teal-100 to-teal-300 opacity-20 z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl pl-4 md:pl-8">
           {/* Institute label */}
           <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full mb-6">
             <span className="flex items-center">
