@@ -2,12 +2,19 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 
 const Hero = () => {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-r from-gray-50 to-blue-50">
-      {/* Background pattern - grid lines */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-20 z-0"></div>
+      {/* Background pattern - animated grid */}
+      <AnimatedGridPattern
+        numSquares={30}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        className="[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]"
+      />
       
       {/* Large circle background elements */}
       <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-100 to-blue-300 opacity-20 z-0"></div>
