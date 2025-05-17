@@ -6,7 +6,7 @@ import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 
 const Hero = () => {
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-r from-gray-50 to-blue-50">
+    <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-r from-slate-50 to-blue-50">
       {/* Background pattern - animated grid */}
       <AnimatedGridPattern
         numSquares={30}
@@ -17,21 +17,21 @@ const Hero = () => {
       />
       
       {/* Large circle background elements */}
-      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-100 to-blue-300 opacity-20 z-0"></div>
+      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-teal-100 to-teal-300 opacity-20 z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl">
           {/* Institute label */}
-          <div className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full mb-6">
+          <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full mb-6">
             <span className="flex items-center">
-              <div className="w-2 h-2 bg-blue-600 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-blue-800 rounded-full mr-2"></div>
               Thapar Institute of Engineering & Technology
             </span>
           </div>
           
           {/* Main headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Where <span className="text-blue-600">Innovation</span> Meets <span className="text-teal-500">Opportunity</span>
+            Where <span className="text-blue-800">Innovation</span> Meets <span className="text-teal-500">Opportunity</span>
           </h1>
           
           {/* Subheading */}
