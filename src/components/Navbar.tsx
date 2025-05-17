@@ -23,11 +23,6 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <img 
-            src="/lovable-uploads/101dd8bd-6139-43ba-9728-b0a98bcb0ca0.png" 
-            alt="VentureLab Logo" 
-            className="h-8 w-auto mr-2"
-          />
           <span className="text-2xl font-display font-bold">
             <span className="text-blue-900">Venture</span>
             <span className="text-teal-600">Lab</span>

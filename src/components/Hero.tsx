@@ -29,18 +29,9 @@ const Hero = () => {
             </span>
           </div>
           
-          {/* Main headline with updated VentureLab styling and logo */}
+          {/* Main headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            <div className="flex items-center gap-3">
-              <img 
-                src="/lovable-uploads/101dd8bd-6139-43ba-9728-b0a98bcb0ca0.png" 
-                alt="VentureLab Logo" 
-                className="h-12 md:h-14 lg:h-16 w-auto"
-              />
-              <span>
-                <span className="text-blue-900">Venture</span><span className="text-teal-600">Lab</span>
-              </span>
-            </div>
+            <span className="text-blue-900">Venture</span><span className="text-teal-600">Lab</span>
             <span className="block text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mt-2">THAPAR</span>
           </h1>
           
