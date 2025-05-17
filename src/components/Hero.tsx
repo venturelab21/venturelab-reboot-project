@@ -22,16 +22,17 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl">
           {/* Institute label */}
-          <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full mb-6">
+          <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full mb-6">
             <span className="flex items-center">
-              <div className="w-2 h-2 bg-blue-800 rounded-full mr-2"></div>
+              <div className="w-2 h-2 bg-blue-900 rounded-full mr-2"></div>
               Thapar Institute of Engineering & Technology
             </span>
           </div>
           
-          {/* Main headline */}
+          {/* Main headline with updated VentureLab styling */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Where <span className="text-blue-800">Innovation</span> Meets <span className="text-teal-500">Opportunity</span>
+            <span className="text-blue-900">Venture</span><span className="text-teal-600">Lab</span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mt-2">THAPAR</span>
           </h1>
           
           {/* Subheading */}
@@ -42,12 +43,12 @@ const Hero = () => {
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="bg-blue-800 hover:bg-blue-900 rounded-full font-medium">
+            <Button asChild size="lg" className="bg-blue-900 hover:bg-blue-950 rounded-full font-medium">
               <Link to="/apply" className="flex items-center">
                 Submit Your Proposal <ArrowRight className="ml-1" size={18} />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-teal-500 text-teal-500 hover:bg-teal-50 rounded-full">
+            <Button asChild size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full">
               <Link to="/programs">Explore Programs</Link>
             </Button>
           </div>

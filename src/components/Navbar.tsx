@@ -24,9 +24,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <span className="text-2xl font-display font-bold">
-            <span className="text-gray-800">Venture</span>
-            <span className="text-thapar">Lab</span>
-            <span className="text-gray-800"> Thapar</span>
+            <span className="text-blue-900">Venture</span>
+            <span className="text-teal-600">Lab</span>
+            <span className="text-blue-900"> Thapar</span>
           </span>
         </Link>
         
@@ -43,13 +43,13 @@ const Navbar = () => {
             <Link 
               key={item.name}
               to={item.link}
-              className="text-gray-700 hover:text-thapar font-medium"
+              className="text-gray-700 hover:text-blue-900 font-medium"
             >
               {item.name}
             </Link>
           ))}
           
-          <Button asChild className="bg-blue-800 text-white hover:bg-blue-900 rounded-full">
+          <Button asChild className="bg-blue-900 text-white hover:bg-blue-950 rounded-full">
             <Link to="/apply">Get Started</Link>
           </Button>
         </nav>
@@ -63,7 +63,7 @@ const Navbar = () => {
               <div key={item.name}>
                 <Link 
                   to={item.link} 
-                  className="block py-3 text-gray-800 hover:text-thapar"
+                  className="block py-3 text-gray-800 hover:text-blue-900"
                   onClick={toggleMenu}
                 >
                   {item.name}
@@ -72,7 +72,7 @@ const Navbar = () => {
               </div>
             ))}
             <div className="py-4">
-              <Button asChild className="w-full bg-blue-800 hover:bg-blue-900 rounded-full">
+              <Button asChild className="w-full bg-blue-900 hover:bg-blue-950 rounded-full">
                 <Link to="/apply" onClick={toggleMenu}>Get Started</Link>
               </Button>
             </div>
