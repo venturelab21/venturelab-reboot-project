@@ -12,7 +12,6 @@ const CTASection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Ready to Transform Your Idea into Reality?</h2>
           <p className="text-lg text-blue-100 mb-8">
             Join VentureLab Thapar today and get access to mentorship, funding, workspace, and a supportive community of entrepreneurs.
           </p>
