@@ -52,17 +52,6 @@ const Hero = () => {
               <Link to="/programs">Explore Programs</Link>
             </Button>
           </div>
-
-          {/* Partners section */}
-          <div className="mt-20">
-            <h3 className="text-xl font-semibold mb-6">Partners & Collaborators</h3>
-            <div className="flex flex-wrap gap-12">
-              <div className="text-xl font-bold text-gray-700">TBI</div>
-              <div className="text-xl font-bold text-gray-700">NIDHI</div>
-              <div className="text-xl font-bold text-gray-700">TIET</div>
-              <div className="text-xl font-bold text-gray-700">DST</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
