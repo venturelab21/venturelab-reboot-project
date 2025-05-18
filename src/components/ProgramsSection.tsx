@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
@@ -47,9 +47,9 @@ const Program = ({ title, label, description, icon, duration, participants, bene
           </div>
         </div>
         
-        <div className="text-sm font-medium mb-2">Program Benefits:</div>
-        <ul className="space-y-2">
-          {benefits.map((benefit, index) => (
+        <div className="text-sm font-medium mb-2">Key Benefits:</div>
+        <ul className="space-y-1.5">
+          {benefits.slice(0, 3).map((benefit, index) => (
             <li key={index} className="flex items-center text-gray-700 text-sm">
               <Check size={16} className="text-teal-500 mr-2 flex-shrink-0" />
               <span>{benefit}</span>
@@ -61,7 +61,7 @@ const Program = ({ title, label, description, icon, duration, participants, bene
       <CardFooter>
         <Button asChild variant="outline" className="w-full group border-blue-600 text-blue-600 hover:bg-blue-50">
           <Link to={link} className="flex items-center justify-center">
-            Program Details <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+            Program Details <ExternalLink size={16} className="ml-2" />
           </Link>
         </Button>
       </CardFooter>
@@ -91,16 +91,14 @@ const ProgramsSection = () => {
           <Program 
             title="VentureLab Program" 
             label="Open"
-            description="Our flagship 12-month program designed for early-stage startups with validated prototypes ready to build a scalable business model and secure initial customers."
+            description="Our flagship 12-month program for early-stage startups with validated prototypes ready to build scalable business models."
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2H9a2 2 0 0 0-2 2v2m15 14V6a2 2 0 0 0-2-2h-2"></path><path d="M15 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V2"></path><path d="M18 14H4a2 2 0 0 0-2 2v6h14"></path><path d="m22 18-3 3-3-3"></path></svg>}
             duration="12 Months"
             participants="12 Startups"
             benefits={[
               "Fully equipped workspace access",
               "Up to ₹10 lakhs seed funding",
-              "Dedicated industry mentors",
-              "Legal and compliance support",
-              "Business model refinement"
+              "Dedicated industry mentors"
             ]}
             link="/programs#venture-lab-program"
           />
@@ -108,16 +106,14 @@ const ProgramsSection = () => {
           <Program 
             title="MeitY TIDE 2.0" 
             label="Applications Open"
-            description="A comprehensive program by Ministry of Electronics & IT, supporting early-stage entrepreneurs building impactful ICT-enabled ventures in key national domains."
+            description="A program by Ministry of Electronics & IT, supporting entrepreneurs building impactful ICT-enabled ventures."
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg>}
             duration="Up to 12 Months"
             participants="Tech Startups"
             benefits={[
               "EIR Program with support up to ₹4 Lakhs",
               "TIDE 2.0 Grant up to ₹7 Lakhs for MVP",
-              "Dedicated mentorship resources",
-              "ICT venture development support",
-              "Strategic funding access"
+              "Dedicated mentorship resources"
             ]}
             link="/programs#meity"
           />
@@ -125,16 +121,14 @@ const ProgramsSection = () => {
           <Program 
             title="SISFS" 
             label="Open"
-            description="A 3-month pre-incubation program for first-time founders to test their concepts, build MVPs, conduct market validation, and prepare for formal incubation."
+            description="A 3-month pre-incubation program for first-time founders to test concepts, build MVPs, and conduct market validation."
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a5 5 0 0 0 5 5"></path></svg>}
             duration="3 Months"
             participants="20 Startups"
             benefits={[
               "Lean startup methodology",
               "MVP development support",
-              "Customer discovery guidance",
-              "Business model canvas",
-              "Pitching skills development"
+              "Customer discovery guidance"
             ]}
             link="/programs#sisfs"
           />
