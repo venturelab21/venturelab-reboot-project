@@ -12,11 +12,10 @@ interface ProgramProps {
   icon: React.ReactNode;
   duration: string;
   participants: string;
-  benefits: string[];
   link: string;
 }
 
-const Program = ({ title, label, description, icon, duration, participants, benefits, link }: ProgramProps) => {
+const Program = ({ title, label, description, icon, duration, participants, link }: ProgramProps) => {
   return (
     <Card className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
       <div className="h-1 bg-gradient-to-r from-blue-600 to-teal-400"></div>
@@ -46,16 +45,6 @@ const Program = ({ title, label, description, icon, duration, participants, bene
             {participants}
           </div>
         </div>
-        
-        <div className="text-sm font-medium mb-2">Key Benefits:</div>
-        <ul className="space-y-1.5">
-          {benefits.slice(0, 3).map((benefit, index) => (
-            <li key={index} className="flex items-center text-gray-700 text-sm">
-              <Check size={16} className="text-teal-500 mr-2 flex-shrink-0" />
-              <span>{benefit}</span>
-            </li>
-          ))}
-        </ul>
       </CardContent>
       
       <CardFooter>
@@ -95,11 +84,6 @@ const ProgramsSection = () => {
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2H9a2 2 0 0 0-2 2v2m15 14V6a2 2 0 0 0-2-2h-2"></path><path d="M15 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V2"></path><path d="M18 14H4a2 2 0 0 0-2 2v6h14"></path><path d="m22 18-3 3-3-3"></path></svg>}
             duration="12 Months"
             participants="12 Startups"
-            benefits={[
-              "Fully equipped workspace access",
-              "Up to ₹10 lakhs seed funding",
-              "Dedicated industry mentors"
-            ]}
             link="/programs#venture-lab-program"
           />
           
@@ -110,11 +94,6 @@ const ProgramsSection = () => {
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg>}
             duration="Up to 12 Months"
             participants="Tech Startups"
-            benefits={[
-              "EIR Program with support up to ₹4 Lakhs",
-              "TIDE 2.0 Grant up to ₹7 Lakhs for MVP",
-              "Dedicated mentorship resources"
-            ]}
             link="/programs#meity"
           />
           
@@ -125,11 +104,6 @@ const ProgramsSection = () => {
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a5 5 0 0 0 5 5"></path></svg>}
             duration="3 Months"
             participants="20 Startups"
-            benefits={[
-              "Lean startup methodology",
-              "MVP development support",
-              "Customer discovery guidance"
-            ]}
             link="/programs#sisfs"
           />
         </div>
