@@ -10,12 +10,10 @@ interface ProgramProps {
   label?: string;
   description: string;
   icon: React.ReactNode;
-  duration: string;
-  participants: string;
   link: string;
 }
 
-const Program = ({ title, label, description, icon, duration, participants, link }: ProgramProps) => {
+const Program = ({ title, label, description, icon, link }: ProgramProps) => {
   return (
     <Card className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
       <div className="h-1 bg-gradient-to-r from-blue-600 to-teal-400"></div>
@@ -33,17 +31,6 @@ const Program = ({ title, label, description, icon, duration, participants, link
         </div>
         <p className="text-gray-600 text-sm">{description}</p>
       </CardHeader>
-      
-      <CardContent>
-        <div className="flex mb-4 text-sm">
-          <div className="mr-8">
-            {duration}
-          </div>
-          <div>
-            {participants}
-          </div>
-        </div>
-      </CardContent>
       
       <CardFooter>
         <Button asChild variant="outline" className="w-full group border-blue-600 text-blue-600 hover:bg-blue-50">
@@ -80,8 +67,6 @@ const ProgramsSection = () => {
             label="Open"
             description="Our flagship 12-month program for early-stage startups with validated prototypes ready to build scalable business models."
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2H9a2 2 0 0 0-2 2v2m15 14V6a2 2 0 0 0-2-2h-2"></path><path d="M15 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V2"></path><path d="M18 14H4a2 2 0 0 0-2 2v6h14"></path><path d="m22 18-3 3-3-3"></path></svg>}
-            duration="12"
-            participants="12"
             link="/programs#venture-lab-program"
           />
           
@@ -90,8 +75,6 @@ const ProgramsSection = () => {
             label="Applications Open"
             description="A program by Ministry of Electronics & IT, supporting entrepreneurs building impactful ICT-enabled ventures."
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg>}
-            duration="12"
-            participants="15"
             link="/programs#meity"
           />
           
@@ -100,8 +83,6 @@ const ProgramsSection = () => {
             label="Open"
             description="A 3-month pre-incubation program for first-time founders to test concepts, build MVPs, and conduct market validation."
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a5 5 0 0 0 5 5"></path></svg>}
-            duration="3"
-            participants="20"
             link="/programs#sisfs"
           />
         </div>
