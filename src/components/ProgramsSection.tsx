@@ -81,7 +81,7 @@ const ProgramsSection = () => {
           <Program 
             title="SISFS" 
             label="Open"
-            description="A 3-month pre-incubation program for first-time founders to test concepts, build MVPs, and conduct market validation."
+            description="The Startup India Seed Fund Scheme, backed by DPIIT, is designed to catalyze early-stage innovation by providing strategic investment to startups — enabling them to validate concepts, develop prototypes, run product trials, and accelerate market entry and commercialization."
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a5 5 0 0 0 5 5"></path></svg>}
             link="/programs#sisfs"
           />
