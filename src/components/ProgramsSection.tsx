@@ -106,18 +106,18 @@ const ProgramsSection = () => {
           />
           
           <Program 
-            title="Meity" 
-            label="Applications Open June 15"
-            description="An intensive 6-month program for growth-stage startups with market traction seeking to expand operations, optimize unit economics, and secure Series A funding."
+            title="MeitY TIDE 2.0" 
+            label="Applications Open"
+            description="A comprehensive program by Ministry of Electronics & IT, supporting early-stage entrepreneurs building impactful ICT-enabled ventures in key national domains."
             icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg>}
-            duration="6 Months"
-            participants="8 Startups"
+            duration="Up to 12 Months"
+            participants="Tech Startups"
             benefits={[
-              "Growth strategy blueprint",
-              "Investor connections",
-              "Sales and marketing support",
-              "Operations scaling guidance",
-              "Leadership development"
+              "EIR Program with support up to ₹4 Lakhs",
+              "TIDE 2.0 Grant up to ₹7 Lakhs for MVP",
+              "Dedicated mentorship resources",
+              "ICT venture development support",
+              "Strategic funding access"
             ]}
             link="/programs#meity"
           />
