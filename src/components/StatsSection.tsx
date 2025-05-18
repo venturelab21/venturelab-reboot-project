@@ -44,9 +44,6 @@ const StatsSection = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex justify-center mb-2">
-          <div className="w-20 h-1 bg-teal-500"></div>
-        </div>
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-800">Our Impact</h2>
           <p className="text-gray-600">
