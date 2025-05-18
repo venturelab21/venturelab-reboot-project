@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { Meteors } from "@/components/ui/meteors";
 
 interface ProgramProps {
   title: string;
@@ -15,13 +16,14 @@ interface ProgramProps {
 
 const Program = ({ title, label, description, icon, link }: ProgramProps) => {
   return (
-    <Card className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-      <div className="h-1 bg-gradient-to-r from-blue-600 to-teal-400"></div>
-      <CardHeader className="pt-6">
+    <Card className="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-800 shadow-sm">
+      <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500/10 to-teal-500/10 transform scale-[0.80] rounded-full blur-3xl" />
+      <div className="h-1 bg-gradient-to-r from-blue-600 to-teal-400 relative z-10"></div>
+      <CardHeader className="pt-6 relative z-10">
         <div className="flex items-center mb-2">
           <div className="text-teal-500 mr-3">{icon}</div>
           <div>
-            <div className="text-xl font-display font-semibold">{title}</div>
+            <div className="text-xl font-display font-semibold text-white">{title}</div>
             {label && (
               <span className="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-sm">
                 {label}
@@ -29,34 +31,37 @@ const Program = ({ title, label, description, icon, link }: ProgramProps) => {
             )}
           </div>
         </div>
-        <p className="text-gray-600 text-sm">{description}</p>
+        <p className="text-gray-400 text-sm">{description}</p>
       </CardHeader>
       
-      <CardFooter>
-        <Button asChild variant="outline" className="w-full group border-blue-600 text-blue-600 hover:bg-blue-50">
+      <CardFooter className="relative z-10">
+        <Button asChild variant="outline" className="w-full group border-blue-600 text-blue-400 hover:bg-blue-800/20">
           <Link to={link} className="flex items-center justify-center">
             Program Details <ExternalLink size={16} className="ml-2" />
           </Link>
         </Button>
       </CardFooter>
+      
+      {/* Meteor effect */}
+      <Meteors number={10} className="opacity-30" />
     </Card>
   );
 };
 
 const ProgramsSection = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-950">
       <div className="container mx-auto px-4">
         <div className="flex justify-center mb-2">
           <div className="w-20 h-1 bg-teal-500"></div>
         </div>
         
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full mb-4 text-sm">
+          <div className="inline-block bg-blue-900/50 text-blue-300 px-3 py-1 rounded-full mb-4 text-sm">
             Our Programs
           </div>
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-800">Comprehensive Startup Support</h2>
-          <p className="text-gray-600">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-white">Comprehensive Startup Support</h2>
+          <p className="text-gray-400">
             We offer structured programs tailored to entrepreneurs at every stage of their journey, from idea validation to market expansion.
           </p>
         </div>
