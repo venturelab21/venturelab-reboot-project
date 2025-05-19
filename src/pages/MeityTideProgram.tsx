@@ -20,11 +20,11 @@ const MeityTideProgram = () => {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink as={Link} to="/">Home</BreadcrumbLink>
+                  <Link to="/" className="text-blue-600 hover:underline">Home</Link>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink as={Link} to="/programs">Programs</BreadcrumbLink>
+                  <Link to="/programs" className="text-blue-600 hover:underline">Programs</Link>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
