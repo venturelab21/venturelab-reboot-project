@@ -149,19 +149,19 @@ const MeityTideProgram = () => {
                   <h3 className="text-xl font-semibold mb-4">Who Can Apply</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-red-500 mb-2">Expert Innovator</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Expert Innovator</h4>
                       <p className="text-gray-700 text-sm">You are working full-time on developing the solution and have the required expertise or relevant experience or know-how for the same.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-red-500 mb-2">Revolutionary Solutions</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Revolutionary Solutions</h4>
                       <p className="text-gray-700 text-sm">The product/solution being developed is catering to any of the focus areas mentioned above.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-red-500 mb-2">Igniting Innovation from India</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Igniting Innovation from India</h4>
                       <p className="text-gray-700 text-sm">Your startup is/will be registered in India.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-red-500 mb-2">Tide 2.0 Untapped</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Tide 2.0 Untapped</h4>
                       <p className="text-gray-700 text-sm">You or your startup have not availed any support from Tide 2.0 scheme in the past.</p>
                     </div>
                   </div>
@@ -171,23 +171,23 @@ const MeityTideProgram = () => {
                   <h3 className="text-xl font-semibold mb-4">What We Offer</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-red-500 mb-2">EIR Grant</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">EIR Grant</h4>
                       <p className="text-gray-700 text-sm">INR 4 Lakhs of prototype validation and development for EIR (Entrepreneur-in-Residence).</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-red-500 mb-2">Product Development Boost</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Product Development Boost</h4>
                       <p className="text-gray-700 text-sm">INR 7 Lakhs of product development support to startups.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-red-500 mb-2">Tailored Support</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Tailored Support</h4>
                       <p className="text-gray-700 text-sm">Customised hand-holding and problem resolving portfolio support for 6 months.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-red-500 mb-2">Co-Work Oasis</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Co-Work Oasis</h4>
                       <p className="text-gray-700 text-sm">Access to co-working space and related services if based out of Ahmedabad.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5 md:col-span-2">
-                      <h4 className="font-medium text-red-500 mb-2">Cloud Credit Boost</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Cloud Credit Boost</h4>
                       <p className="text-gray-700 text-sm">Access to service partners for cloud credit support worth ₹5,000.</p>
                     </div>
                   </div>
