@@ -1,3 +1,4 @@
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { SmartphoneNfc, Brain, Cpu, Car, SmartHome, Activity } from "lucide-react";
 
 const MeityTideProgram = () => {
   return (
@@ -58,49 +60,66 @@ const MeityTideProgram = () => {
                 tech start-ups over 5 years.
               </p>
 
-              {/* Focus Areas Card - Keeping this one */}
+              {/* Focus Areas Card with icons */}
               <div className="mb-12">
                 <Card>
                   <CardContent className="pt-6">
-                    <h3 className="text-xl font-semibold mb-3">Focus Areas</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>Internet of Things (IoT)</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>Artificial Intelligence & Machine Learning (AI-ML)</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>Blockchain</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>E-mobility</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>Smart Infrastructure</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>CleanTech & HealthTech</span>
-                      </li>
-                    </ul>
+                    <h3 className="text-xl font-semibold mb-5">Focus Areas</h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="flex items-start">
+                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                          <SmartphoneNfc size={20} />
+                        </div>
+                        <div>
+                          <span className="font-medium">Internet of Things (IoT)</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                          <Brain size={20} />
+                        </div>
+                        <div>
+                          <span className="font-medium">Artificial Intelligence & Machine Learning (AI-ML)</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                          <Cpu size={20} />
+                        </div>
+                        <div>
+                          <span className="font-medium">Blockchain</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                          <Car size={20} />
+                        </div>
+                        <div>
+                          <span className="font-medium">E-mobility</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                          <SmartHome size={20} />
+                        </div>
+                        <div>
+                          <span className="font-medium">Smart Infrastructure</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                          <Activity size={20} />
+                        </div>
+                        <div>
+                          <span className="font-medium">CleanTech & HealthTech</span>
+                        </div>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
