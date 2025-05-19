@@ -1,5 +1,5 @@
 
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -149,15 +149,15 @@ const MeityTideProgram = () => {
                   <h3 className="text-xl font-semibold mb-4">Who Can Apply</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Expert Innovator</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Tech Innovator</h4>
                       <p className="text-gray-700 text-sm">You are working full-time on developing the solution and have the required expertise or relevant experience or know-how for the same.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Revolutionary Solutions</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Reimagined Solutions</h4>
                       <p className="text-gray-700 text-sm">The product/solution being developed is catering to any of the focus areas mentioned above.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Igniting Innovation from India</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">Innovating from India</h4>
                       <p className="text-gray-700 text-sm">Your startup is/will be registered in India.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
