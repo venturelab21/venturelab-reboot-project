@@ -10,6 +10,7 @@ import MeityTideProgram from "./pages/MeityTideProgram";
 import SISFSProgram from "./pages/SISFSProgram";
 import VentureLabProgram from "./pages/VentureLabProgram";
 import Portfolio from "./pages/Portfolio";
+import KnowUs from "./pages/KnowUs";
 
 // Create a QueryClient instance
 const queryClient = new QueryClient();
@@ -27,7 +28,7 @@ const App = () => (
           <Route path="/programs/venture-lab" element={<VentureLabProgram />} />
           <Route path="/portfolio" element={<Portfolio />} />
           {/* About Us Routes */}
-          <Route path="/about/know-us" element={<NotFound />} />
+          <Route path="/about/know-us" element={<KnowUs />} />
           <Route path="/about/team" element={<NotFound />} />
           <Route path="/about/council" element={<NotFound />} />
           <Route path="/mentors" element={<NotFound />} />
