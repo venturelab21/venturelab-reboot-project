@@ -1,3 +1,4 @@
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -131,7 +132,7 @@ const SISFSProgram = () => {
                         <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
                           <Info size={20} />
                         </div>
-                        <h4 className="font-medium text-blue-600">Incubator Connection</h4>
+                        <h4 className="font-medium text-blue-600">Promoter Majority</h4>
                       </div>
                       <p className="text-gray-700 text-sm">Indian promoters must hold at least 51% shareholding at the time of application.</p>
                     </div>
