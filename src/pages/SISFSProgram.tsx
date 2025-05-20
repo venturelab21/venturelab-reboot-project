@@ -1,4 +1,3 @@
-
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -134,7 +133,7 @@ const SISFSProgram = () => {
                         </div>
                         <h4 className="font-medium text-blue-600">Incubator Connection</h4>
                       </div>
-                      <p className="text-gray-700 text-sm">Shareholding by Indian promoters in the startup should be at least 51% at the time of application to the incubator for the scheme, as per the Companies Act, 2013.</p>
+                      <p className="text-gray-700 text-sm">Indian promoters must hold at least 51% shareholding at the time of application.</p>
                     </div>
                   </div>
                 </TabsContent>
