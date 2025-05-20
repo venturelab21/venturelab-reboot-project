@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SmartphoneNfc, Brain, Cpu, Car, SmartHome, Activity } from "lucide-react";
+import { SmartphoneNfc, Brain, Cpu, Car, Smartphone, Activity } from "lucide-react";
 
 const MeityTideProgram = () => {
   return (
@@ -104,7 +104,7 @@ const MeityTideProgram = () => {
                       
                       <div className="flex items-start">
                         <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
-                          <SmartHome size={20} />
+                          <Smartphone size={20} />
                         </div>
                         <div>
                           <span className="font-medium">Smart Infrastructure</span>
