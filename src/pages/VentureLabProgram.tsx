@@ -273,8 +273,17 @@ const VentureLabProgram = () => {
                   <h3 className="text-xl font-semibold mb-4">Value Creation Model</h3>
                   <p className="text-gray-700 mb-4">For accelerated business growth</p>
                   
-                  <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    {/* Added the image of the value creation model here */}
+                    <div className="mb-8">
+                      <img 
+                        src="/lovable-uploads/7fb392e7-dda6-4def-a0eb-248e00db5728.png" 
+                        alt="Value Creation Model" 
+                        className="w-full h-auto rounded-lg shadow-md border border-gray-200"
+                      />
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 gap-6 mt-8">
                       <div className="bg-white p-5 rounded-lg shadow-sm">
                         <h4 className="text-blue-700 font-medium mb-2 flex items-center">
                           <Briefcase className="mr-2" size={18} />
