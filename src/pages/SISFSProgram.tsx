@@ -1,3 +1,4 @@
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -6,7 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { FileText, Calendar, DollarSign, ArrowRight, Info } from "lucide-react";
+import { FileText, Calendar, ArrowRight, Info } from "lucide-react";
+import { Boxes } from "@/components/ui/background-boxes";
 
 const SISFSProgram = () => {
   return (
@@ -55,34 +57,39 @@ const SISFSProgram = () => {
                 trials, market entry and commercialization. This support will enable these startups to graduate to a level where they will become ready for venture capital investments.
               </p>
 
-              {/* Focus Areas Card with icons */}
+              {/* Focus Areas Card with icons - Now with Background Boxes */}
               <div className="mb-12">
-                <Card>
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-semibold mb-5">Offerings</h3>
+                <div className="relative overflow-hidden rounded-lg">
+                  <div className="absolute inset-0 bg-slate-900 z-0">
+                    <Boxes className="opacity-20" />
+                    <div className="absolute inset-0 bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+                  </div>
+                  
+                  <div className="relative z-20 p-6">
+                    <h3 className="text-2xl font-semibold mb-5 text-white">Offerings</h3>
                     <div className="grid md:grid-cols-2 gap-8">
-                      <div className="flex items-center p-6 border border-gray-200 rounded-lg">
+                      <div className="flex items-center p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg">
                         <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
                           <FileText size={24} />
                         </div>
                         <div>
-                          <h4 className="font-medium text-lg mb-1">Up to Rs. 20 Lakhs</h4>
-                          <p className="text-gray-600 text-sm">Funding support for validation of Proof of Concept, prototype development, or product trials</p>
+                          <h4 className="font-medium text-lg mb-1 text-white">Up to Rs. 20 Lakhs</h4>
+                          <p className="text-gray-200 text-sm">Funding support for validation of Proof of Concept, prototype development, or product trials</p>
                         </div>
                       </div>
                       
-                      <div className="flex items-center p-6 border border-gray-200 rounded-lg">
+                      <div className="flex items-center p-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg">
                         <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
                           <FileText size={24} />
                         </div>
                         <div>
-                          <h4 className="font-medium text-lg mb-1">Up to Rs. 50 Lakhs</h4>
-                          <p className="text-gray-600 text-sm">Investment for market entry, commercialization, and scaling through convertible instruments</p>
+                          <h4 className="font-medium text-lg mb-1 text-white">Up to Rs. 50 Lakhs</h4>
+                          <p className="text-gray-200 text-sm">Investment for market entry, commercialization, and scaling through convertible instruments</p>
                         </div>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </div>
 
               <Tabs defaultValue="eligibility" className="mb-12">
@@ -94,46 +101,55 @@ const SISFSProgram = () => {
                 </TabsList>
                 
                 <TabsContent value="eligibility" className="pt-4">
-                  <h3 className="text-xl font-semibold mb-4">Who Can Apply</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <div className="flex items-center mb-2">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
-                          <FileText size={20} />
-                        </div>
-                        <h4 className="font-medium text-blue-600">DPIIT Recognition</h4>
-                      </div>
-                      <p className="text-gray-700 text-sm">Startup must have DPIIT recognition at the time of application.</p>
+                  <div className="relative overflow-hidden rounded-lg">
+                    <div className="absolute inset-0 bg-slate-900 z-0">
+                      <Boxes className="opacity-20" />
+                      <div className="absolute inset-0 bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
                     </div>
                     
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <div className="flex items-center mb-2">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
-                          <Calendar size={20} />
+                    <div className="relative z-20 p-6">
+                      <h3 className="text-2xl font-semibold mb-5 text-white">Who Can Apply</h3>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-5">
+                          <div className="flex items-center mb-2">
+                            <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                              <FileText size={20} />
+                            </div>
+                            <h4 className="font-medium text-white">DPIIT Recognition</h4>
+                          </div>
+                          <p className="text-gray-200 text-sm">Startup must have DPIIT recognition at the time of application.</p>
                         </div>
-                        <h4 className="font-medium text-blue-600">Incorporation Period</h4>
-                      </div>
-                      <p className="text-gray-700 text-sm">Startup should not be more than 2 years old at the time of application submission.</p>
-                    </div>
-                    
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <div className="flex items-center mb-2">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
-                          <DollarSign size={20} />
+                        
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-5">
+                          <div className="flex items-center mb-2">
+                            <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                              <Calendar size={20} />
+                            </div>
+                            <h4 className="font-medium text-white">Incorporation Period</h4>
+                          </div>
+                          <p className="text-gray-200 text-sm">Startup should not be more than 2 years old at the time of application submission.</p>
                         </div>
-                        <h4 className="font-medium text-blue-600">Previous Funding</h4>
-                      </div>
-                      <p className="text-gray-700 text-sm">Startup should not have received more than Rs. 10 lakhs of monetary support from Government.</p>
-                    </div>
-                    
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <div className="flex items-center mb-2">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
-                          <Info size={20} />
+                        
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-5">
+                          <div className="flex items-center mb-2">
+                            <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                              <FileText size={20} />
+                            </div>
+                            <h4 className="font-medium text-white">Previous Funding</h4>
+                          </div>
+                          <p className="text-gray-200 text-sm">Startup should not have received more than Rs. 10 lakhs of monetary support from Government.</p>
                         </div>
-                        <h4 className="font-medium text-blue-600">Promoter Majority</h4>
+                        
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-5">
+                          <div className="flex items-center mb-2">
+                            <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                              <Info size={20} />
+                            </div>
+                            <h4 className="font-medium text-white">Promoter Majority</h4>
+                          </div>
+                          <p className="text-gray-200 text-sm">Indian promoters must hold at least 51% shareholding at the time of application.</p>
+                        </div>
                       </div>
-                      <p className="text-gray-700 text-sm">Indian promoters must hold at least 51% shareholding at the time of application.</p>
                     </div>
                   </div>
                 </TabsContent>
@@ -144,7 +160,7 @@ const SISFSProgram = () => {
                     <div className="border border-gray-200 rounded-lg p-5">
                       <div className="flex items-center mb-2">
                         <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
-                          <DollarSign size={20} />
+                          <FileText size={20} />
                         </div>
                         <h4 className="font-medium text-blue-600">Seed Capital</h4>
                       </div>
@@ -246,7 +262,7 @@ const SISFSProgram = () => {
                     <AccordionItem value="item-5">
                       <AccordionTrigger>Is the scheme still open for applications?</AccordionTrigger>
                       <AccordionContent>
-                        Currently, applications are closed for the SISFS program. Please check the official Startup India website for updates on future application windows.
+                        Currently, applications are open for the SISFS program. Please check the official Startup India website for updates on future application windows.
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
