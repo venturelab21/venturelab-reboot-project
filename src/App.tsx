@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import MeityTideProgram from "./pages/MeityTideProgram";
 import SISFSProgram from "./pages/SISFSProgram";
+import VentureLabProgram from "./pages/VentureLabProgram";
 
 // Create a QueryClient instance
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/programs/meity-tide" element={<MeityTideProgram />} />
           <Route path="/programs/sisfs" element={<SISFSProgram />} />
+          <Route path="/programs/venture-lab" element={<VentureLabProgram />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
