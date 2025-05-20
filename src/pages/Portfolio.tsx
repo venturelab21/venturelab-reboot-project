@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -38,7 +37,7 @@ const companies: Company[] = [
   { id: 22, name: "Nirmaan", website: "https://nirmaan.store/", category: "Others", logo: "/lovable-uploads/744476bf-646e-4a85-b07a-0a1df7e62b0e.png" },
   { id: 23, name: "Foxo", website: "https://www.foxo.club/", category: "Digitization", logo: "/lovable-uploads/f806cfe2-f1ff-4e33-9013-a68caf43e589.png" },
   { id: 24, name: "Project studio", website: "https://www.projectstudio.ai/", category: "Deep Tech" },
-  { id: 25, name: "Kriya fit", website: "https://kriya.fit/", category: "Others" },
+  { id: 25, name: "Kriya fit", website: "https://kriya.fit/", category: "Others", logo: "/lovable-uploads/ddd9de6e-bc41-4d22-8cf9-7be671cf732c.png" },
   { id: 26, name: "BulkSolids Innovation India", website: "https://bulksolidsindia.com/", category: "Climate Tech", logo: "/lovable-uploads/ad2f5ab3-c579-47f0-b80f-a845f637e9a7.png" },
 ];
 
