@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,7 +14,7 @@ interface Company {
 }
 
 const companies: Company[] = [
-  { id: 1, name: "Visarvya Businesses Pvt Ltd", website: "https://www.visar.co.in/", category: "Deep Tech" },
+  { id: 1, name: "Visarvya Businesses Pvt Ltd", website: "https://www.visar.co.in/", category: "Deep Tech", logo: "https://www.visar.co.in/assets/logo-CgcTpD-z.svg" },
   { id: 2, name: "Sentinal Innovations Pvt Ltd", website: "https://www.sentinal.in/", category: "Deep Tech", logo: "/lovable-uploads/c4d41606-a6ad-4e93-bf81-d17b2f8923b7.png" },
   { id: 3, name: "Horses Mouth Technologies Pvt Ltd", website: "https://yocket.com/feed/booking?source=VC_B2B_HM-RG", category: "Deep Tech", logo: "/lovable-uploads/ec0b4340-c2af-4905-959f-ec5fc6e3555d.png" },
   { id: 4, name: "Deradh Software Pvt Ltd", website: "https://www.deradh.com/", category: "Deep Tech", logo: "/lovable-uploads/e7d3a7ba-3eb5-4a0b-8bd4-f1a2237e2f63.png" },
