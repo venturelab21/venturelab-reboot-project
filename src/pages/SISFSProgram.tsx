@@ -63,7 +63,7 @@ const SISFSProgram = () => {
                     <div className="grid md:grid-cols-2 gap-8">
                       <div className="flex items-center p-6 border border-gray-200 rounded-lg">
                         <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
-                          <DollarSign size={24} />
+                          <FileText size={24} />
                         </div>
                         <div>
                           <h4 className="font-medium text-lg mb-1">Up to Rs. 20 Lakhs</h4>
@@ -73,7 +73,7 @@ const SISFSProgram = () => {
                       
                       <div className="flex items-center p-6 border border-gray-200 rounded-lg">
                         <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
-                          <DollarSign size={24} />
+                          <FileText size={24} />
                         </div>
                         <div>
                           <h4 className="font-medium text-lg mb-1">Up to Rs. 50 Lakhs</h4>
