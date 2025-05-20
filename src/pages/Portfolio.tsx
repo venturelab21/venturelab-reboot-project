@@ -35,7 +35,7 @@ const companies: Company[] = [
   { id: 19, name: "Terafac Technologies", website: "https://www.terafac.com/", category: "Deep Tech" },
   { id: 20, name: "REPEAT GUD", website: "https://repeatgud.com", category: "Climate Tech" },
   { id: 21, name: "Eternz", website: "https://www.eternz.com/", category: "Others" },
-  { id: 22, name: "Nirmaan", website: "https://nirmaan.store/", category: "Others" },
+  { id: 22, name: "Nirmaan", website: "https://nirmaan.store/", category: "Others", logo: "/lovable-uploads/744476bf-646e-4a85-b07a-0a1df7e62b0e.png" },
   { id: 23, name: "Foxo", website: "https://www.foxo.club/", category: "Digitization" },
   { id: 24, name: "Project studio", website: "https://www.projectstudio.ai/", category: "Deep Tech" },
   { id: 25, name: "Kriya fit", website: "https://kriya.fit/", category: "Others" },
@@ -107,6 +107,15 @@ const Portfolio = () => {
                     <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-full mb-3">
                       {company.category}
                     </span>
+                    {company.logo ? (
+                      <div className="mb-4 flex justify-center">
+                        <img 
+                          src={company.logo} 
+                          alt={`${company.name} logo`} 
+                          className="h-16 w-auto object-contain"
+                        />
+                      </div>
+                    ) : null}
                     <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-500 transition-colors line-clamp-2">
                       {company.name}
                     </h3>

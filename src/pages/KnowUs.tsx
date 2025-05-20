@@ -20,7 +20,7 @@ const KnowUs = () => {
               <BreadcrumbItem>
                 <BreadcrumbLink href="/about/know-us">About Us</BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbItem isCurrentPage>
+              <BreadcrumbItem>
                 <BreadcrumbLink>Know Us</BreadcrumbLink>
               </BreadcrumbItem>
             </Breadcrumb>
@@ -30,8 +30,7 @@ const KnowUs = () => {
         {/* Header */}
         <div className="bg-white py-16 relative overflow-hidden">
           <Spotlight
-            className="-top-40 left-0"
-            fill="blue"
+            className="-top-40 left-0 from-blue-500/20 via-blue-500/10 to-transparent"
           />
           <div className="container mx-auto px-4 relative z-10">
             <h1 className="text-4xl md:text-5xl font-display font-bold text-center mb-6">
