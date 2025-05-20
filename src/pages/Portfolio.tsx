@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ExternalLink } from "lucide-react";
 import { Spotlight } from "@/components/ui/spotlight";
 
 interface Company {
@@ -93,30 +92,32 @@ const Portfolio = () => {
               </TabsList>
             </Tabs>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredCompanies.map((company) => (
                 <div
                   key={company.id}
                   onClick={() => visitWebsite(company.website)}
-                  className="border border-gray-200 bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-hover transition-shadow group relative"
+                  className="border border-gray-200 bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 group relative h-full"
                 >
-                  <div className="p-6">
-                    <div className="absolute top-4 right-4 text-gray-400 group-hover:text-blue-500 transition-colors">
-                      <ExternalLink size={18} />
+                  <div className="p-6 h-full flex flex-col">
+                    <div className="mb-4">
+                      <span className="inline-block px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">
+                        {company.category}
+                      </span>
                     </div>
-                    <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-full mb-3">
-                      {company.category}
-                    </span>
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-lg font-semibold group-hover:text-blue-500 transition-colors line-clamp-2">
+                    
+                    <div className="flex items-center justify-between flex-grow">
+                      <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors line-clamp-2 pr-2">
                         {company.name}
                       </h3>
                       {company.logo && (
-                        <img 
-                          src={company.logo} 
-                          alt={`${company.name} logo`} 
-                          className="h-8 w-auto object-contain ml-2" 
-                        />
+                        <div className="flex-shrink-0">
+                          <img 
+                            src={company.logo} 
+                            alt={`${company.name} logo`} 
+                            className="h-14 w-auto object-contain" 
+                          />
+                        </div>
                       )}
                     </div>
                   </div>
