@@ -1,8 +1,10 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Spotlight } from "@/components/ui/spotlight";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface Company {
   id: number;
@@ -107,18 +109,24 @@ const Portfolio = () => {
                     </div>
                     
                     <div className="flex items-center justify-between mt-auto">
-                      <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors line-clamp-2 pr-4 max-w-[65%]">
+                      <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors line-clamp-2 max-w-[60%]">
                         {company.name}
                       </h3>
-                      {company.logo && (
-                        <div className="flex-shrink-0">
+                      <div className="flex-shrink-0 w-24 h-16 flex items-center justify-center">
+                        {company.logo ? (
                           <img 
                             src={company.logo} 
                             alt={`${company.name} logo`} 
-                            className="h-16 w-auto object-contain" 
+                            className="max-h-16 max-w-24 object-contain" 
                           />
-                        </div>
-                      )}
+                        ) : (
+                          <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center">
+                            <span className="text-xl font-semibold text-gray-400">
+                              {company.name.charAt(0)}
+                            </span>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
