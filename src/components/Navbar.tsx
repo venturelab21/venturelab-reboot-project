@@ -34,9 +34,9 @@ const Navbar = () => {
   ];
 
   const programMenuItems = [
-    { name: 'MeiTY TIDE', link: '/programs/meity-tide' },
+    { name: 'VentureLab Program', link: '/programs/venture-lab' },
+    { name: 'MeiTY TIDE 2.0', link: '/programs/meity-tide' },
     { name: 'SISFS', link: '/programs/sisfs' },
-    { name: 'Venture Lab', link: '/programs/venture-lab' },
   ];
 
   const menuItems = [
