@@ -134,7 +134,7 @@ const SISFSProgram = () => {
                         </div>
                         <h4 className="font-medium text-blue-600">Incubator Connection</h4>
                       </div>
-                      <p className="text-gray-700 text-sm">Startups should have a business idea to develop a product or a service with market fit.</p>
+                      <p className="text-gray-700 text-sm">Shareholding by Indian promoters in the startup should be at least 51% at the time of application to the incubator for the scheme, as per the Companies Act, 2013.</p>
                     </div>
                   </div>
                 </TabsContent>
