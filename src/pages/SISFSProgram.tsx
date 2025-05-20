@@ -1,4 +1,3 @@
-
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -256,10 +255,9 @@ const SISFSProgram = () => {
 
               {/* Call to action */}
               <div className="bg-blue-50 rounded-xl p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Status: Applications Closed</h3>
-                <p className="text-lg mb-6">The current round of applications for the SISFS program is now closed.</p>
-                <Button size="lg" className="bg-blue-500 hover:bg-blue-600 rounded-full" disabled>
-                  Applications Closed
+                <h3 className="text-2xl font-bold mb-4">Status: Application Open</h3>
+                <Button size="lg" className="bg-blue-500 hover:bg-blue-600 rounded-full">
+                  Application Open
                 </Button>
               </div>
             </div>
