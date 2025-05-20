@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -24,7 +23,7 @@ const companies: Company[] = [
   { id: 9, name: "BBX Infotech", website: "https://bschoolbulls.com/index/", category: "Digitization", logo: "/lovable-uploads/79946fce-7bc1-4614-aec9-0b5ff740c121.png" },
   { id: 10, name: "Negotrip", website: "https://www.welstays.com/", category: "Others" },
   { id: 11, name: "Labellerr", website: "https://calendly.com/tensormatics/call-with-tensor-matics-labellerr-com?month=2025-05", category: "Deep Tech", logo: "/lovable-uploads/d0ab3fa2-bf0b-47af-9288-0bc1a5de4397.png" },
-  { id: 12, name: "Minus Zero", website: "https://minuszero.ai/", category: "Deep Tech", logo: "/lovable-uploads/341e0364-56ab-4d14-9b5e-9abceccbb287.png" },
+  { id: 12, name: "Minus Zero", website: "https://minuszero.ai/", category: "Deep Tech", logo: "https://framerusercontent.com/images/ylPy6u18awhlkKAin5zfRKkpiI.png" },
   { id: 13, name: "AGPHARM BIOINNOVATIONS LLP", website: "https://www.agpharmbioinnovations.com/", category: "Climate Tech", logo: "/lovable-uploads/b403b2a5-29b8-4f57-94af-ccbeaaba7591.png" },
   { id: 14, name: "Flynovate Private Limited", website: "https://flynovate.in/", category: "Climate Tech", logo: "/lovable-uploads/03c7dce5-4d1e-4de4-82ee-60f2c84a2d79.png" },
   { id: 15, name: "BbookThat Studio", website: "https://www.bookthatstudio.com/", category: "Digitization", logo: "/lovable-uploads/345e05e5-2aa1-4a0b-996c-36afbc1406b8.png" },
