@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -27,7 +26,6 @@ const Navbar = () => {
 
   const aboutSubMenuItems = [
     { name: 'Know Us', link: '/about/know-us' },
-    { name: 'About Us', link: '/about/venture-lab' },
     { name: 'Our Team', link: '/about/team' },
     { name: 'Governing Council', link: '/about/council' },
     { name: 'Our Mentors', link: '/mentors' },
