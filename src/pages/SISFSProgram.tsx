@@ -68,7 +68,7 @@ const SISFSProgram = () => {
                         </div>
                         <div>
                           <h4 className="font-medium text-lg mb-1">Up to Rs. 20 Lakhs</h4>
-                          <p className="text-gray-600 text-sm">Grant for validation of Proof of Concept, prototype development, or product trials</p>
+                          <p className="text-gray-600 text-sm">Funding support for validation of Proof of Concept, prototype development, or product trials</p>
                         </div>
                       </div>
                       
