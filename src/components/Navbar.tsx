@@ -27,7 +27,7 @@ const Navbar = () => {
 
   const aboutSubMenuItems = [
     { name: 'Know Us', link: '/about/know-us' },
-    { name: 'Venture Lab', link: '/about/venture-lab' },
+    { name: 'About Us', link: '/about/venture-lab' },
     { name: 'Our Team', link: '/about/team' },
     { name: 'Governing Council', link: '/about/council' },
     { name: 'Our Mentors', link: '/mentors' },
