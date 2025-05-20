@@ -1,4 +1,3 @@
-
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,7 +7,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FileText, Calendar, ArrowRight, Info } from "lucide-react";
-import { Boxes } from "@/components/ui/background-boxes";
+import { Spotlight } from "@/components/ui/spotlight";
 
 const SISFSProgram = () => {
   return (
@@ -57,13 +56,10 @@ const SISFSProgram = () => {
                 trials, market entry and commercialization. This support will enable these startups to graduate to a level where they will become ready for venture capital investments.
               </p>
 
-              {/* Focus Areas Card with icons - Now with Background Boxes */}
+              {/* Focus Areas Card with Spotlight effect */}
               <div className="mb-12">
-                <div className="relative overflow-hidden rounded-lg">
-                  <div className="absolute inset-0 bg-slate-900 z-0">
-                    <Boxes className="opacity-20" />
-                    <div className="absolute inset-0 bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-                  </div>
+                <div className="relative overflow-hidden rounded-lg bg-slate-900">
+                  <Spotlight className="from-blue-500/50 via-blue-400/25 to-indigo-500/25" />
                   
                   <div className="relative z-20 p-6">
                     <h3 className="text-2xl font-semibold mb-5 text-white">Offerings</h3>
@@ -101,11 +97,8 @@ const SISFSProgram = () => {
                 </TabsList>
                 
                 <TabsContent value="eligibility" className="pt-4">
-                  <div className="relative overflow-hidden rounded-lg">
-                    <div className="absolute inset-0 bg-slate-900 z-0">
-                      <Boxes className="opacity-20" />
-                      <div className="absolute inset-0 bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-                    </div>
+                  <div className="relative overflow-hidden rounded-lg bg-slate-900">
+                    <Spotlight className="from-indigo-500/50 via-purple-500/25 to-blue-500/25" />
                     
                     <div className="relative z-20 p-6">
                       <h3 className="text-2xl font-semibold mb-5 text-white">Who Can Apply</h3>
