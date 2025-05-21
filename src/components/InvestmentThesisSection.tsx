@@ -37,28 +37,34 @@ const InvestmentThesisSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <p className="text-blue-700 font-medium mb-2">Our Investment Thesis</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Where Innovation Meets Opportunity</h2>
-          <p className="text-gray-700 max-w-3xl mx-auto">
-            We invest at the pre-seed stage, partnering with visionary founders building technology-first products, 
-            services, or processes that unlock scalable impact across consumer, enterprise, and healthcare sectors.
-          </p>
+        {/* Top section with heading and description */}
+        <div className="mb-16">
+          <p className="uppercase text-gray-600 font-medium tracking-wider text-sm mb-1">WHERE INNOVATION MEETS OPPORTUNITY</p>
+          
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 lg:mb-0 font-display text-gray-900 lg:max-w-xl">
+              Sector Pitches
+            </h2>
+            <p className="text-gray-700 max-w-2xl lg:text-lg">
+              We focus on technology products or technology-backed services or processes across consumer, 
+              enterprise healthcare and deep technology domains
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        {/* Investment areas grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {investmentAreas.map((area, index) => (
-            <Card key={index} className="border-none shadow-md hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="mb-4 p-3 rounded-full bg-blue-100/80">
-                  {area.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{area.title}</h3>
-                <p className="text-gray-600">{area.description}</p>
-              </CardContent>
-            </Card>
+            <div key={index} className="border p-6 flex flex-col items-center text-center">
+              <div className="mb-5 text-blue-700">
+                {area.icon}
+              </div>
+              <h3 className="text-lg font-bold text-gray-900">
+                {area.title}
+              </h3>
+            </div>
           ))}
         </div>
 
