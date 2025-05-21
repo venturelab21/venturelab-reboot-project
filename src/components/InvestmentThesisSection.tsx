@@ -41,7 +41,7 @@ const InvestmentThesisSection = () => {
       <div className="container mx-auto px-4">
         {/* Top section with heading and description */}
         <div className="mb-16">
-          <p className="uppercase text-gray-600 font-medium tracking-wider text-sm mb-1">WHERE INNOVATION MEETS OPPORTUNITY</p>
+          <p className="uppercase text-gray-600 font-medium tracking-wider text-sm mb-1">From First Belief to First Breakthrough</p>
           
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 lg:mb-0 font-display text-gray-900 lg:max-w-xl">
