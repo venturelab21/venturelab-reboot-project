@@ -6,6 +6,7 @@ import PortfolioSection from "@/components/PortfolioSection";
 import MentorSection from "@/components/MentorSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import InvestmentThesisSection from "@/components/InvestmentThesisSection";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <InvestmentThesisSection />
         <ProgramsSection />
         <PortfolioSection />
         <MentorSection />
