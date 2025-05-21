@@ -1,13 +1,13 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Cube, Recycle, Activity, Factory, Health, Leaf } from "lucide-react";
+import { Box, Recycle, Activity, Factory, Heart, Leaf } from "lucide-react";
 
 const InvestmentThesisSection = () => {
   const investmentAreas = [
     {
       title: "FinTech",
       description: "Driving digital finance, embedded banking, and inclusive financial infrastructure",
-      icon: <Cube className="h-12 w-12 text-blue-700" />,
+      icon: <Box className="h-12 w-12 text-blue-700" />,
     },
     {
       title: "CleanTech",
@@ -27,7 +27,7 @@ const InvestmentThesisSection = () => {
     {
       title: "HealthTech and Wellness",
       description: "Building platforms for preventive care, digital health, and longevity",
-      icon: <Health className="h-12 w-12 text-blue-700" />,
+      icon: <Heart className="h-12 w-12 text-blue-700" />,
     },
     {
       title: "The Emerging Unknown",
