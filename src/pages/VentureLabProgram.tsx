@@ -1,3 +1,4 @@
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -77,7 +78,7 @@ const VentureLabProgram = () => {
                 <div className="md:w-1/3">
                   <div className="bg-blue-900 rounded-lg p-6 shadow-lg">
                     <div className="aspect-square rounded-lg overflow-hidden mb-4">
-                      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Entrepreneurs in a meeting" className="w-full h-full object-cover" />
+                      <img src="/lovable-uploads/b3573eb0-1896-4464-a58c-edafc18f433f.png" alt="Managing Director portrait" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
