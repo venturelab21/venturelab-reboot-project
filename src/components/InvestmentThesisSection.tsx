@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Cube, Recycle, Leaf, Factory, Heart, TrendingUp } from "lucide-react";
+import { Box, RecycleIcon, Leaf, Factory, Heart, TrendingUp } from "lucide-react";
 import DisplayCards from "@/components/ui/display-cards";
 
 const InvestmentThesisSection = () => {
@@ -9,12 +8,12 @@ const InvestmentThesisSection = () => {
     {
       title: "FinTech",
       description: "Driving digital finance, embedded banking, and inclusive financial infrastructure",
-      icon: <Cube className="h-12 w-12 text-blue-700" />,
+      icon: <Box className="h-12 w-12 text-blue-700" />,
     },
     {
       title: "CleanTech",
       description: "Powering sustainability through energy innovation, mobility, and circular models",
-      icon: <Recycle className="h-12 w-12 text-blue-700" />,
+      icon: <RecycleIcon className="h-12 w-12 text-blue-700" />,
     },
     {
       title: "Lifestyle",
