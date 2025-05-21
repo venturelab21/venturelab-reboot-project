@@ -48,8 +48,7 @@ const InvestmentThesisSection = () => {
               Sector Pitches
             </h2>
             <p className="text-gray-700 max-w-2xl lg:text-lg">
-              We focus on technology products or technology-backed services or processes across consumer, 
-              enterprise healthcare and deep technology domains
+              We invest at the pre-seed stage in technology products, services, or processes across FinTech, CleanTech, HealthTech, Lifestyle, and Industry 4.0—and back moonshot innovations that challenge the status quo and reshape industries.
             </p>
           </div>
         </div>
