@@ -78,7 +78,7 @@ const VentureLabProgram = () => {
                 <div className="md:w-1/3">
                   <div className="bg-blue-900 rounded-lg p-6 shadow-lg">
                     <div className="aspect-square rounded-lg overflow-hidden mb-4">
-                      <img src="/lovable-uploads/b3573eb0-1896-4464-a58c-edafc18f433f.png" alt="Managing Director portrait" className="w-full h-full object-cover" />
+                      <img src="/lovable-uploads/e0fdee9a-b444-4516-a67b-f3f4e74f54b9.png" alt="Managing Director portrait" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
