@@ -11,6 +11,7 @@ import SISFSProgram from "./pages/SISFSProgram";
 import VentureLabProgram from "./pages/VentureLabProgram";
 import Portfolio from "./pages/Portfolio";
 import KnowUs from "./pages/KnowUs";
+import Events from "./pages/Events";
 
 // Create a QueryClient instance
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/programs/sisfs" element={<SISFSProgram />} />
           <Route path="/programs/venture-lab" element={<VentureLabProgram />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/events" element={<Events />} />
           {/* About Us Routes */}
           <Route path="/about/know-us" element={<KnowUs />} />
           <Route path="/about/team" element={<NotFound />} />

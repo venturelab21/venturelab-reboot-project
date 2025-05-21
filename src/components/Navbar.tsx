@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -39,6 +40,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: 'Portfolio', link: '/portfolio' },
+    { name: 'Events', link: '/events' },
     { name: 'Contact', link: '/contact' },
   ];
 
