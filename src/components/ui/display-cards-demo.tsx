@@ -2,7 +2,7 @@
 "use client";
 
 import DisplayCards from "@/components/ui/display-cards";
-import { Box, RecycleIcon, Leaf, Factory, Heart, TrendingUp } from "lucide-react";
+import { Box, RecycleIcon, Leaf } from "lucide-react";
 
 const defaultCards = [
   {
@@ -13,7 +13,7 @@ const defaultCards = [
     iconClassName: "text-blue-500",
     titleClassName: "text-blue-500",
     className:
-      "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
+      "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
   },
   {
     icon: <RecycleIcon className="size-4 text-blue-300" />,
