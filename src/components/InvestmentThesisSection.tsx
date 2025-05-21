@@ -37,7 +37,7 @@ const InvestmentThesisSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" id="investment-thesis">
       <div className="container mx-auto px-4">
         {/* Top section with heading and description */}
         <div className="mb-16">
