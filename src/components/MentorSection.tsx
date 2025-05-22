@@ -25,12 +25,13 @@ const mentors: MentorProps[] = [
     linkedin: "https://www.linkedin.com/in/drnikhilagarwalindia/"
   },
   {
-    id: "priya-mehta",
-    name: "Priya Mehta",
-    title: "Investment & Finance Advisor",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    bio: "Seasoned financial growth-stage venture capitalist with 10+ years of experience in evaluating and scaling technology startups.",
-    tags: ["Venture Funding", "Financial Modeling"]
+    id: "harmanpreet-singh",
+    name: "Harmanpreet Singh",
+    title: "Technology & Business Growth Expert",
+    image: "/lovable-uploads/c846b454-1cac-4a86-8e00-f23bdd1fbaf3.png",
+    bio: "Technology leader with expertise in business growth strategies and innovation ecosystems for startups and enterprises.",
+    tags: ["Tech Innovation", "Business Growth"],
+    linkedin: "https://www.linkedin.com/in/harmansachdeva/?originalSubdomain=in"
   },
   {
     id: "suresh-patel",
