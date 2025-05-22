@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { ExternalLink } from "lucide-react";
 
 interface MentorProps {
   id: string;
@@ -10,6 +11,7 @@ interface MentorProps {
   image: string;
   bio: string;
   tags: string[];
+  linkedin?: string;
 }
 
 const mentors: MentorProps[] = [
@@ -44,6 +46,15 @@ const mentors: MentorProps[] = [
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     bio: "Academic entrepreneur bridging the gap between academic research into profitable ventures.",
     tags: ["MedTech", "Research Translation"]
+  },
+  {
+    id: "anirudh-singh",
+    name: "Anirudh Singh",
+    title: "Venture Capital & Startup Advisor",
+    image: "/lovable-uploads/c3a78913-273d-4dfe-8681-9cd1a4ff2917.png",
+    bio: "Experienced venture capitalist with expertise in early-stage startup investments and strategic business development.",
+    tags: ["Venture Capital", "Startup Advisory"],
+    linkedin: "https://www.linkedin.com/in/anirudh71/"
   }
 ];
 
@@ -65,7 +76,7 @@ const MentorSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
           {mentors.map((mentor) => (
             <Card key={mentor.id} className="overflow-hidden bg-white border border-gray-200">
               <div className="h-48 bg-gray-200">
@@ -76,7 +87,19 @@ const MentorSection = () => {
                 />
               </div>
               <CardContent className="p-4">
-                <h3 className="font-semibold text-lg">{mentor.name}</h3>
+                <div className="flex items-center justify-between mb-1">
+                  <h3 className="font-semibold text-lg">{mentor.name}</h3>
+                  {mentor.linkedin && (
+                    <a 
+                      href={mentor.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      <ExternalLink size={16} />
+                    </a>
+                  )}
+                </div>
                 <p className="text-sm text-gray-500 mb-2">{mentor.title}</p>
                 <p className="text-sm text-gray-600 mb-4 line-clamp-3">{mentor.bio}</p>
                 <div className="flex flex-wrap gap-2">
