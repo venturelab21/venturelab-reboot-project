@@ -14,6 +14,7 @@ interface DisplayCardProps {
   titleClassName?: string;
   logo?: string;
   category?: string;
+  onClick?: () => void;
 }
 
 function DisplayCard({
@@ -25,13 +26,18 @@ function DisplayCard({
   iconClassName = "text-blue-500",
   titleClassName = "text-blue-500",
   logo,
-  category
+  category,
+  onClick
 }: DisplayCardProps) {
   return (
-    <div className={cn(
-      "relative overflow-hidden rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-lg",
-      className
-    )}>
+    <div 
+      className={cn(
+        "relative overflow-hidden rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-lg",
+        className
+      )}
+      onClick={onClick}
+      role={onClick ? "button" : undefined}
+    >
       {category && (
         <div className="mb-3">
           <span className="inline-block px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">
@@ -82,24 +88,14 @@ interface DisplayCardsProps {
 }
 
 export default function DisplayCards({
-  cards,
+  cards = [],
   className,
   gridClassName
 }: DisplayCardsProps) {
-  const defaultCards = [{
-    className: "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
-  }, {
-    className: "[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0"
-  }, {
-    className: "[grid-area:stack] translate-x-32 translate-y-20 hover:translate-y-10"
-  }];
-  
-  const displayCards = cards || defaultCards;
-  
   return (
     <div className={cn("opacity-100 animate-in fade-in-0 duration-700", className)}>
       <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", gridClassName)}>
-        {displayCards.map((cardProps, index) => (
+        {cards.map((cardProps, index) => (
           <DisplayCard key={index} {...cardProps} />
         ))}
       </div>
