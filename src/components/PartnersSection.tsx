@@ -5,20 +5,20 @@ import { ArrowRight } from "lucide-react";
 
 const partners = [
   {
+    name: "MeitY Startup Hub",
+    logo: "/lovable-uploads/56cbe9e1-6476-4158-93ae-fa3799b35d86.png",
+    column: 1,
+    row: 1
+  },
+  {
     name: "Department of Science & Technology",
     logo: "/lovable-uploads/b7340c7b-fc93-453f-b9b2-bf564638fbf4.png",
-    column: 1,
+    column: 2,
     row: 1
   },
   {
     name: "Startup India",
     logo: "/lovable-uploads/0a17b82d-a2fb-4b23-80d6-d8ad639916f4.png",
-    column: 2,
-    row: 1
-  },
-  {
-    name: "BIRAC",
-    logo: "https://www.birac.nic.in/webcontent/1570696087_birac_english_logo_2.jpg",
     column: 3,
     row: 1
   },
@@ -41,8 +41,8 @@ const partners = [
     row: 2
   },
   {
-    name: "MeitY Startup Hub",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/MeitY_Startup_Hub_Logo.jpg/1200px-MeitY_Startup_Hub_Logo.jpg",
+    name: "BIRAC",
+    logo: "https://www.birac.nic.in/webcontent/1570696087_birac_english_logo_2.jpg",
     column: 2,
     row: 2
   },
