@@ -1,10 +1,8 @@
-
 "use client";
 
 import { cn } from "@/lib/utils";
 import { Sparkles } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
 interface DisplayCardProps {
   className?: string;
   icon?: React.ReactNode;
@@ -17,7 +15,6 @@ interface DisplayCardProps {
   category?: string;
   onClick?: () => void;
 }
-
 function DisplayCard({
   className,
   icon = <Sparkles className="size-4 text-blue-300" />,
@@ -30,48 +27,16 @@ function DisplayCard({
   category,
   onClick
 }: DisplayCardProps) {
-  return (
-    <Card 
-      className={cn("relative overflow-hidden hover:shadow-lg transition-all duration-300", className)}
-      onClick={onClick}
-    >
-      <CardHeader className="pb-2">
-        {logo ? (
-          <div className="h-12 flex items-center">
-            <img 
-              src={logo} 
-              alt={`${title} logo`} 
-              className="h-10 object-contain" 
-            />
-          </div>
-        ) : (
-          <div className={cn("rounded-full w-8 h-8 flex items-center justify-center bg-blue-50", iconClassName)}>
-            {icon}
-          </div>
-        )}
-        <CardTitle className={cn("text-lg font-semibold mt-2", titleClassName)}>
-          {title}
-        </CardTitle>
-        {category && (
-          <span className="inline-block mt-1 text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
-            {category}
-          </span>
-        )}
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="line-clamp-3 text-sm">{description}</CardDescription>
-        {date && <p className="text-xs text-gray-500 mt-2">{date}</p>}
-      </CardContent>
-    </Card>
-  );
+  return <Card className={cn("relative overflow-hidden hover:shadow-lg transition-all duration-300", className)} onClick={onClick}>
+      
+      
+    </Card>;
 }
-
 interface DisplayCardsProps {
   cards?: DisplayCardProps[];
   className?: string;
   gridClassName?: string;
 }
-
 export default function DisplayCards({
   cards,
   className,
