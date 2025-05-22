@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -43,12 +42,13 @@ const mentors: MentorProps[] = [
     linkedin: "https://www.linkedin.com/in/bhavishsood/"
   },
   {
-    id: "leela-sharma",
-    name: "Dr. Leela Sharma",
-    title: "Research Commercialization Expert",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    bio: "Academic entrepreneur bridging the gap between academic research into profitable ventures.",
-    tags: ["MedTech", "Research Translation"]
+    id: "rajiv-bansal",
+    name: "Rajiv Bansal",
+    title: "Technology Investment Specialist",
+    image: "/lovable-uploads/ba39cb15-dab7-4d1e-923d-424ccc049d78.png",
+    bio: "Experienced technology investment professional with expertise in identifying high-potential startups and strategic growth opportunities.",
+    tags: ["Tech Investment", "Strategic Growth"],
+    linkedin: "https://www.linkedin.com/in/rajivb1/"
   },
   {
     id: "anirudh-singh",
