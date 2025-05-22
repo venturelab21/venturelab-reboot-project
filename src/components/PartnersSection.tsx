@@ -11,8 +11,8 @@ const partners = [
     row: 1
   },
   {
-    name: "Department of Science & Technology",
-    logo: "/lovable-uploads/b7340c7b-fc93-453f-b9b2-bf564638fbf4.png",
+    name: "Invest India",
+    logo: "/lovable-uploads/a048490a-0ae5-470f-b404-7486da50d1f4.png",
     column: 2,
     row: 1
   },
