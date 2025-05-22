@@ -53,8 +53,8 @@ const partners = [
     row: 2
   },
   {
-    name: "IIT Delhi",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/1200px-Indian_Institute_of_Technology_Delhi_Logo.svg.png",
+    name: "Innovation Mission Punjab",
+    logo: "/lovable-uploads/7bffa2ef-53d7-40e4-87cb-17af3800b810.png",
     column: 4,
     row: 2
   },
