@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -97,8 +98,14 @@ const PortfolioSection = () => {
           <div className="w-20 h-1 bg-teal-500"></div>
         </div>
         
-        <div className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full mb-8 text-sm mx-auto text-center block w-fit">
-          OUR PORTFOLIO
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full mb-4 text-sm">
+            OUR PORTFOLIO
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-800">Venture Showcase</h2>
+          <p className="text-gray-600">
+            Meet the innovative startups that have grown with VentureLab's support and are now making an impact in their industries.
+          </p>
         </div>
         
         {/* Category Filter */}
