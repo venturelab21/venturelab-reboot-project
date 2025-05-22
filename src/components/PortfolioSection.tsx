@@ -26,13 +26,13 @@ const startups: StartupProps[] = [
     logo: "https://framerusercontent.com/images/ylPy6u18awhlkKAin5zfRKkpiI.png"
   },
   {
-    id: "eternz",
-    name: "Eternz",
-    image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Democratizing investment access through fractional ownership of premium assets with AI-powered portfolio optimization.",
-    category: "Others",
-    funding: "₹2.0 Cr",
-    logo: "/lovable-uploads/d88bb36a-2af7-4d92-a981-3b843abf2943.png"
+    id: "repeatgud",
+    name: "REPEAT GUD",
+    image: "https://images.unsplash.com/photo-1541345023926-55d6e0853f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    description: "Developing sustainable recycling solutions for consumer goods that reduce environmental impact by 40%.",
+    category: "Climate Tech",
+    funding: "₹2.5 Cr",
+    logo: "/lovable-uploads/97db16cb-aaed-4103-97da-b3a902f96bcf.png"
   },
   {
     id: "foxo",
