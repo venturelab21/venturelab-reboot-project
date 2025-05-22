@@ -4,9 +4,9 @@ import Hero from "@/components/Hero";
 import ProgramsSection from "@/components/ProgramsSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import MentorSection from "@/components/MentorSection";
-import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import InvestmentThesisSection from "@/components/InvestmentThesisSection";
+import PartnersSection from "@/components/PartnersSection";
 
 const Index = () => {
   return (
@@ -14,11 +14,11 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <PartnersSection />
         <ProgramsSection />
         <InvestmentThesisSection />
         <PortfolioSection />
         <MentorSection />
-        <CTASection />
       </main>
       <Footer />
     </div>
