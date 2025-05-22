@@ -26,6 +26,33 @@ const startups: StartupProps[] = [
     logo: "https://framerusercontent.com/images/ylPy6u18awhlkKAin5zfRKkpiI.png"
   },
   {
+    id: "eternz",
+    name: "Eternz",
+    image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    description: "Democratizing investment access through fractional ownership of premium assets with AI-powered portfolio optimization.",
+    category: "Others",
+    funding: "₹2.0 Cr",
+    logo: "/lovable-uploads/d88bb36a-2af7-4d92-a981-3b843abf2943.png"
+  },
+  {
+    id: "foxo",
+    name: "Foxo",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    description: "Remote patient monitoring platform for chronic diseases using thin-film wearable technology.",
+    category: "Digitization",
+    funding: "₹3.8 Cr",
+    logo: "/lovable-uploads/f806cfe2-f1ff-4e33-9013-a68caf43e589.png"
+  },
+  {
+    id: "nirmaan",
+    name: "Nirmaan",
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    description: "Personalized learning platform using AI to adapt content difficulty based on student performance patterns.",
+    category: "Others",
+    funding: "₹1.5 Cr",
+    logo: "/lovable-uploads/744476bf-646e-4a85-b07a-0a1df7e62b0e.png"
+  },
+  {
     id: "medassist-ai",
     name: "MedAssist AI",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
@@ -42,33 +69,6 @@ const startups: StartupProps[] = [
     category: "CleanTech",
     funding: "₹2.2 Cr",
     logo: "/lovable-uploads/d08b9705-7653-47d0-80a4-c30f0f0dbdcb.png"
-  },
-  {
-    id: "vitaltrack",
-    name: "VitalTrack",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Remote patient monitoring platform for chronic diseases using thin-film wearable technology.",
-    category: "HealthTech",
-    funding: "₹3.8 Cr",
-    logo: "/lovable-uploads/e0fdee9a-b444-4516-a67b-f3f4e74f54b9.png"
-  },
-  {
-    id: "wealthwise",
-    name: "WealthWise",
-    image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Democratizing investment access through fractional ownership of premium assets with AI-powered portfolio optimization.",
-    category: "FinTech",
-    funding: "₹2.0 Cr",
-    logo: "/lovable-uploads/85776a30-8cf3-44c7-b7c1-8ffab94fb713.png"
-  },
-  {
-    id: "adaptlearn",
-    name: "AdaptLearn",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Personalized learning platform using AI to adapt content difficulty based on student performance patterns.",
-    category: "EdTech",
-    funding: "₹1.5 Cr",
-    logo: "/lovable-uploads/341e0364-56ab-4d14-9b5e-9abceccbb287.png"
   },
   {
     id: "supplysync",
