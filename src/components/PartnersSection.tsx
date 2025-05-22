@@ -12,31 +12,31 @@ const partners = [
   },
   {
     name: "DST NIDHI",
-    logo: "https://framerusercontent.com/images/ylPy6u18awhlkKAin5zfRKkpiI.png",
+    logo: "https://dbt.gov.in/sites/default/files/inline-images/NIDHI.jpg",
     column: 2,
     row: 1
   },
   {
-    name: "SIDBI",
-    logo: "https://www.startupindia.gov.in/content/dam/invest-india/SIH-assets/images/sidbi-logo.png",
+    name: "BIRAC",
+    logo: "https://www.birac.nic.in/webcontent/1570696087_birac_english_logo_2.jpg",
     column: 3,
     row: 1
   },
   {
-    name: "Gates Foundation",
-    logo: "https://www.gatesfoundation.org/-/media/gfo/3global-design-system/bmgf-logo-black.svg",
+    name: "Startup India",
+    logo: "https://static.startupindia.gov.in/site/sih-prod/ui_assets/startup_india_logo.jpg",
     column: 4,
     row: 1
   },
   {
-    name: "Dell Foundation",
-    logo: "https://logos-world.net/wp-content/uploads/2021/08/Dell-Logo.png",
+    name: "Make In India",
+    logo: "https://upload.wikimedia.org/wikipedia/en/5/5d/Make_in_India_logo.jpg",
     column: 5,
     row: 1
   },
   {
-    name: "JP Morgan",
-    logo: "https://logos-world.net/wp-content/uploads/2021/02/JP-Morgan-Chase-Symbol.png",
+    name: "Startup Punjab",
+    logo: "https://startuppunjab.in/wp-content/uploads/2022/12/cropped-Logo-1-232x300.png",
     column: 1,
     row: 2
   },
@@ -47,34 +47,22 @@ const partners = [
     row: 2
   },
   {
-    name: "iDEX",
-    logo: "https://idex.gov.in/images/idex-logo-nm.png",
+    name: "TIH",
+    logo: "https://static.wixstatic.com/media/a858c6_4d6bbde219494dc593bc9f66e6bbfbd2~mv2.webp",
     column: 3,
     row: 2
   },
   {
-    name: "Smart City Indore",
-    logo: "https://smartcityindore.org/wp-content/uploads/2016/11/smart-city-logo.jpg",
+    name: "IIT Delhi",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Indian_Institute_of_Technology_Delhi_Logo.svg/1200px-Indian_Institute_of_Technology_Delhi_Logo.svg.png",
     column: 4,
     row: 2
   },
   {
-    name: "ARIAS Society",
-    logo: "https://arias.assam.gov.in/sites/default/files/ARIAS-Logo-withText.png",
+    name: "I-Hub Foundation",
+    logo: "https://ihfc.co.in/wp-content/uploads/2023/02/ihfc-logo.svg",
     column: 5,
     row: 2
-  },
-  {
-    name: "SAP",
-    logo: "https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg",
-    column: 2,
-    row: 3
-  },
-  {
-    name: "Accenture",
-    logo: "https://logos-world.net/wp-content/uploads/2020/06/Accenture-Logo.png",
-    column: 4,
-    row: 3
   }
 ];
 
@@ -87,15 +75,16 @@ const PartnersSection = () => {
             <span className="text-gray-800">Our </span>
             <span className="text-red-500">Partners</span>
           </h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
+            We collaborate with leading organizations to drive innovation and support startups
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
           {partners.map((partner, index) => (
             <div 
               key={index} 
-              className={`border border-gray-200 p-4 flex items-center justify-center h-32 bg-white rounded-md hover:shadow-md transition-shadow duration-300 ${
-                partner.row === 3 && (partner.column === 1 || partner.column === 3 || partner.column === 5) ? 'hidden' : ''
-              }`}
+              className="border border-gray-200 p-4 flex items-center justify-center h-32 bg-white rounded-md hover:shadow-md transition-shadow duration-300"
             >
               <img 
                 src={partner.logo} 
