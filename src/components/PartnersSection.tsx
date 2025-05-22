@@ -1,7 +1,5 @@
 
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 
 const partners = [
   {
@@ -94,17 +92,10 @@ const PartnersSection = () => {
             </div>
           ))}
         </div>
-        
-        <div className="text-center mt-8">
-          <Button asChild className="bg-red-500 hover:bg-red-600 rounded-full px-6 py-3 text-white font-medium">
-            <Link to="/partners" className="flex items-center">
-              VIEW ALL PARTNERS <ArrowRight size={16} className="ml-2" />
-            </Link>
-          </Button>
-        </div>
       </div>
     </section>
   );
 };
 
 export default PartnersSection;
+
