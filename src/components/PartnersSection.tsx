@@ -35,8 +35,8 @@ const partners = [
     row: 1
   },
   {
-    name: "Startup Punjab",
-    logo: "https://startuppunjab.in/wp-content/uploads/2022/12/cropped-Logo-1-232x300.png",
+    name: "Prath",
+    logo: "/lovable-uploads/482dfb54-0eac-49f7-96be-676e1182ebf8.png",
     column: 1,
     row: 2
   },
