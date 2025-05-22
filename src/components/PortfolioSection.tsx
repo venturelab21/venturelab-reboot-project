@@ -53,31 +53,31 @@ const startups: StartupProps[] = [
     logo: "/lovable-uploads/744476bf-646e-4a85-b07a-0a1df7e62b0e.png"
   },
   {
-    id: "medassist-ai",
-    name: "MedAssist AI",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "AI-driven diagnostic assistant helping physicians improve diagnostic accuracy from medical imaging with 95% accuracy.",
-    category: "HealthTech",
-    funding: "₹3.5 Cr",
-    logo: "/lovable-uploads/b3573eb0-1896-4464-a58c-edafc18f433f.png"
-  },
-  {
-    id: "solardwellings",
-    name: "SolarDwellings",
+    id: "repeatgud",
+    name: "REPEAT GUD",
     image: "https://images.unsplash.com/photo-1541345023926-55d6e0853f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Developing integrated solar solutions for affordable residential housing that reduce energy costs by 60%.",
-    category: "CleanTech",
-    funding: "₹2.2 Cr",
-    logo: "/lovable-uploads/d08b9705-7653-47d0-80a4-c30f0f0dbdcb.png"
+    description: "Developing sustainable recycling solutions for consumer goods that reduce environmental impact by 40%.",
+    category: "Climate Tech",
+    funding: "₹2.5 Cr",
+    logo: "/lovable-uploads/97db16cb-aaed-4103-97da-b3a902f96bcf.png"
   },
   {
-    id: "supplysync",
-    name: "SupplySync",
+    id: "terafac",
+    name: "Terafac Technologies",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Optimizing logistics with blockchain-based tracking and IoT sensors for real-time inventory management.",
-    category: "Supply Chain",
-    funding: "₹2.0 Cr",
-    logo: "/lovable-uploads/7fb392e7-dda6-4def-a0eb-248e00db5728.png"
+    description: "Advanced semiconductor solutions for next-generation computing and AI hardware acceleration.",
+    category: "Deep Tech",
+    funding: "₹3.2 Cr",
+    logo: "/lovable-uploads/064f6bd6-f4ba-40f6-a28a-cc7ee4fd1e54.png"
+  },
+  {
+    id: "labellerr",
+    name: "Labellerr",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    description: "AI-powered data annotation platform that improves machine learning model accuracy by 40%.",
+    category: "Deep Tech",
+    funding: "₹2.8 Cr",
+    logo: "/lovable-uploads/d0ab3fa2-bf0b-47af-9288-0bc1a5de4397.png"
   }
 ];
 
