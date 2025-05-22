@@ -59,8 +59,8 @@ const partners = [
     row: 2
   },
   {
-    name: "I-Hub Foundation",
-    logo: "https://ihfc.co.in/wp-content/uploads/2023/02/ihfc-logo.svg",
+    name: "Modular Capital",
+    logo: "/lovable-uploads/e6a49d94-726f-44ca-b074-1dc6b5bf59ad.png",
     column: 5,
     row: 2
   }
