@@ -47,8 +47,8 @@ const partners = [
     row: 2
   },
   {
-    name: "TIH",
-    logo: "https://static.wixstatic.com/media/a858c6_4d6bbde219494dc593bc9f66e6bbfbd2~mv2.webp",
+    name: "Startup Punjab",
+    logo: "/lovable-uploads/5897f13a-21f3-43fc-9a05-0e2cc1c2d1b5.png",
     column: 3,
     row: 2
   },
