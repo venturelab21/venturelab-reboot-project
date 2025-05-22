@@ -78,6 +78,15 @@ const startups: StartupProps[] = [
     category: "Deep Tech",
     funding: "₹2.8 Cr",
     logo: "/lovable-uploads/d0ab3fa2-bf0b-47af-9288-0bc1a5de4397.png"
+  },
+  {
+    id: "wendor",
+    name: "Wendor",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    description: "Smart vending solutions with IoT integration for contactless retail experiences.",
+    category: "Digitization",
+    funding: "₹2.2 Cr",
+    logo: "/lovable-uploads/2a7f63b7-97e6-47c9-91c0-1c6ae4e3d3af.png"
   }
 ];
 
