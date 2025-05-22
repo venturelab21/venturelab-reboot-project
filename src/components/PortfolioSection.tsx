@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import DisplayCards from "@/components/ui/display-cards";
 import { useState } from "react";
 
 interface StartupProps {
@@ -12,6 +12,7 @@ interface StartupProps {
   description: string;
   category: string;
   funding: string;
+  logo?: string;
 }
 
 const startups: StartupProps[] = [
@@ -21,7 +22,8 @@ const startups: StartupProps[] = [
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     description: "AI-driven diagnostic assistant helping physicians improve diagnostic accuracy from medical imaging with 95% accuracy.",
     category: "HealthTech",
-    funding: "₹3.5 Cr"
+    funding: "₹3.5 Cr",
+    logo: "/lovable-uploads/b3573eb0-1896-4464-a58c-edafc18f433f.png"
   },
   {
     id: "solardwellings",
@@ -29,7 +31,8 @@ const startups: StartupProps[] = [
     image: "https://images.unsplash.com/photo-1541345023926-55d6e0853f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     description: "Developing integrated solar solutions for affordable residential housing that reduce energy costs by 60%.",
     category: "CleanTech",
-    funding: "₹2.2 Cr"
+    funding: "₹2.2 Cr",
+    logo: "/lovable-uploads/d08b9705-7653-47d0-80a4-c30f0f0dbdcb.png"
   },
   {
     id: "vitaltrack",
@@ -37,7 +40,8 @@ const startups: StartupProps[] = [
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     description: "Remote patient monitoring platform for chronic diseases using thin-film wearable technology.",
     category: "HealthTech",
-    funding: "₹3.8 Cr"
+    funding: "₹3.8 Cr",
+    logo: "/lovable-uploads/e0fdee9a-b444-4516-a67b-f3f4e74f54b9.png"
   },
   {
     id: "wealthwise",
@@ -45,7 +49,8 @@ const startups: StartupProps[] = [
     image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     description: "Democratizing investment access through fractional ownership of premium assets with AI-powered portfolio optimization.",
     category: "FinTech",
-    funding: "₹2.0 Cr"
+    funding: "₹2.0 Cr",
+    logo: "/lovable-uploads/85776a30-8cf3-44c7-b7c1-8ffab94fb713.png"
   },
   {
     id: "adaptlearn",
@@ -53,7 +58,8 @@ const startups: StartupProps[] = [
     image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     description: "Personalized learning platform using AI to adapt content difficulty based on student performance patterns.",
     category: "EdTech",
-    funding: "₹1.5 Cr"
+    funding: "₹1.5 Cr",
+    logo: "/lovable-uploads/341e0364-56ab-4d14-9b5e-9abceccbb287.png"
   },
   {
     id: "supplysync",
@@ -61,7 +67,8 @@ const startups: StartupProps[] = [
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     description: "Optimizing logistics with blockchain-based tracking and IoT sensors for real-time inventory management.",
     category: "Supply Chain",
-    funding: "₹2.0 Cr"
+    funding: "₹2.0 Cr",
+    logo: "/lovable-uploads/7fb392e7-dda6-4def-a0eb-248e00db5728.png"
   }
 ];
 
@@ -74,6 +81,15 @@ const PortfolioSection = () => {
   const filteredStartups = activeCategory === "All" 
     ? startups 
     : startups.filter(startup => startup.category === activeCategory);
+
+  // Convert startups to display cards format
+  const startupCards = filteredStartups.map(startup => ({
+    title: startup.name,
+    description: startup.description,
+    category: startup.category,
+    logo: startup.logo,
+    className: "cursor-pointer hover:-translate-y-1 transition-transform duration-300"
+  }));
 
   return (
     <section className="py-16 bg-white">
@@ -110,39 +126,7 @@ const PortfolioSection = () => {
         </div>
         
         {/* Startups Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {filteredStartups.map((startup) => (
-            <Card key={startup.id} className="overflow-hidden border border-gray-200">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <img 
-                  src={startup.image} 
-                  alt={startup.name} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl font-semibold">{startup.name}</h3>
-                  <span className="inline-block px-2 py-1 bg-gray-100 text-xs text-gray-600 rounded">
-                    {startup.category}
-                  </span>
-                </div>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  {startup.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <div className="text-sm">
-                    <span className="text-gray-600">Funding Raised: </span>
-                    <span className="font-semibold">{startup.funding}</span>
-                  </div>
-                  <Button asChild variant="link" size="sm" className="p-0">
-                    <Link to={`/portfolio/${startup.id}`}>Company Profile</Link>
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+        <DisplayCards cards={startupCards} />
         
         <div className="mt-10 text-center">
           <Button asChild variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">

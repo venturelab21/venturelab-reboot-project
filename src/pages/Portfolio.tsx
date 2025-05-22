@@ -1,9 +1,9 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Spotlight } from "@/components/ui/spotlight";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import DisplayCards from "@/components/ui/display-cards";
 
 interface Company {
   id: number;
@@ -54,6 +54,15 @@ const Portfolio = () => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  // Transform companies data to DisplayCard format
+  const companyCards = filteredCompanies.map(company => ({
+    title: company.name,
+    logo: company.logo,
+    category: company.category,
+    className: "cursor-pointer hover:-translate-y-1 transition-transform duration-300 h-[180px]",
+    onClick: () => visitWebsite(company.website)
+  }));
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -78,59 +87,25 @@ const Portfolio = () => {
         {/* Portfolio Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <Tabs defaultValue="All" className="w-full mb-8">
-              <TabsList className="grid grid-cols-2 md:grid-cols-5 gap-2">
-                {categories.map((category) => (
-                  <TabsTrigger
-                    key={category}
-                    value={category}
-                    onClick={() => setActiveCategory(category)}
-                    className="data-[state=active]:bg-blue-500 data-[state=active]:text-white"
-                  >
-                    {category}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredCompanies.map((company) => (
-                <div
-                  key={company.id}
-                  onClick={() => visitWebsite(company.website)}
-                  className="border border-gray-200 bg-white rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 group relative h-[180px]"
+            {/* Category Filter Buttons */}
+            <div className="w-full mb-8 flex flex-wrap justify-center gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    activeCategory === category
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  }`}
                 >
-                  <div className="p-6 h-full flex flex-col">
-                    <div className="mb-3">
-                      <span className="inline-block px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">
-                        {company.category}
-                      </span>
-                    </div>
-                    
-                    <div className="flex items-center justify-between mt-auto">
-                      <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors line-clamp-2 max-w-[60%]">
-                        {company.name}
-                      </h3>
-                      <div className="flex-shrink-0 w-24 h-16 flex items-center justify-center">
-                        {company.logo ? (
-                          <img 
-                            src={company.logo} 
-                            alt={`${company.name} logo`} 
-                            className="max-h-16 max-w-24 object-contain" 
-                          />
-                        ) : (
-                          <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center">
-                            <span className="text-xl font-semibold text-gray-400">
-                              {company.name.charAt(0)}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  {category}
+                </button>
               ))}
             </div>
+            
+            {/* Display Cards Grid */}
+            <DisplayCards cards={companyCards} />
           </div>
         </section>
       </main>
