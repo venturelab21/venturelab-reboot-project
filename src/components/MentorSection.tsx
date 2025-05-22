@@ -34,12 +34,13 @@ const mentors: MentorProps[] = [
     linkedin: "https://www.linkedin.com/in/harmansachdeva/?originalSubdomain=in"
   },
   {
-    id: "suresh-patel",
-    name: "Suresh Patel",
-    title: "Serial Tech Entrepreneur",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    bio: "Founded and exited three successful tech startups, specializing in growth hacking and lean startup methodologies.",
-    tags: ["Startup Growth", "Go-to-Market Strategy"]
+    id: "bhavish-sood",
+    name: "Bhavish Sood",
+    title: "Business Strategy Consultant",
+    image: "/lovable-uploads/32299cf8-11fa-41c6-8f08-eb30113144c9.png",
+    bio: "Strategic business consultant with expertise in technology market analysis and growth planning for emerging enterprises.",
+    tags: ["Business Strategy", "Market Analysis"],
+    linkedin: "https://www.linkedin.com/in/bhavishsood/"
   },
   {
     id: "leela-sharma",
