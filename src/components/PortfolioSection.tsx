@@ -17,6 +17,15 @@ interface StartupProps {
 
 const startups: StartupProps[] = [
   {
+    id: "minuszero",
+    name: "Minus Zero",
+    image: "https://images.unsplash.com/photo-1549399542-7e8f29e5c3d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    description: "Building autonomous driving technology with nature-inspired AI that requires minimal training data.",
+    category: "Deep Tech",
+    funding: "₹4.1 Cr",
+    logo: "https://framerusercontent.com/images/ylPy6u18awhlkKAin5zfRKkpiI.png"
+  },
+  {
     id: "medassist-ai",
     name: "MedAssist AI",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
