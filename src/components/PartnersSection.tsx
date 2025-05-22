@@ -29,8 +29,8 @@ const partners = [
     row: 1
   },
   {
-    name: "Make In India",
-    logo: "https://upload.wikimedia.org/wikipedia/en/5/5d/Make_in_India_logo.jpg",
+    name: "Avataar Ventures",
+    logo: "/lovable-uploads/dfba00ec-d09b-4c64-8f3b-727e8361cb97.png",
     column: 5,
     row: 1
   },
