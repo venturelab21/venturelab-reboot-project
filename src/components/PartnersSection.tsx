@@ -41,8 +41,8 @@ const partners = [
     row: 2
   },
   {
-    name: "BIRAC",
-    logo: "https://www.birac.nic.in/webcontent/1570696087_birac_english_logo_2.jpg",
+    name: "Chandigarh Angels Network",
+    logo: "/lovable-uploads/a67ae513-a429-4068-b4d9-40bcc541eee0.png",
     column: 2,
     row: 2
   },
