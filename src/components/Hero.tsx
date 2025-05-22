@@ -19,6 +19,15 @@ const Hero = () => {
       {/* Large circle background elements */}
       <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-teal-100 to-teal-300 opacity-20 z-0"></div>
       
+      {/* Building image */}
+      <div className="absolute right-0 bottom-0 w-full md:w-1/2 h-48 md:h-64 lg:h-80 z-0">
+        <img 
+          src="/lovable-uploads/3f24908e-65bd-4bcd-9e8b-945805df6335.png" 
+          alt="Thapar Institute Building" 
+          className="w-full h-full object-contain object-right-bottom"
+        />
+      </div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl pl-4 md:pl-8">
           {/* Institute label - Updated text */}
