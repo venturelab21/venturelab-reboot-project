@@ -2,7 +2,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Box, RecycleIcon, Leaf, Factory, Heart, TrendingUp } from "lucide-react";
-import DisplayCards from "@/components/ui/display-cards";
 
 const InvestmentThesisSection = () => {
   const investmentAreas = [
@@ -38,21 +37,6 @@ const InvestmentThesisSection = () => {
     },
   ];
 
-  // Create cards for the DisplayCards component
-  const sectorCards = investmentAreas.slice(0, 3).map((area, index) => ({
-    icon: React.cloneElement(area.icon as React.ReactElement, { className: "size-4 text-blue-300" }),
-    title: area.title,
-    description: area.description,
-    date: "",
-    iconClassName: "text-blue-500",
-    titleClassName: "text-blue-500",
-    className: index === 0
-      ? "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0"
-      : index === 1
-        ? "[grid-area:stack] translate-x-12 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0"
-        : "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10"
-  }));
-
   return (
     <section className="py-20 bg-white" id="investment-thesis">
       <div className="container mx-auto px-4">
@@ -70,13 +54,8 @@ const InvestmentThesisSection = () => {
           </div>
         </div>
 
-        {/* Display cards for the first 3 investment areas */}
-        <div className="mb-20">
-          <DisplayCards cards={sectorCards} />
-        </div>
-
         {/* Traditional grid for all investment areas */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-20">
           {investmentAreas.map((area, index) => (
             <div key={index} className="border p-6 flex flex-col items-center text-center">
               <div className="mb-5 text-blue-700">
