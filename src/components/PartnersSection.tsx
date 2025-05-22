@@ -11,8 +11,8 @@ const partners = [
     row: 1
   },
   {
-    name: "DST NIDHI",
-    logo: "https://dbt.gov.in/sites/default/files/inline-images/NIDHI.jpg",
+    name: "Startup India",
+    logo: "/lovable-uploads/0a17b82d-a2fb-4b23-80d6-d8ad639916f4.png",
     column: 2,
     row: 1
   },
