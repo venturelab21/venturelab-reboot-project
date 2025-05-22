@@ -23,8 +23,8 @@ const partners = [
     row: 1
   },
   {
-    name: "Startup India",
-    logo: "https://static.startupindia.gov.in/site/sih-prod/ui_assets/startup_india_logo.jpg",
+    name: "TIE Chandigarh",
+    logo: "/lovable-uploads/defafdff-5cc1-4f85-b138-cfcb0732d08a.png",
     column: 4,
     row: 1
   },
