@@ -72,18 +72,9 @@ const startups: StartupProps[] = [
   }
 ];
 
-const categories = [
-  "All", "AI & ML", "CleanTech", "HealthTech", "FinTech", "EdTech", "Supply Chain"
-];
-
 const PortfolioSection = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const filteredStartups = activeCategory === "All" 
-    ? startups 
-    : startups.filter(startup => startup.category === activeCategory);
-
   // Convert startups to display cards format
-  const startupCards = filteredStartups.map(startup => ({
+  const startupCards = startups.map(startup => ({
     title: startup.name,
     description: startup.description,
     category: startup.category,
@@ -103,26 +94,6 @@ const PortfolioSection = () => {
             OUR PORTFOLIO
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-800">Venture Showcase</h2>
-          <p className="text-gray-600">
-            Meet the innovative startups that have grown with VentureLab's support and are now making an impact in their industries.
-          </p>
-        </div>
-        
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm transition-colors ${
-                activeCategory === category
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
         </div>
         
         {/* Startups Grid */}
