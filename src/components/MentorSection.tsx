@@ -16,12 +16,13 @@ interface MentorProps {
 
 const mentors: MentorProps[] = [
   {
-    id: "ankit-kapoor",
-    name: "Dr. Ankit Kapoor",
+    id: "nikhil-agarwal",
+    name: "Dr. Nikhil Agarwal",
     title: "Innovation & Strategy Expert",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    bio: "Former product lead at multinational tech firm with 15+ years of experience in product development and market entry strategies.",
-    tags: ["Technology Strategy", "Product Development"]
+    image: "/lovable-uploads/be4c8dc7-04e9-4341-9ed0-024f5c8778e9.png",
+    bio: "Experienced strategist and innovation leader with extensive expertise in entrepreneurial ecosystem development and strategic business growth.",
+    tags: ["Innovation Strategy", "Business Development"],
+    linkedin: "https://www.linkedin.com/in/drnikhilagarwalindia/"
   },
   {
     id: "priya-mehta",
