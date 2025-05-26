@@ -10,6 +10,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { CalendarDays, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { EventScraper } from "@/components/EventScraper";
 
 interface Event {
   id: number;
@@ -23,7 +24,7 @@ interface Event {
   registrationLink: string;
 }
 
-const upcomingEvents: Event[] = [
+const initialUpcomingEvents: Event[] = [
   {
     id: 1,
     title: "Startup Pitch Competition",
@@ -59,7 +60,7 @@ const upcomingEvents: Event[] = [
   }
 ];
 
-const pastEvents: Event[] = [
+const initialPastEvents: Event[] = [
   {
     id: 4,
     title: "Fundraising Masterclass",
@@ -87,8 +88,16 @@ const pastEvents: Event[] = [
 const Events = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [upcomingEvents, setUpcomingEvents] = useState<Event[]>(initialUpcomingEvents);
+  const [pastEvents, setPastEvents] = useState<Event[]>(initialPastEvents);
   
-  const categories = ["All", "Workshop", "Conference", "Competition", "Webinar"];
+  const categories = ["All", "Workshop", "Conference", "Competition", "Webinar", "Networking", "Event"];
+  
+  const handleEventsLoaded = (newEvents: Event[]) => {
+    console.log('Loading events:', newEvents);
+    // Add scraped events to upcoming events
+    setUpcomingEvents(prev => [...prev, ...newEvents]);
+  };
   
   const filterEvents = (events: Event[]) => {
     return events.filter(event => {
@@ -125,6 +134,13 @@ const Events = () => {
             className="from-blue-500/20 via-blue-500/10 to-transparent" 
             size={300}
           />
+        </section>
+
+        {/* Event Scraper Section */}
+        <section className="py-10 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <EventScraper onEventsLoaded={handleEventsLoaded} />
+          </div>
         </section>
 
         {/* Filter Section */}
