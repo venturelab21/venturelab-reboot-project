@@ -53,7 +53,7 @@ const mentors: MentorProps[] = [
 const MentorSection = () => {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="flex justify-center mb-2">
           <div className="w-20 h-1 bg-teal-500"></div>
         </div>
@@ -68,7 +68,7 @@ const MentorSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 max-w-7xl mx-auto">
           {mentors.map((mentor) => (
             <Card key={mentor.id} className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300">
               <div className="relative h-48 bg-gray-200 overflow-hidden">
@@ -96,7 +96,7 @@ const MentorSection = () => {
           ))}
         </div>
         
-        <div className="mt-12 bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg p-8 text-center">
+        <div className="mt-12 bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg p-8 text-center max-w-4xl mx-auto">
           <h3 className="text-xl font-semibold text-white mb-4">Become a VentureLab Mentor</h3>
           <p className="text-white text-opacity-90 mb-6 max-w-2xl mx-auto">
             Want to guide the next generation of entrepreneurs? Join our mentor network and share your expertise to help shape innovative ventures and impactful businesses.
