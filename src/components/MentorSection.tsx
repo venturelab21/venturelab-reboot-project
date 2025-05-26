@@ -18,7 +18,7 @@ const mentors: MentorProps[] = [
   {
     id: "nikhil-agarwal",
     name: "Dr. Nikhil Agarwal",
-    title: "Innovation & Strategy Expert",
+    title: "MD at FITT New Delhi",
     image: "/lovable-uploads/be4c8dc7-04e9-4341-9ed0-024f5c8778e9.png",
     bio: "Experienced strategist and innovation leader with extensive expertise in entrepreneurial ecosystem development and strategic business growth.",
     tags: ["Innovation Strategy", "Business Development"],
@@ -27,7 +27,7 @@ const mentors: MentorProps[] = [
   {
     id: "harmanpreet-singh",
     name: "Harmanpreet Singh",
-    title: "Technology & Business Growth Expert",
+    title: "General Partner at Prath Ventures",
     image: "/lovable-uploads/c846b454-1cac-4a86-8e00-f23bdd1fbaf3.png",
     bio: "Technology leader with expertise in business growth strategies and innovation ecosystems for startups and enterprises.",
     tags: ["Tech Innovation", "Business Growth"],
@@ -36,7 +36,7 @@ const mentors: MentorProps[] = [
   {
     id: "bhavish-sood",
     name: "Bhavish Sood",
-    title: "Business Strategy Consultant",
+    title: "General Partner at Modular Capital",
     image: "/lovable-uploads/32299cf8-11fa-41c6-8f08-eb30113144c9.png",
     bio: "Strategic business consultant with expertise in technology market analysis and growth planning for emerging enterprises.",
     tags: ["Business Strategy", "Market Analysis"],
@@ -45,7 +45,7 @@ const mentors: MentorProps[] = [
   {
     id: "rajiv-bansal",
     name: "Rajiv Bansal",
-    title: "Technology Investment Specialist",
+    title: "CEO Opoyi",
     image: "/lovable-uploads/ba39cb15-dab7-4d1e-923d-424ccc049d78.png",
     bio: "Experienced technology investment professional with expertise in identifying high-potential startups and strategic growth opportunities.",
     tags: ["Tech Investment", "Strategic Growth"],
@@ -54,7 +54,7 @@ const mentors: MentorProps[] = [
   {
     id: "anirudh-singh",
     name: "Anirudh Singh",
-    title: "Venture Capital & Startup Advisor",
+    title: "Partner Avattar Venture Partner",
     image: "/lovable-uploads/c3a78913-273d-4dfe-8681-9cd1a4ff2917.png",
     bio: "Experienced venture capitalist with expertise in early-stage startup investments and strategic business development.",
     tags: ["Venture Capital", "Startup Advisory"],
