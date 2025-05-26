@@ -19,10 +19,10 @@ const Hero = () => {
       {/* Large circle background elements */}
       <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-teal-100 to-teal-300 opacity-20 z-0"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl pl-4 md:pl-8">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
+        <div className="max-w-4xl mx-auto lg:mx-0 lg:pl-8">
           {/* Institute label - Updated text */}
-          <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full mb-6">
+          <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full mb-8">
             <span className="flex items-center">
               <div className="w-2 h-2 bg-blue-900 rounded-full mr-2"></div>
               Thapar Innovate
@@ -30,26 +30,26 @@ const Hero = () => {
           </div>
           
           {/* Main headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-8">
             <span className="text-blue-900">Venture</span><span className="text-teal-600">Lab</span>
-            <span className="block text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mt-2">THAPAR</span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mt-3">THAPAR</span>
           </h1>
           
           {/* Subheading */}
-          <p className="text-lg text-gray-700 mb-10 max-w-3xl">
+          <p className="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl leading-relaxed">
             VentureLab Thapar incubates and accelerates startups through expert mentorship, state-of-the-art
             resources, and strategic funding access in our innovation ecosystem.
           </p>
           
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="bg-blue-900 hover:bg-blue-950 rounded-full font-medium">
-              <Link to="/apply" className="flex items-center">
-                Submit Your Proposal <ArrowRight className="ml-1" size={18} />
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-4">
+            <Button asChild size="lg" className="bg-blue-900 hover:bg-blue-950 rounded-full font-medium px-8 py-4">
+              <Link to="/apply" className="flex items-center justify-center">
+                Submit Your Proposal <ArrowRight className="ml-2" size={18} />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full">
-              <Link to="/programs">Explore Programs</Link>
+            <Button asChild size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8 py-4">
+              <Link to="/programs" className="flex items-center justify-center">Explore Programs</Link>
             </Button>
           </div>
         </div>
