@@ -71,11 +71,12 @@ const MentorSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 max-w-7xl mx-auto">
           {mentors.map((mentor) => (
             <Card key={mentor.id} className="overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              <div className="relative h-48 bg-gray-200 overflow-hidden">
+              <div className="relative h-56 bg-gray-200 overflow-hidden">
                 <img 
                   src={mentor.image} 
                   alt={mentor.name} 
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top scale-90"
+                  style={{ objectPosition: '50% 15%' }}
                 />
                 {mentor.linkedin && (
                   <a 
