@@ -1,5 +1,8 @@
+
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface MentorProps {
   id: string;
