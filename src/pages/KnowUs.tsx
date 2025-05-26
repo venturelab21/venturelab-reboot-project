@@ -42,7 +42,7 @@ const KnowUs = () => {
 
         {/* About Content */}
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto">
             <div>
               <h2 className="text-3xl font-display font-bold mb-6 text-blue-900">Our Story</h2>
               <div className="prose max-w-none">
@@ -53,13 +53,6 @@ const KnowUs = () => {
                   We are strongly backed by the Meity Startup hub and Startup India to incubate technology-based start-ups focused on economic and social impacts.
                 </p>
               </div>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="/lovable-uploads/85776a30-8cf3-44c7-b7c1-8ffab94fb713.png" 
-                alt="Venture Lab Thapar team" 
-                className="w-full h-auto"
-              />
             </div>
           </div>
 
