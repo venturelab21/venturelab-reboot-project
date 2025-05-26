@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -82,44 +81,29 @@ const MentorSection = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
           {mentors.map((mentor) => (
-            <Card key={mentor.id} className="overflow-hidden bg-white border border-gray-200">
-              <div className="h-56 bg-gray-200 overflow-hidden">
+            <Card key={mentor.id} className="overflow-hidden bg-white border border-gray-200 h-full">
+              <div className="h-56 bg-gray-200 overflow-hidden relative">
                 <img 
                   src={mentor.image} 
                   alt={mentor.name} 
                   className="w-full h-full object-cover object-top transform scale-110"
                   style={{ objectPosition: '50% 15%' }}
                 />
+                {mentor.linkedin && (
+                  <a 
+                    href={mentor.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 bg-white bg-opacity-90 p-2 rounded-full text-blue-600 hover:text-blue-800 hover:bg-white transition-all duration-200 shadow-sm"
+                  >
+                    <ExternalLink size={16} />
+                  </a>
+                )}
               </div>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between mb-1">
-                  <h3 className="font-semibold text-lg">{mentor.name}</h3>
-                  {mentor.linkedin && (
-                    <a 
-                      href={mentor.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800"
-                    >
-                      <ExternalLink size={16} />
-                    </a>
-                  )}
-                </div>
-                <p className="text-sm text-gray-500 mb-2">{mentor.title}</p>
-                <p className="text-sm text-gray-600 mb-4 line-clamp-3">{mentor.bio}</p>
-                <div className="flex flex-wrap gap-2">
-                  {mentor.tags.map((tag, index) => (
-                    <span key={index} className="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <CardContent className="p-4 text-center">
+                <h3 className="font-semibold text-lg mb-1 text-gray-800">{mentor.name}</h3>
+                <p className="text-sm text-gray-600">{mentor.title}</p>
               </CardContent>
-              <CardFooter className="p-4 pt-0 flex justify-end">
-                <Button variant="link" size="sm" className="p-0" asChild>
-                  <Link to={`/mentors/${mentor.id}`}>View Profile</Link>
-                </Button>
-              </CardFooter>
             </Card>
           ))}
         </div>
@@ -129,9 +113,7 @@ const MentorSection = () => {
           <p className="text-white text-opacity-90 mb-6 max-w-2xl mx-auto">
             Want to guide the next generation of entrepreneurs? Join our mentor network and share your expertise to help shape innovative ventures and impactful businesses.
           </p>
-          <Button asChild variant="secondary" className="bg-white text-blue-800 hover:bg-gray-100">
-            <Link to="/mentors/apply">Apply as Mentor</Link>
-          </Button>
+          
         </div>
       </div>
     </section>
