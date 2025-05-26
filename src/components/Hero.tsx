@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Linkedin } from "lucide-react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 
 const Hero = () => {
@@ -41,16 +41,28 @@ const Hero = () => {
             resources, and strategic funding access in our innovation ecosystem.
           </p>
           
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="bg-blue-900 hover:bg-blue-950 rounded-full font-medium">
-              <Link to="/apply" className="flex items-center">
-                Submit Your Proposal <ArrowRight className="ml-1" size={18} />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full">
-              <Link to="/programs">Explore Programs</Link>
-            </Button>
+          {/* CTA buttons and LinkedIn */}
+          <div className="flex flex-col sm:flex-row gap-4 items-start">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg" className="bg-blue-900 hover:bg-blue-950 rounded-full font-medium">
+                <Link to="/apply" className="flex items-center">
+                  Submit Your Proposal <ArrowRight className="ml-1" size={18} />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full">
+                <Link to="/programs">Explore Programs</Link>
+              </Button>
+            </div>
+            
+            {/* LinkedIn Link */}
+            <a 
+              href="https://www.linkedin.com/company/thapar-innovate/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+            >
+              <Linkedin size={20} />
+            </a>
           </div>
         </div>
       </div>
