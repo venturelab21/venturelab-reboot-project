@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -82,11 +83,12 @@ const MentorSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
           {mentors.map((mentor) => (
             <Card key={mentor.id} className="overflow-hidden bg-white border border-gray-200">
-              <div className="h-48 bg-gray-200">
+              <div className="h-56 bg-gray-200 overflow-hidden">
                 <img 
                   src={mentor.image} 
                   alt={mentor.name} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top transform scale-110"
+                  style={{ objectPosition: '50% 15%' }}
                 />
               </div>
               <CardContent className="p-4">
