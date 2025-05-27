@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 
 interface CouncilMemberProps {
@@ -55,7 +54,7 @@ const councilMembers: CouncilMemberProps[] = [
     id: "manpreet",
     name: "Mr. Manpreet",
     title: "Principal Officer",
-    image: "/lovable-uploads/72119053-e474-4582-9545-f1f6ac6b5b29.png"
+    image: "/placeholder.svg"
   },
   {
     id: "vinod-kumar-sablok",
