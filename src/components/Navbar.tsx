@@ -29,7 +29,7 @@ const Navbar = () => {
     { name: 'Know Us', link: '/about/know-us' },
     { name: 'Meet our Team', link: '/about/team' },
     { name: 'Governing Council', link: '/about/council' },
-    { name: 'Our Mentors', link: '/mentors' },
+    { name: 'Career', link: '/career' },
   ];
 
   const programMenuItems = [
