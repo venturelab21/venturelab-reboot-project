@@ -12,43 +12,43 @@ const councilMembers: CouncilMemberProps[] = [
   {
     id: "padmakumar-nair",
     name: "Dr. Padmakumar Nair",
-    title: "Council Member",
+    title: "Director, TIET",
     image: "/lovable-uploads/edb05a93-a60d-4caf-b805-b7fde223bc76.png"
   },
   {
     id: "ajay-batish",
     name: "Dr. Ajay Batish",
-    title: "Council Member",
+    title: "Deputy Director, TIET",
     image: "/lovable-uploads/86cf5b49-2101-4045-b99d-bc86fc716695.png"
   },
   {
     id: "gurbinder-singh",
     name: "Dr. Gurbinder Singh",
-    title: "Council Member",
+    title: "Registrar",
     image: "/lovable-uploads/78fe8e77-dd15-4321-890e-eec3324b88a8.png"
   },
   {
     id: "shivani-council",
     name: "Ms. Shivani",
-    title: "Council Member",
+    title: "Chief Innovation Officer",
     image: "/lovable-uploads/28d0024b-d71a-4567-a4cd-67f86d79d1ef.png"
   },
   {
     id: "deepinder-dhillon",
     name: "Mr. Deepinder Dhillon",
-    title: "Council Member",
+    title: "Jt. Director at Govt. of Punjab",
     image: "/lovable-uploads/174e5e76-45fe-48d0-815c-e6335a706070.png"
   },
   {
     id: "harshvir-singh",
     name: "Mr. Harshvir Singh",
-    title: "Council Member",
+    title: "MD at Drish Infotech Limited",
     image: "/lovable-uploads/019b169f-1dd2-402a-a386-90842b8cbcf8.png"
   },
   {
     id: "karminder-singh",
     name: "Dr. Karminder Singh",
-    title: "Council Member",
+    title: "Associate Dean - Industry Connect & Entrepreneurship, LM Thapar School of Management",
     image: "/lovable-uploads/75678a8d-fba6-49c3-9407-cb8d6c4a6ad7.png"
   }
 ];
@@ -86,7 +86,7 @@ const GoverningCouncilSection = () => {
                 />
               </div>
               <div className="p-4 text-center">
-                <h3 className="font-semibold text-lg text-gray-900 mb-1">{member.name}</h3>
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">{member.name}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{member.title}</p>
               </div>
             </Card>
