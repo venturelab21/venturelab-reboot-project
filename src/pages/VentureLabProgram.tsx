@@ -1,4 +1,3 @@
-
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -62,8 +61,8 @@ const VentureLabProgram = () => {
         <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="md:w-2/3">
+              <div className="flex flex-col gap-8">
+                <div>
                   <h2 className="text-3xl font-display font-bold mb-6">Words of Wisdom from the MD</h2>
                   <blockquote className="italic text-lg text-gray-700 mb-6">
                     "Fantastic idea is one thing, converting this idea into a successful business requires a great deal more. A good business model, access to the right markets, adequate financing, the right contacts and the skills of the team determine success or failure for more than eighty per cent."
@@ -74,13 +73,6 @@ const VentureLabProgram = () => {
                   <p className="text-gray-700">
                     You receive training and will be coached, and experts are available to assist you in drawing up expansion plans. In addition, there will be a focus on personal development and teambuilding. Venture Lab develops your potential enabling you to prepare your business for national or international expansion.
                   </p>
-                </div>
-                <div className="md:w-1/3">
-                  <div className="bg-blue-900 rounded-lg p-6 shadow-lg">
-                    <div className="aspect-square rounded-lg overflow-hidden mb-4">
-                      <img src="/lovable-uploads/e0fdee9a-b444-4516-a67b-f3f4e74f54b9.png" alt="Managing Director portrait" className="w-full h-full object-cover" />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
