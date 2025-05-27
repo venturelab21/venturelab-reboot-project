@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +13,7 @@ import KnowUs from "./pages/KnowUs";
 import Events from "./pages/Events";
 import MeetOurTeam from "./pages/MeetOurTeam";
 import GoverningCouncil from "./pages/GoverningCouncil";
+import Contact from "./pages/Contact";
 
 // Create a QueryClient instance
 const queryClient = new QueryClient();
@@ -37,6 +37,7 @@ const App = () => (
           <Route path="/about/team" element={<MeetOurTeam />} />
           <Route path="/about/council" element={<GoverningCouncil />} />
           <Route path="/mentors" element={<NotFound />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
