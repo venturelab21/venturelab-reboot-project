@@ -12,6 +12,7 @@ import VentureLabProgram from "./pages/VentureLabProgram";
 import Portfolio from "./pages/Portfolio";
 import KnowUs from "./pages/KnowUs";
 import Events from "./pages/Events";
+import MeetOurTeam from "./pages/MeetOurTeam";
 
 // Create a QueryClient instance
 const queryClient = new QueryClient();
@@ -32,7 +33,7 @@ const App = () => (
           <Route path="/partners" element={<NotFound />} />
           {/* About Us Routes */}
           <Route path="/about/know-us" element={<KnowUs />} />
-          <Route path="/about/team" element={<NotFound />} />
+          <Route path="/about/team" element={<MeetOurTeam />} />
           <Route path="/about/council" element={<NotFound />} />
           <Route path="/mentors" element={<NotFound />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
