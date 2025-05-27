@@ -13,18 +13,18 @@ interface MentorProps {
 
 const mentors: MentorProps[] = [
   {
-    id: "nikhil-agarwal",
-    name: "Dr. Nikhil Agarwal",
-    title: "MD, FITT",
-    image: "/lovable-uploads/be4c8dc7-04e9-4341-9ed0-024f5c8778e9.png",
-    linkedin: "https://www.linkedin.com/in/drnikhilagarwalindia/"
-  },
-  {
     id: "harmanpreet-singh",
     name: "Harmanpreet Singh",
     title: "General Partner, Prath Ventures",
     image: "/lovable-uploads/c846b454-1cac-4a86-8e00-f23bdd1fbaf3.png",
     linkedin: "https://www.linkedin.com/in/harmansachdeva/?originalSubdomain=in"
+  },
+  {
+    id: "nikhil-agarwal",
+    name: "Dr. Nikhil Agarwal",
+    title: "MD, FITT",
+    image: "/lovable-uploads/be4c8dc7-04e9-4341-9ed0-024f5c8778e9.png",
+    linkedin: "https://www.linkedin.com/in/drnikhilagarwalindia/"
   },
   {
     id: "bhavish-sood",
