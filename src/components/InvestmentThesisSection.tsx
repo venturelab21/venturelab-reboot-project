@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Box, RecycleIcon, Leaf, Factory, Heart, TrendingUp } from "lucide-react";
@@ -31,7 +30,7 @@ const InvestmentThesisSection = () => {
       icon: <Heart className="h-12 w-12 text-blue-700" />,
     },
     {
-      title: "The Emerging Unknown",
+      title: "Moonshot Opportunity",
       description: "Exploring moonshot ideas and deep-tech frontiers that defy categorization",
       icon: <TrendingUp className="h-12 w-12 text-blue-700" />,
     },
