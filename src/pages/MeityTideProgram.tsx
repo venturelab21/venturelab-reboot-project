@@ -162,7 +162,7 @@ const MeityTideProgram = () => {
                       <p className="text-gray-700 text-sm">INR 4 Lakhs of prototype validation and development for EIR (Entrepreneur-in-Residence).</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Product Development Boost</h4>
+                      <h4 className="font-medium text-blue-600 mb-2">MVP Grant</h4>
                       <p className="text-gray-700 text-sm">INR 7 Lakhs of product development support to startups.</p>
                     </div>
                     <div className="border border-gray-200 rounded-lg p-5">
