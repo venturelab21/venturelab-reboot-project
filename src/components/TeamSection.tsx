@@ -16,6 +16,12 @@ const teamMembers: TeamMemberProps[] = [
     image: "/lovable-uploads/1a523e03-0c22-46d6-8126-3f6d021ab23f.png"
   },
   {
+    id: "shivani",
+    name: "Ms. Shivani",
+    title: "Chief Innovation Officer",
+    image: "/lovable-uploads/bbe0d1bb-1851-47dd-960c-e53d3b16440a.png"
+  },
+  {
     id: "karminder-ghuman",
     name: "Dr. Karminder Ghuman",
     title: "Chief Coordinator",
