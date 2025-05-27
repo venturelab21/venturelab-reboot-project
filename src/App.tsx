@@ -13,6 +13,7 @@ import Portfolio from "./pages/Portfolio";
 import KnowUs from "./pages/KnowUs";
 import Events from "./pages/Events";
 import MeetOurTeam from "./pages/MeetOurTeam";
+import GoverningCouncil from "./pages/GoverningCouncil";
 
 // Create a QueryClient instance
 const queryClient = new QueryClient();
@@ -34,7 +35,7 @@ const App = () => (
           {/* About Us Routes */}
           <Route path="/about/know-us" element={<KnowUs />} />
           <Route path="/about/team" element={<MeetOurTeam />} />
-          <Route path="/about/council" element={<NotFound />} />
+          <Route path="/about/council" element={<GoverningCouncil />} />
           <Route path="/mentors" element={<NotFound />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
