@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -117,7 +118,7 @@ const Navbar = () => {
           ))}
           
           <Button asChild className="bg-blue-900 text-white hover:bg-blue-950 rounded-full">
-            <Link to="/apply">Get Started</Link>
+            <Link to="/apply">Pitch Us</Link>
           </Button>
         </nav>
       </div>
@@ -178,7 +179,7 @@ const Navbar = () => {
             
             <div className="py-4">
               <Button asChild className="w-full bg-blue-900 hover:bg-blue-950 rounded-full">
-                <Link to="/apply" onClick={toggleMenu}>Get Started</Link>
+                <Link to="/apply" onClick={toggleMenu}>Pitch Us</Link>
               </Button>
             </div>
           </div>
