@@ -44,6 +44,12 @@ const teamMembers: TeamMemberProps[] = [
     name: "Aneesh Gopalakrishnan",
     title: "Manager - MeitY TIDE Program",
     image: "/lovable-uploads/82513aa7-62c9-4035-a88b-23dfcf53c6e6.png"
+  },
+  {
+    id: "gurleen-kaur",
+    name: "Ms. Gurleen Kaur",
+    title: "Assistant Manager - VentureLab Program",
+    image: "/lovable-uploads/1b8b28ff-9b69-4bab-b60c-e8454c40c16c.png"
   }
 ];
 
