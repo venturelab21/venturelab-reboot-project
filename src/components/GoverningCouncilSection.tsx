@@ -55,7 +55,7 @@ const councilMembers: CouncilMemberProps[] = [
     id: "manpreet",
     name: "Mr. Manpreet",
     title: "Principal Officer",
-    image: "/placeholder.svg"
+    image: "/lovable-uploads/72119053-e474-4582-9545-f1f6ac6b5b29.png"
   },
   {
     id: "vinod-kumar-sablok",
