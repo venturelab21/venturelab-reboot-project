@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -20,11 +21,11 @@ const mentors: MentorProps[] = [
     linkedin: "https://www.linkedin.com/in/harmansachdeva/?originalSubdomain=in"
   },
   {
-    id: "nikhil-agarwal",
-    name: "Dr. Nikhil Agarwal",
-    title: "MD, FITT",
-    image: "/lovable-uploads/be4c8dc7-04e9-4341-9ed0-024f5c8778e9.png",
-    linkedin: "https://www.linkedin.com/in/drnikhilagarwalindia/"
+    id: "anirudh-singh",
+    name: "Anirudh Singh",
+    title: "Partner, Avattar Venture Partner",
+    image: "/lovable-uploads/c3a78913-273d-4dfe-8681-9cd1a4ff2917.png",
+    linkedin: "https://www.linkedin.com/in/anirudh71/"
   },
   {
     id: "bhavish-sood",
@@ -41,11 +42,11 @@ const mentors: MentorProps[] = [
     linkedin: "https://www.linkedin.com/in/rajivb1/"
   },
   {
-    id: "anirudh-singh",
-    name: "Anirudh Singh",
-    title: "Partner, Avattar Venture Partner",
-    image: "/lovable-uploads/c3a78913-273d-4dfe-8681-9cd1a4ff2917.png",
-    linkedin: "https://www.linkedin.com/in/anirudh71/"
+    id: "nikhil-agarwal",
+    name: "Dr. Nikhil Agarwal",
+    title: "MD, FITT",
+    image: "/lovable-uploads/be4c8dc7-04e9-4341-9ed0-024f5c8778e9.png",
+    linkedin: "https://www.linkedin.com/in/drnikhilagarwalindia/"
   }
 ];
 
