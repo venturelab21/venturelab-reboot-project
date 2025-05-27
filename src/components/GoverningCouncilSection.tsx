@@ -50,6 +50,24 @@ const councilMembers: CouncilMemberProps[] = [
     name: "Dr. Karminder Singh",
     title: "Associate Dean - Industry Connect & Entrepreneurship, LM Thapar School of Management",
     image: "/lovable-uploads/75678a8d-fba6-49c3-9407-cb8d6c4a6ad7.png"
+  },
+  {
+    id: "manpreet",
+    name: "Mr. Manpreet",
+    title: "Principal Officer",
+    image: "/placeholder.svg"
+  },
+  {
+    id: "vinod-kumar-sablok",
+    name: "Vinod Kumar Sablok",
+    title: "General Counsel - Legal at Thapar University",
+    image: "/placeholder.svg"
+  },
+  {
+    id: "ca-pankaj",
+    name: "CA Pankaj",
+    title: "CA",
+    image: "/placeholder.svg"
   }
 ];
 
