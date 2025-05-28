@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 
 const Hero = () => {
@@ -21,10 +21,10 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto lg:mx-0">
-          {/* Institute label - Updated text */}
+          {/* Institute label - Updated with elegant icon */}
           <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full mb-8">
             <span className="flex items-center">
-              <div className="w-2 h-2 bg-blue-900 rounded-full mr-2"></div>
+              <Sparkles className="w-4 h-4 mr-2 text-blue-600" />
               Thapar Innovate
             </span>
           </div>
