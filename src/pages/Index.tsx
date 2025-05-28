@@ -10,6 +10,8 @@ import PartnersSection from "@/components/PartnersSection";
 import CareersSection from "@/components/CareersSection";
 
 const Index = () => {
+  console.log("Index page is rendering");
+  
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />

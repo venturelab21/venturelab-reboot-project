@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Briefcase } from "lucide-react";
 
 const CareersSection = () => {
+  console.log("CareersSection is rendering");
+  
   return (
     <section className="py-16 bg-gradient-to-r from-slate-50 to-blue-50">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
