@@ -1,3 +1,4 @@
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -263,65 +264,14 @@ const VentureLabProgram = () => {
                 
                 <TabsContent value="value" className="pt-4">
                   <h3 className="text-xl font-semibold mb-4">Value Creation Model</h3>
-                  <p className="text-gray-700 mb-4">For accelerated business growth</p>
+                  <p className="text-gray-700 mb-6">For accelerated business growth</p>
                   
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="bg-white p-5 rounded-lg shadow-sm">
-                        <h4 className="text-blue-700 font-medium mb-2 flex items-center">
-                          <Briefcase className="mr-2" size={18} />
-                          Strategic Capital
-                        </h4>
-                        <p className="text-sm text-gray-600">
-                          Handled by the CEO: set targets, achieve market position and boost product sales
-                        </p>
-                      </div>
-                      
-                      <div className="bg-white p-5 rounded-lg shadow-sm">
-                        <h4 className="text-blue-700 font-medium mb-2 flex items-center">
-                          <LineChart className="mr-2" size={18} />
-                          Economic Capital
-                        </h4>
-                        <p className="text-sm text-gray-600">
-                          Managed by the CFO: optimize finances and business processes for efficient use
-                        </p>
-                      </div>
-                      
-                      <div className="bg-white p-5 rounded-lg shadow-sm">
-                        <h4 className="text-blue-700 font-medium mb-2 flex items-center">
-                          <Compass className="mr-2" size={18} />
-                          Cultural Capital
-                        </h4>
-                        <p className="text-sm text-gray-600">
-                          Overseen by the CTO/COO: master the know-how, effective behaviours, and communication with target groups
-                        </p>
-                      </div>
-                      
-                      <div className="bg-white p-5 rounded-lg shadow-sm">
-                        <h4 className="text-blue-700 font-medium mb-2 flex items-center">
-                          <Users className="mr-2" size={18} />
-                          Social Capital
-                        </h4>
-                        <p className="text-sm text-gray-600">
-                          Managed by the CMO: builds contacts and networks within the business environment
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-6 bg-blue-800 text-white p-4 rounded-lg">
-                      <h4 className="font-medium mb-2 text-center">Opportunity Cycle</h4>
-                      <div className="flex justify-between">
-                        <div className="text-center px-2">
-                          <div className="bg-teal-500 text-white p-2 rounded text-sm mb-1">Recognition</div>
-                        </div>
-                        <div className="text-center px-2">
-                          <div className="bg-teal-500 text-white p-2 rounded text-sm mb-1">Preparation</div>
-                        </div>
-                        <div className="text-center px-2">
-                          <div className="bg-teal-500 text-white p-2 rounded text-sm mb-1">Exploitation</div>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="flex justify-center mb-6">
+                    <img 
+                      src="/lovable-uploads/8e91c143-a821-4bf7-a67e-5dec7def2963.png" 
+                      alt="Value Creation Model for accelerated business growth" 
+                      className="max-w-full h-auto rounded-lg shadow-lg"
+                    />
                   </div>
                 </TabsContent>
                 
