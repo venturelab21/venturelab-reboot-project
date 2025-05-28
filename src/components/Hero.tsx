@@ -29,21 +29,10 @@ const Hero = () => {
             </span>
           </div>
           
-          {/* VentureLab Logo - Responsive and Crisp */}
-          <div className="mb-8 flex justify-start">
-            <img 
-              src="/lovable-uploads/7e64e619-763d-446a-9d2d-28dd94c45f64.png" 
-              alt="VentureLab Thapar" 
-              className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain"
-              style={{
-                imageRendering: 'crisp-edges'
-              }}
-            />
-          </div>
-          
-          {/* Main headline - Updated to complement logo */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight mb-8">
-            <span className="block text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900">THAPAR</span>
+          {/* Main headline */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-8">
+            <span className="text-blue-900">Venture</span><span className="text-teal-600">Lab</span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mt-3">THAPAR</span>
           </h1>
           
           {/* Subheading */}
