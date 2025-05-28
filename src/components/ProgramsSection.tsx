@@ -1,6 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Rocket } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { Meteors } from "@/components/ui/meteors";
@@ -86,7 +87,7 @@ const ProgramsSection = () => {
             title="SISFS" 
             label="Open"
             description="Seed funding to startups for proof of concept, prototype development, product trials, market entry, and commercialization."
-            icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m14 8-6 6"></path><path d="m8 8 6 6"></path></svg>}
+            icon={<Rocket size={24} />}
             link="/programs/sisfs"
           />
         </div>
