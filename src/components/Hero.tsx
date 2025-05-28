@@ -42,7 +42,7 @@ const Hero = () => {
           </p>
           
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-4">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-4 mb-12">
             <Button asChild size="lg" className="bg-blue-900 hover:bg-blue-950 rounded-full font-medium px-8 py-4">
               <Link to="/apply" className="flex items-center justify-center">
                 Pitch to us <ArrowRight className="ml-2" size={18} />
@@ -51,6 +51,18 @@ const Hero = () => {
             <Button asChild size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8 py-4">
               <Link to="/programs" className="flex items-center justify-center">Explore Programs</Link>
             </Button>
+          </div>
+
+          {/* Featured Partner */}
+          <div className="flex items-center space-x-4">
+            <span className="text-sm text-gray-600">Featured Portfolio Company:</span>
+            <div className="flex items-center">
+              <img 
+                src="/lovable-uploads/f2d988f2-39ef-418d-9d8a-52e9b96d8bf5.png" 
+                alt="Eternz Logo" 
+                className="h-8 w-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
