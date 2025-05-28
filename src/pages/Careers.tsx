@@ -43,11 +43,12 @@ const Careers = () => {
               <div className="flex justify-center">
                 <div className="bg-purple-200 rounded-3xl p-8 max-w-md">
                   <div className="bg-white rounded-2xl p-6 shadow-lg">
-                    <div className="flex items-center justify-center h-48 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
-                      <div className="text-center">
-                        <Users className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                        <p className="text-gray-600">Team Collaboration</p>
-                      </div>
+                    <div className="flex items-center justify-center h-48 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop&crop=center" 
+                        alt="Team collaboration at VentureLab" 
+                        className="w-full h-full object-cover rounded-xl"
+                      />
                     </div>
                   </div>
                 </div>
