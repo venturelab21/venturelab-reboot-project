@@ -254,7 +254,11 @@ const MeityTideProgram = () => {
               <div className="bg-blue-50 rounded-xl p-8 text-center">
                 <h3 className="text-2xl font-bold mb-4">Ready to Apply?</h3>
                 <p className="text-lg mb-6">Join 2000+ startups being supported by MeitY TIDE 2.0 across India</p>
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 rounded-full">
+                <Button 
+                  size="lg" 
+                  className="bg-blue-600 hover:bg-blue-700 rounded-full"
+                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeyMtKDE9QoME77OQw8OkcW0WteTAyQsdEYFohHG690MKEAUg/viewform', '_blank')}
+                >
                   Apply Now
                 </Button>
               </div>
