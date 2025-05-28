@@ -91,12 +91,6 @@ const ProgramsSection = () => {
             link="/programs/sisfs"
           />
         </div>
-        
-        <div className="mt-12 text-center">
-          <Button asChild size="lg" className="bg-blue-800 hover:bg-blue-900 rounded-full">
-            <Link to="/apply">Apply to Our Programs</Link>
-          </Button>
-        </div>
       </div>
     </section>
   );
