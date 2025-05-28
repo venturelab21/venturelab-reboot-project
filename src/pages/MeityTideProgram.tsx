@@ -1,22 +1,37 @@
 
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SmartphoneNfc, Brain, Cpu, Car, Smartphone, Activity } from "lucide-react";
+import { SmartphoneNfc, Brain, Cpu, Car, Smartphone, Activity, CheckCircle, DollarSign, Users, Cloud } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const MeityTideProgram = () => {
+  const focusAreas = [
+    { icon: <SmartphoneNfc size={20} />, title: "Internet of Things (IoT)" },
+    { icon: <Brain size={20} />, title: "Artificial Intelligence & Machine Learning (AI-ML)" },
+    { icon: <Cpu size={20} />, title: "Blockchain" },
+    { icon: <Car size={20} />, title: "E-mobility" },
+    { icon: <Smartphone size={20} />, title: "Smart Infrastructure" },
+    { icon: <Activity size={20} />, title: "CleanTech & HealthTech" }
+  ];
+
+  const benefits = [
+    { icon: <DollarSign size={20} />, title: "EIR Grant", desc: "INR 4 Lakhs for prototype validation and development" },
+    { icon: <DollarSign size={20} />, title: "MVP Grant", desc: "INR 7 Lakhs for product development support" },
+    { icon: <Users size={20} />, title: "Tailored Support", desc: "6 months of customized hand-holding" },
+    { icon: <Cloud size={20} />, title: "Cloud Credits", desc: "₹5,000 worth of cloud credit support" }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
         {/* Breadcrumb navigation */}
-        <div className="bg-gray-50 py-4">
+        <div className="bg-gray-50 py-3">
           <div className="container mx-auto px-4">
             <Breadcrumb>
               <BreadcrumbList>
@@ -36,232 +51,268 @@ const MeityTideProgram = () => {
           </div>
         </div>
 
-        {/* Program header */}
-        <section className="py-12 bg-gradient-to-r from-blue-900 to-blue-700">
+        {/* Compact program header */}
+        <section className="py-8 bg-gradient-to-r from-blue-900 to-blue-700">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="inline-block bg-blue-200 text-blue-800 px-3 py-1 rounded-full mb-4 text-sm font-medium">Ministry of Electronics & IT</span>
-              <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">MeitY TIDE 2.0 Program</h1>
-              <p className="text-xl text-blue-100">Supporting technology entrepreneurs building solutions for tomorrow</p>
+              <span className="inline-block bg-blue-200 text-blue-800 px-3 py-1 rounded-full mb-3 text-sm font-medium">Ministry of Electronics & IT</span>
+              <h1 className="text-3xl md:text-4xl font-display font-bold mb-3 text-white">MeitY TIDE 2.0 Program</h1>
+              <p className="text-lg text-blue-100">Supporting technology entrepreneurs building solutions for tomorrow</p>
             </div>
           </div>
         </section>
 
-        {/* About the scheme */}
-        <section className="py-16">
+        {/* Main content */}
+        <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-display font-bold mb-6">About The Scheme</h2>
-              <p className="text-lg text-gray-700 mb-8">
-                TIDE 2.0 scheme by the Ministry of Electronics & Information Technology (MeitY) aims to support technology 
-                startups working in emerging technologies through financial and technical support. The scheme envisions 
-                creating a holistic ecosystem to support technology startups and incubation centres through identifying 
-                and creating necessary linkages. The Scheme empowers 52+ incubators in India and supports nearly 2000 
-                tech start-ups over 5 years.
-              </p>
-
-              {/* Focus Areas Card with icons */}
-              <div className="mb-12">
-                <Card>
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-semibold mb-5">Focus Areas</h3>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="flex items-start">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
-                          <SmartphoneNfc size={20} />
-                        </div>
-                        <div>
-                          <span className="font-medium">Internet of Things (IoT)</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
-                          <Brain size={20} />
-                        </div>
-                        <div>
-                          <span className="font-medium">Artificial Intelligence & Machine Learning (AI-ML)</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
-                          <Cpu size={20} />
-                        </div>
-                        <div>
-                          <span className="font-medium">Blockchain</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
-                          <Car size={20} />
-                        </div>
-                        <div>
-                          <span className="font-medium">E-mobility</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
-                          <Smartphone size={20} />
-                        </div>
-                        <div>
-                          <span className="font-medium">Smart Infrastructure</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start">
-                        <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
-                          <Activity size={20} />
-                        </div>
-                        <div>
-                          <span className="font-medium">CleanTech & HealthTech</span>
-                        </div>
-                      </div>
+            <div className="max-w-6xl mx-auto">
+              
+              {/* About section - more compact */}
+              <div className="grid lg:grid-cols-3 gap-8 mb-10">
+                <div className="lg:col-span-2">
+                  <h2 className="text-2xl font-display font-bold mb-4">About The Scheme</h2>
+                  <p className="text-gray-700 mb-4">
+                    TIDE 2.0 scheme by MeitY aims to support technology startups working in emerging technologies through financial and technical support. The scheme empowers 52+ incubators in India and supports nearly 2000 tech start-ups over 5 years.
+                  </p>
+                </div>
+                
+                {/* Key stats card */}
+                <Card className="lg:col-span-1">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg">Program Impact</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm text-gray-600">Incubators</span>
+                      <span className="font-semibold text-blue-600">52+</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-gray-600">Startups Supported</span>
+                      <span className="font-semibold text-blue-600">2000+</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-gray-600">Duration</span>
+                      <span className="font-semibold text-blue-600">5 Years</span>
                     </div>
                   </CardContent>
                 </Card>
               </div>
 
-              <Tabs defaultValue="eligibility" className="mb-12">
+              {/* Focus Areas - more compact grid */}
+              <Card className="mb-8">
+                <CardHeader>
+                  <CardTitle className="text-xl">Focus Areas</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {focusAreas.map((area, index) => (
+                      <div key={index} className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
+                        <div className="text-blue-600 flex-shrink-0">
+                          {area.icon}
+                        </div>
+                        <span className="text-sm font-medium text-gray-800">{area.title}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Tabs defaultValue="eligibility" className="mb-10">
                 <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
                   <TabsTrigger value="eligibility">Eligibility</TabsTrigger>
                   <TabsTrigger value="benefits">Benefits</TabsTrigger>
-                  <TabsTrigger value="process">Application</TabsTrigger>
+                  <TabsTrigger value="process">Process</TabsTrigger>
                   <TabsTrigger value="faq">FAQ</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="eligibility" className="pt-4">
-                  <h3 className="text-xl font-semibold mb-4">Who Can Apply</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Tech Innovator</h4>
-                      <p className="text-gray-700 text-sm">You are working full-time on developing the solution and have the required expertise or relevant experience or know-how for the same.</p>
-                    </div>
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Reimagined Solutions</h4>
-                      <p className="text-gray-700 text-sm">The product/solution being developed is catering to any of the focus areas mentioned above.</p>
-                    </div>
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Innovating from India</h4>
-                      <p className="text-gray-700 text-sm">Your startup is/will be registered in India.</p>
-                    </div>
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Tide 2.0 Untapped</h4>
-                      <p className="text-gray-700 text-sm">You or your startup have not availed any support from Tide 2.0 scheme in the past.</p>
-                    </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <Card>
+                      <CardContent className="pt-4">
+                        <div className="flex items-start space-x-3">
+                          <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                          <div>
+                            <h4 className="font-medium text-blue-600 mb-1">Tech Innovator</h4>
+                            <p className="text-sm text-gray-700">Working full-time on developing solutions with required expertise.</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardContent className="pt-4">
+                        <div className="flex items-start space-x-3">
+                          <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                          <div>
+                            <h4 className="font-medium text-blue-600 mb-1">Focus Area Match</h4>
+                            <p className="text-sm text-gray-700">Product/solution catering to our focus areas.</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardContent className="pt-4">
+                        <div className="flex items-start space-x-3">
+                          <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                          <div>
+                            <h4 className="font-medium text-blue-600 mb-1">India-based</h4>
+                            <p className="text-sm text-gray-700">Startup registered or will be registered in India.</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardContent className="pt-4">
+                        <div className="flex items-start space-x-3">
+                          <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                          <div>
+                            <h4 className="font-medium text-blue-600 mb-1">First Time</h4>
+                            <p className="text-sm text-gray-700">Haven't availed TIDE 2.0 support previously.</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </TabsContent>
                 
                 <TabsContent value="benefits" className="pt-4">
-                  <h3 className="text-xl font-semibold mb-4">What We Offer</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">EIR Grant</h4>
-                      <p className="text-gray-700 text-sm">INR 4 Lakhs of prototype validation and development for EIR (Entrepreneur-in-Residence).</p>
-                    </div>
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">MVP Grant</h4>
-                      <p className="text-gray-700 text-sm">INR 7 Lakhs of product development support to startups.</p>
-                    </div>
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Tailored Support</h4>
-                      <p className="text-gray-700 text-sm">Customised hand-holding and problem resolving portfolio support for 6 months.</p>
-                    </div>
-                    <div className="border border-gray-200 rounded-lg p-5">
-                      <h4 className="font-medium text-blue-600 mb-2">Co-Work Oasis</h4>
-                      <p className="text-gray-700 text-sm">Access to co-working space and related services if based out of Ahmedabad.</p>
-                    </div>
-                    <div className="border border-gray-200 rounded-lg p-5 md:col-span-2">
-                      <h4 className="font-medium text-blue-600 mb-2">Cloud Credit Boost</h4>
-                      <p className="text-gray-700 text-sm">Access to service partners for cloud credit support worth ₹5,000.</p>
-                    </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {benefits.map((benefit, index) => (
+                      <Card key={index}>
+                        <CardContent className="pt-4">
+                          <div className="flex items-start space-x-3">
+                            <div className="text-blue-600 mt-1 flex-shrink-0">
+                              {benefit.icon}
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-blue-600 mb-1">{benefit.title}</h4>
+                              <p className="text-sm text-gray-700">{benefit.desc}</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                    
+                    {/* Additional benefits */}
+                    <Card className="md:col-span-2">
+                      <CardContent className="pt-4">
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div className="flex items-start space-x-3">
+                            <Users className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                            <div>
+                              <h4 className="font-medium text-blue-600 mb-1">Co-working Space</h4>
+                              <p className="text-sm text-gray-700">Access to co-working facilities if based in Ahmedabad</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start space-x-3">
+                            <Activity className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+                            <div>
+                              <h4 className="font-medium text-blue-600 mb-1">Network Access</h4>
+                              <p className="text-sm text-gray-700">Access to mentor network and industry connections</p>
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </TabsContent>
                 
                 <TabsContent value="process" className="pt-4">
-                  <h3 className="text-xl font-semibold mb-4">Application Process</h3>
-                  <ol className="relative border-l border-gray-200 ml-3">
-                    <li className="mb-10 ml-6">
-                      <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-200 rounded-full -left-4 ring-4 ring-white">
-                        <span className="text-blue-800 font-bold">1</span>
-                      </span>
-                      <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">Submit Application</h3>
-                      <p className="mb-2 text-base font-normal text-gray-600">Complete the online application form with your startup details and proposed solution.</p>
-                    </li>
-                    <li className="mb-10 ml-6">
-                      <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-200 rounded-full -left-4 ring-4 ring-white">
-                        <span className="text-blue-800 font-bold">2</span>
-                      </span>
-                      <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">Screening & Shortlisting</h3>
-                      <p className="mb-2 text-base font-normal text-gray-600">Applications will be reviewed and shortlisted based on innovation, market potential, and team capability.</p>
-                    </li>
-                    <li className="mb-10 ml-6">
-                      <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-200 rounded-full -left-4 ring-4 ring-white">
-                        <span className="text-blue-800 font-bold">3</span>
-                      </span>
-                      <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">Pitch Presentation</h3>
-                      <p className="mb-2 text-base font-normal text-gray-600">Shortlisted startups will present their ideas to an expert panel of judges.</p>
-                    </li>
-                    <li className="ml-6">
-                      <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-200 rounded-full -left-4 ring-4 ring-white">
-                        <span className="text-blue-800 font-bold">4</span>
-                      </span>
-                      <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">Selection & Onboarding</h3>
-                      <p className="mb-2 text-base font-normal text-gray-600">Selected startups will be onboarded to the program and begin receiving support.</p>
-                    </li>
-                  </ol>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full flex-shrink-0">
+                          <span className="text-blue-800 font-bold text-sm">1</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-1">Submit Application</h4>
+                          <p className="text-sm text-gray-600">Complete online application with startup details</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full flex-shrink-0">
+                          <span className="text-blue-800 font-bold text-sm">2</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-1">Screening</h4>
+                          <p className="text-sm text-gray-600">Review based on innovation and market potential</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full flex-shrink-0">
+                          <span className="text-blue-800 font-bold text-sm">3</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-1">Pitch Presentation</h4>
+                          <p className="text-sm text-gray-600">Present to expert panel of judges</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start space-x-4">
+                        <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full flex-shrink-0">
+                          <span className="text-blue-800 font-bold text-sm">4</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-1">Selection & Onboarding</h4>
+                          <p className="text-sm text-gray-600">Begin receiving program support</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </TabsContent>
                 
                 <TabsContent value="faq" className="pt-4">
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
-                      <AccordionTrigger>What kind of startups does MeitY TIDE 2.0 support?</AccordionTrigger>
+                      <AccordionTrigger className="text-left">What kind of startups does MeitY TIDE 2.0 support?</AccordionTrigger>
                       <AccordionContent>
-                        MeitY TIDE 2.0 supports technology startups working in emerging areas such as IoT, AI/ML, Blockchain, Smart Infrastructure, CleanTech, HealthTech, and E-mobility.
+                        Technology startups working in IoT, AI/ML, Blockchain, Smart Infrastructure, CleanTech, HealthTech, and E-mobility.
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
-                      <AccordionTrigger>What stage should my startup be in to apply?</AccordionTrigger>
+                      <AccordionTrigger className="text-left">What stage should my startup be in?</AccordionTrigger>
                       <AccordionContent>
-                        The program is ideal for early-stage startups that have a minimum viable product or proof of concept and are looking for support to develop and scale their solution.
+                        Early-stage startups with MVP or proof of concept looking for support to develop and scale.
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
-                      <AccordionTrigger>Is there any equity dilution involved?</AccordionTrigger>
+                      <AccordionTrigger className="text-left">Is there equity dilution?</AccordionTrigger>
                       <AccordionContent>
-                        No, the financial support provided under MeitY TIDE 2.0 is grant-based and does not involve equity dilution.
+                        No, the support is grant-based and does not involve equity dilution.
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
-                      <AccordionTrigger>How long is the program duration?</AccordionTrigger>
+                      <AccordionTrigger className="text-left">How long is the program?</AccordionTrigger>
                       <AccordionContent>
-                        The program typically provides support for a period of 6 months, which may be extended based on performance and requirements.
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-5">
-                      <AccordionTrigger>Can I apply if my startup is not yet registered?</AccordionTrigger>
-                      <AccordionContent>
-                        You can apply with your idea, but if selected, you will need to register your startup before receiving any financial support.
+                        Typically 6 months, which may be extended based on performance and requirements.
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
                 </TabsContent>
               </Tabs>
 
-              {/* Call to action */}
-              <div className="bg-blue-50 rounded-xl p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Ready to Apply?</h3>
-                <p className="text-lg mb-6">Join 2000+ startups being supported by MeitY TIDE 2.0 across India</p>
-                <Button 
-                  size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 rounded-full"
-                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeyMtKDE9QoME77OQw8OkcW0WteTAyQsdEYFohHG690MKEAUg/viewform', '_blank')}
-                >
-                  Apply Now
-                </Button>
-              </div>
+              {/* Compact call to action */}
+              <Card className="bg-blue-50 border-blue-200">
+                <CardContent className="pt-6">
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold mb-2">Ready to Apply?</h3>
+                    <p className="text-gray-700 mb-4">Join 2000+ startups being supported by MeitY TIDE 2.0</p>
+                    <Button 
+                      size="lg" 
+                      className="bg-blue-600 hover:bg-blue-700 rounded-full"
+                      onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeyMtKDE9QoME77OQw8OkcW0WteTAyQsdEYFohHG690MKEAUg/viewform', '_blank')}
+                    >
+                      Apply Now
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
