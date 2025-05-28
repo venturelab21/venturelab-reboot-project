@@ -45,7 +45,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-4">
             <Button asChild size="lg" className="bg-blue-900 hover:bg-blue-950 rounded-full font-medium px-8 py-4">
               <Link to="/apply" className="flex items-center justify-center">
-                Pitch To Us <ArrowRight className="ml-2" size={18} />
+                Pitch to us <ArrowRight className="ml-2" size={18} />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8 py-4">
