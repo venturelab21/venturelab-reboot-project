@@ -48,11 +48,11 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-display font-bold">
-            <span className="text-blue-900">Venture</span>
-            <span className="text-teal-600">Lab</span>
-            <span className="text-blue-900"> Thapar</span>
-          </span>
+          <img 
+            src="/lovable-uploads/7e64e619-763d-446a-9d2d-28dd94c45f64.png" 
+            alt="VentureLab Thapar" 
+            className="h-8 md:h-10"
+          />
         </Link>
         
         {/* Mobile Menu Button */}
@@ -118,7 +118,7 @@ const Navbar = () => {
           ))}
           
           <Button asChild className="bg-blue-900 text-white hover:bg-blue-950 rounded-full">
-            <Link to="/apply">Pitch Us</Link>
+            <Link to="/apply">Pitch to us</Link>
           </Button>
         </nav>
       </div>
@@ -179,7 +179,7 @@ const Navbar = () => {
             
             <div className="py-4">
               <Button asChild className="w-full bg-blue-900 hover:bg-blue-950 rounded-full">
-                <Link to="/apply" onClick={toggleMenu}>Pitch Us</Link>
+                <Link to="/apply" onClick={toggleMenu}>Pitch to us</Link>
               </Button>
             </div>
           </div>
