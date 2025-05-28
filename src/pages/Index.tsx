@@ -7,7 +7,6 @@ import MentorSection from "@/components/MentorSection";
 import Footer from "@/components/Footer";
 import InvestmentThesisSection from "@/components/InvestmentThesisSection";
 import PartnersSection from "@/components/PartnersSection";
-import CareersSection from "@/components/CareersSection";
 
 const Index = () => {
   console.log("Index page is rendering");
@@ -22,7 +21,6 @@ const Index = () => {
         <PortfolioSection />
         <PartnersSection />
         <MentorSection />
-        <CareersSection />
       </main>
       <Footer />
     </div>
