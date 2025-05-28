@@ -48,7 +48,7 @@ const teamMembers: TeamMemberProps[] = [
   {
     id: "rahul-sharma",
     name: "Rahul Sharma",
-    title: "Manager - SISFS",
+    title: "Manager- Startup India Seed Fund Program",
     image: "/lovable-uploads/d729addb-196e-4579-bde4-af4254d743aa.png",
     linkedinUrl: "https://www.linkedin.com/in/rahulsharma100/"
   },
