@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -51,7 +52,7 @@ const mentors: MentorProps[] = [
 
 const MentorSection = () => {
   return (
-    <section id="mentors" className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="flex justify-center mb-2">
           <div className="w-20 h-1 bg-teal-500"></div>
