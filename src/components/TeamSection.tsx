@@ -100,7 +100,8 @@ const TeamSection = () => {
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  style={{ objectPosition: '50% 15%' }}
                 />
                 {member.linkedinUrl && (
                   <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
