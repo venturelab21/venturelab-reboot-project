@@ -34,10 +34,10 @@ const Careers = () => {
                   Life At <span className="text-blue-600">VentureLab</span>
                 </h2>
                 <p className="text-gray-600 mb-6">
-                  Exciting every moment! The team at VentureLab TET is bombarded with new challenges very often, both operational and strategic. So it lacks the need from fellow students or breakthrough minds like yourself to take VentureLab TET to new uncharted heights and enhance the fabric of both consulting market research and evaluating start-ups. Starting up with ecosystems partners, both team at VentureLab TET is always on a high.
+                  Exciting every moment! The team at VentureLab Thapar is bombarded with new challenges very often, both operational and strategic. So it lacks the need from fellow students or breakthrough minds like yourself to take VentureLab Thapar to new uncharted heights and enhance the fabric of both consulting market research and evaluating start-ups. Starting up with ecosystems partners, both team at VentureLab Thapar is always on a high.
                 </p>
                 <p className="text-gray-600">
-                  VentureLab TET is located inside the TET Campus at Patiala, having a large campus with all the amenities within and nearby.
+                  VentureLab Thapar is located inside the Thapar Campus at Patiala, having a large campus with all the amenities within and nearby.
                 </p>
               </div>
               <div className="flex justify-center">
@@ -144,7 +144,7 @@ const Careers = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button className="bg-blue-600 hover:bg-blue-700">
-                  VentureLab TET Jobs
+                  VentureLab Thapar Jobs
                 </Button>
                 <Button variant="outline">
                   Startup Jobs
@@ -179,13 +179,13 @@ const Careers = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin className="h-4 w-4 text-gray-500" />
-                      <span className="text-sm text-gray-500">TET, Patiala, Punjab</span>
+                      <span className="text-sm text-gray-500">Thapar, Patiala, Punjab</span>
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       Assistant Manager (Incubation)
                     </h3>
                     <p className="text-gray-600 text-sm mb-4">
-                      VentureLab Thapar • 5:01 am • TET • Patiala Last date to apply: Monday, 29th July...
+                      VentureLab Thapar • 5:01 am • Thapar • Patiala Last date to apply: Monday, 29th July...
                     </p>
                   </div>
                 </div>
