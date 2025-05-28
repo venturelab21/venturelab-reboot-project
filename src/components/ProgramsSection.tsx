@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink, Rocket } from "lucide-react";
@@ -50,7 +49,7 @@ const Program = ({ title, label, description, icon, link }: ProgramProps) => {
 
 const ProgramsSection = () => {
   return (
-    <section className="py-16 bg-gray-950">
+    <section id="programs-section" className="py-16 bg-gray-950">
       <div className="container mx-auto px-4">
         <div className="flex justify-center mb-2">
           <div className="w-20 h-1 bg-teal-500"></div>

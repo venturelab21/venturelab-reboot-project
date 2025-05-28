@@ -5,6 +5,13 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 
 const Hero = () => {
+  const scrollToPrograms = () => {
+    const programsSection = document.getElementById('programs-section');
+    if (programsSection) {
+      programsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-r from-slate-50 to-blue-50">
       {/* Background pattern - animated grid */}
@@ -48,8 +55,13 @@ const Hero = () => {
                 Pitch to us <ArrowRight className="ml-2" size={18} />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8 py-4">
-              <Link to="/programs" className="flex items-center justify-center">Explore Programs</Link>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8 py-4"
+              onClick={scrollToPrograms}
+            >
+              Explore Programs
             </Button>
           </div>
         </div>
