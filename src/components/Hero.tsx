@@ -31,8 +31,7 @@ const Hero = () => {
           
           {/* Main headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-8">
-            <span className="text-blue-900">Venture</span><span className="text-teal-600">Lab</span>
-            <span className="block text-2xl md:text-3xl lg:text-4xl font-bold text-blue-900 mt-3">THAPAR</span>
+            <span className="text-blue-900">VentureLab</span> <span className="text-teal-600">Thapar</span>
           </h1>
           
           {/* Subheading */}
