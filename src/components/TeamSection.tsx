@@ -39,18 +39,18 @@ const teamMembers: TeamMemberProps[] = [
     linkedinUrl: "https://www.linkedin.com/in/mandeep-singh-8aa7a411/"
   },
   {
-    id: "rahul-sharma",
-    name: "Rahul Sharma",
-    title: "Manager - SISFS",
-    image: "/lovable-uploads/d729addb-196e-4579-bde4-af4254d743aa.png",
-    linkedinUrl: "https://www.linkedin.com/in/rahulsharma100/"
-  },
-  {
     id: "aneesh-gopalakrishnan",
     name: "Aneesh Gopalakrishnan",
     title: "Manager - MeitY TIDE Program",
     image: "/lovable-uploads/82513aa7-62c9-4035-a88b-23dfcf53c6e6.png",
     linkedinUrl: "https://www.linkedin.com/in/aneesh-gopalakrishnan/"
+  },
+  {
+    id: "rahul-sharma",
+    name: "Rahul Sharma",
+    title: "Manager - SISFS",
+    image: "/lovable-uploads/d729addb-196e-4579-bde4-af4254d743aa.png",
+    linkedinUrl: "https://www.linkedin.com/in/rahulsharma100/"
   },
   {
     id: "gurleen-kaur",
