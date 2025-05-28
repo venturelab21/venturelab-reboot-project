@@ -36,8 +36,7 @@ const Hero = () => {
               alt="VentureLab Thapar" 
               className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain"
               style={{
-                imageRendering: 'crisp-edges',
-                imageRendering: '-webkit-optimize-contrast'
+                imageRendering: 'crisp-edges'
               }}
             />
           </div>
