@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Box, RecycleIcon, Leaf, Factory, Heart, TrendingUp } from "lucide-react";
@@ -45,7 +46,7 @@ const InvestmentThesisSection = () => {
           
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 lg:mb-0 font-display text-gray-900 lg:max-w-xl">
-              Sector Pitches
+              Sector Focus
             </h2>
             <p className="text-gray-700 max-w-2xl lg:text-lg">
               We invest at the pre-seed stage in technology products, services, or processes across FinTech, CleanTech, HealthTech, Lifestyle, and Industry 4.0—and back moonshot innovations that challenge the status quo and reshape industries.
