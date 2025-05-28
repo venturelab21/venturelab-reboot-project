@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { ChevronDown } from "lucide-react";
-import { useState } from 'react';
 
 const Footer = () => {
-  const [isCareersOpen, setIsCareersOpen] = useState(false);
-
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
@@ -40,21 +35,7 @@ const Footer = () => {
               <li><Link to="/portfolio" className="text-gray-400 hover:text-white">Portfolio</Link></li>
               <li><Link to="/mentors" className="text-gray-400 hover:text-white">Mentors</Link></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-white">Contact</Link></li>
-              <li>
-                <Collapsible open={isCareersOpen} onOpenChange={setIsCareersOpen}>
-                  <CollapsibleTrigger className="text-gray-400 hover:text-white flex items-center gap-1">
-                    Careers
-                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isCareersOpen ? 'rotate-180' : ''}`} />
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="mt-2 ml-4">
-                    <div className="text-gray-400 text-sm space-y-2">
-                      <p>Join our innovative team!</p>
-                      <p>Check back soon for open positions or email us your resume.</p>
-                      <p className="text-xs text-gray-500">careers@venturelab.org.in</p>
-                    </div>
-                  </CollapsibleContent>
-                </Collapsible>
-              </li>
+              <li><Link to="/careers" className="text-gray-400 hover:text-white">Careers</Link></li>
             </ul>
           </div>
           
