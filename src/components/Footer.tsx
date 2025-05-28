@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
             <h3 className="text-xl font-display font-semibold mb-4">VentureLab Thapar</h3>
             <p className="text-gray-400 mb-4">
@@ -48,6 +48,16 @@ const Footer = () => {
               <p className="mt-2">Email: <a href="mailto:info@venturelab.org.in" className="hover:text-white">info@venturelab.org.in</a></p>
               <p>Phone: <a href="tel:+911234567890" className="hover:text-white">+91 123 456 7890</a></p>
             </address>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Career</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-400 hover:text-white">Join Our Team</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Open Positions</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Internships</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Campus Recruitment</a></li>
+            </ul>
           </div>
           
           <div>
