@@ -85,7 +85,7 @@ const ProgramsSection = () => {
           
           <Program 
             title="SISFS" 
-            label="Open"
+            label="Application Open"
             description="Seed funding to startups for proof of concept, prototype development, product trials, market entry, and commercialization."
             icon={<Rocket size={24} />}
             link="/programs/sisfs"
