@@ -1,4 +1,3 @@
-
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -268,7 +267,7 @@ const VentureLabProgram = () => {
                   
                   <div className="flex justify-center mb-6">
                     <img 
-                      src="/lovable-uploads/fe983028-0dc1-4077-ad1c-aa51c5e49d1a.png" 
+                      src="/lovable-uploads/6bdc0c92-2f8f-4910-9f7e-4f8643e565fc.png" 
                       alt="Organizational Capital Framework showing Strategic, Economic, Cultural and Social Capital interconnected through Opportunity Recognition, Preparation and Exploitation" 
                       className="max-w-full h-auto rounded-lg shadow-lg"
                     />
