@@ -267,7 +267,7 @@ const VentureLabProgram = () => {
                   
                   <div className="flex justify-center mb-6">
                     <img 
-                      src="/lovable-uploads/92b133b5-a859-469f-af5b-29bac7f5fd29.png" 
+                      src="/lovable-uploads/435cd590-d5db-4afc-b706-94875c512b17.png" 
                       alt="Organizational Capital Framework showing Strategic, Economic, Cultural and Social Capital interconnected through Opportunity Recognition, Preparation and Exploitation" 
                       className="max-w-full h-auto rounded-lg shadow-lg"
                     />
