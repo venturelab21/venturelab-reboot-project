@@ -39,7 +39,6 @@ const Navbar = () => {
   const menuItems = [
     { name: 'Portfolio', link: '/portfolio' },
     { name: 'Events', link: '/events' },
-    { name: 'Contact', link: '/contact' },
   ];
 
   return (
