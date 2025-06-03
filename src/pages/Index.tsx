@@ -2,7 +2,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProgramsSection from "@/components/ProgramsSection";
-import StatsSection from "@/components/StatsSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import MentorSection from "@/components/MentorSection";
 import Footer from "@/components/Footer";
@@ -17,7 +16,6 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <StatsSection />
         <ProgramsSection />
         <InvestmentThesisSection />
         <PortfolioSection />
