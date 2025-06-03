@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ProgramsBreadcrumb from "@/components/programs/ProgramsBreadcrumb";
 import { 
   Globe, 
   Users, 
@@ -26,25 +27,7 @@ const VentureLabProgram = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Breadcrumb navigation */}
-        <div className="bg-gray-50 py-4">
-          <div className="container mx-auto px-4">
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <Link to="/" className="text-blue-600 hover:underline">Home</Link>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <Link to="/programs" className="text-blue-600 hover:underline">Programs</Link>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>VentureLab Program</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
-        </div>
+        <ProgramsBreadcrumb currentProgram="VentureLab Program" />
 
         {/* Program header */}
         <section className="py-12 bg-gradient-to-r from-teal-700 to-teal-500">

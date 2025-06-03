@@ -2,7 +2,11 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Link, useNavigate } from "react-router-dom";
 
-const Breadcrumbs = () => {
+interface ProgramsBreadcrumbProps {
+  currentProgram: string;
+}
+
+const ProgramsBreadcrumb = ({ currentProgram }: ProgramsBreadcrumbProps) => {
   const navigate = useNavigate();
 
   const handleProgramsClick = (e: React.MouseEvent) => {
@@ -40,7 +44,7 @@ const Breadcrumbs = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>SISFS</BreadcrumbPage>
+              <BreadcrumbPage>{currentProgram}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -49,4 +53,4 @@ const Breadcrumbs = () => {
   );
 };
 
-export default Breadcrumbs;
+export default ProgramsBreadcrumb;
