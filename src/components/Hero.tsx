@@ -1,6 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Building2, Zap, TrendingUp, DollarSign } from "lucide-react";
+import { ArrowRight, Sparkles, Building2, Zap, TrendingUp, DollarSign } from "lucide-react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 
 const Hero = () => {
@@ -14,113 +15,79 @@ const Hero = () => {
   };
 
   return <>
-      {/* Modern Tech-Inspired Hero Banner */}
+      {/* Modern Hero Banner */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
-        {/* Animated tech grid background */}
+        {/* Animated background pattern */}
         <AnimatedGridPattern 
-          numSquares={60} 
-          maxOpacity={0.15} 
+          numSquares={50} 
+          maxOpacity={0.1} 
           duration={3} 
           repeatDelay={1} 
-          className="[mask-image:radial-gradient(1200px_circle_at_center,white,transparent)]" 
+          className="[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]" 
         />
         
-        {/* Abstract tech background elements */}
+        {/* Abstract tech elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Digital grid pattern */}
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px'
-          }}></div>
+          {/* Digital nodes */}
+          <div className="absolute top-20 left-20 w-4 h-4 bg-blue-400 rounded-full opacity-60 animate-pulse"></div>
+          <div className="absolute top-40 right-32 w-2 h-2 bg-purple-400 rounded-full opacity-80 animate-ping"></div>
+          <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-teal-400 rounded-full opacity-70 animate-pulse"></div>
+          <div className="absolute top-1/3 right-20 w-5 h-5 bg-blue-300 rounded-full opacity-50 animate-ping"></div>
           
-          {/* Floating digital nodes */}
-          <div className="absolute top-1/4 left-1/6 w-3 h-3 bg-blue-400 rounded-full opacity-60 animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-purple-400 rounded-full opacity-50 animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-1/3 left-1/3 w-4 h-4 bg-cyan-400 rounded-full opacity-40 animate-pulse" style={{animationDelay: '2s'}}></div>
-          <div className="absolute bottom-1/4 right-1/5 w-2 h-2 bg-indigo-400 rounded-full opacity-70 animate-pulse" style={{animationDelay: '0.5s'}}></div>
-          
-          {/* Digital connection lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1200 800">
-            <defs>
-              <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3B82F6" stopOpacity="0" />
-                <stop offset="50%" stopColor="#3B82F6" stopOpacity="1" />
-                <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0" />
-                <stop offset="50%" stopColor="#8B5CF6" stopOpacity="1" />
-                <stop offset="100%" stopColor="#06B6D4" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-            
-            {/* Network connection lines */}
-            <path d="M200 300 Q400 200 600 300 T1000 350" stroke="url(#lineGradient1)" strokeWidth="2" fill="none" />
-            <path d="M300 150 Q400 300 500 450 T800 600" stroke="url(#lineGradient2)" strokeWidth="2" fill="none" />
-            
-            {/* Node connection points */}
-            <circle cx="200" cy="300" r="4" fill="#3B82F6" opacity="0.8" />
-            <circle cx="600" cy="300" r="3" fill="#8B5CF6" opacity="0.6" />
-            <circle cx="1000" cy="350" r="3" fill="#06B6D4" opacity="0.7" />
-            <circle cx="300" cy="150" r="3" fill="#8B5CF6" opacity="0.5" />
-            <circle cx="500" cy="450" r="4" fill="#06B6D4" opacity="0.8" />
-            <circle cx="800" cy="600" r="3" fill="#3B82F6" opacity="0.6" />
+          {/* Circuit-like lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1000 800">
+            <path d="M100 200 L300 200 L300 400 L500 400" stroke="#3B82F6" strokeWidth="2" fill="none" />
+            <path d="M200 100 L200 300 L600 300" stroke="#8B5CF6" strokeWidth="2" fill="none" />
+            <path d="M700 150 L700 350 L900 350" stroke="#06B6D4" strokeWidth="2" fill="none" />
+            <circle cx="300" cy="200" r="8" fill="#3B82F6" opacity="0.7" />
+            <circle cx="200" cy="300" r="6" fill="#8B5CF6" opacity="0.8" />
+            <circle cx="700" cy="350" r="10" fill="#06B6D4" opacity="0.6" />
           </svg>
           
-          {/* Abstract startup/innovation icons floating */}
-          <div className="absolute top-20 left-20 opacity-10">
-            <div className="w-8 h-8 border-2 border-blue-400 rounded rotate-45"></div>
-          </div>
-          <div className="absolute top-32 right-32 opacity-15">
-            <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"></div>
-          </div>
-          <div className="absolute bottom-40 left-40 opacity-10">
-            <div className="w-10 h-10 border border-cyan-400 rounded-lg rotate-12"></div>
-          </div>
-          <div className="absolute bottom-20 right-20 opacity-12">
-            <svg width="24" height="24" viewBox="0 0 24 24" className="text-indigo-400">
-              <path fill="currentColor" d="M12 2L13.09 5.26L16 4L14.74 7.09L18 8L14.74 10.91L16 14L13.09 12.74L12 16L10.91 12.74L8 14L9.26 10.91L6 8L9.26 7.09L8 4L10.91 5.26L12 2Z"/>
-            </svg>
-          </div>
+          {/* Floating geometric shapes */}
+          <div className="absolute top-1/4 left-1/3 w-16 h-16 border-2 border-blue-400 rotate-45 opacity-30"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-12 h-12 border-2 border-purple-400 rounded-full opacity-40"></div>
+          <div className="absolute top-1/2 left-1/5 w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-400 opacity-50 transform rotate-12"></div>
         </div>
 
-        {/* Main hero content */}
+        {/* Main content */}
         <div className="relative z-10 text-center px-6 md:px-8 lg:px-12 max-w-6xl mx-auto">
-          
-          {/* Main headline - clean and impactful */}
-          <div className="mb-8 space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-light leading-tight text-white">
-              Your next big business idea
-            </h1>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-normal leading-tight">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-medium">
-                gets shape here.
-              </span>
-            </h2>
+          {/* Institute label */}
+          <div className="inline-block bg-blue-100/10 backdrop-blur-sm text-blue-200 px-6 py-3 rounded-full mb-8 border border-blue-400/20">
+            <span className="flex items-center text-sm md:text-base">
+              <Sparkles className="w-5 h-5 mr-2 text-blue-300" />
+              Thapar Innovate
+            </span>
           </div>
           
+          {/* Brand name */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-8">
+            <span className="text-blue-200">Venture</span>
+            <span className="text-teal-300">Lab</span>
+            <span className="block text-3xl md:text-4xl lg:text-5xl font-bold text-blue-200 mt-4">THAPAR</span>
+          </h1>
+          
+          {/* Main headline */}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-relaxed max-w-4xl mx-auto">
+            Your next big business idea gets shape here.
+          </h2>
+          
           {/* Subheading */}
-          <p className="text-xl md:text-2xl lg:text-3xl text-blue-100 mb-4 font-light leading-relaxed">
-            Learn, Build & Grow with
-          </p>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-12 tracking-wide">
-            VentureLab Thapar
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Learn, Build & Grow with VentureLab Thapar.
           </p>
           
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-full font-medium px-10 py-4 text-lg border-0 transform hover:scale-105">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-4 justify-center">
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 rounded-full font-medium px-10 py-6 text-lg">
               <Link to="/apply" className="flex items-center justify-center">
-                Pitch to us <ArrowRight className="ml-3" size={20} />
+                Pitch to us <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-cyan-400/60 text-cyan-300 hover:bg-cyan-400/10 hover:border-cyan-300 hover:text-cyan-200 rounded-full px-10 py-4 text-lg font-medium shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 bg-transparent backdrop-blur-sm transform hover:scale-105" 
+              className="border-teal-400 text-teal-300 hover:bg-teal-400/10 rounded-full px-10 py-6 text-lg backdrop-blur-sm" 
               onClick={scrollToPrograms}
             >
               Explore Programs
@@ -128,122 +95,133 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Modern scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-60">
-          <div className="flex flex-col items-center">
-            <div className="w-6 h-10 border-2 border-blue-300 rounded-full flex justify-center animate-bounce">
-              <div className="w-1 h-3 bg-gradient-to-b from-blue-300 to-purple-400 rounded-full mt-2 animate-pulse"></div>
-            </div>
-            <div className="text-blue-300 text-xs mt-2 font-light tracking-wider">SCROLL</div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
 
-      {/* VentureLab Graphic Section - keeping existing functionality */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      {/* VentureLab Hero Graphic Section */}
+      <section className="py-16 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-4xl font-light mb-6 text-slate-800">
-              We give <span className="text-orange-500 font-normal">everything</span> it takes
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              We Give <span className="text-orange-500">Everything</span> It Takes
             </h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed font-light">
-              We back fearless entrepreneurs building disruptive solutions. We stand with startups at their risky early stages, when they need the most support.
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              We back fearless entrepreneurs building disruptive solutions. We stand with the startups at their risky early stages, when they need most support while there is hardly any available.
             </p>
           </div>
 
-          {/* VL Graphic */}
+          {/* Main VL Graphic with surrounding blocks */}
           <div className="relative max-w-6xl mx-auto">
             {/* Central VL Logo */}
-            <div className="flex justify-center items-center mb-12">
+            <div className="flex justify-center items-center mb-8">
               <div className="relative">
-                <svg width="360" height="180" viewBox="0 0 360 180" className="drop-shadow-sm">
-                  {/* V Letter */}
+                {/* Large stylized VL made of gears and circuits */}
+                <svg width="400" height="200" viewBox="0 0 400 200" className="drop-shadow-lg">
+                  {/* V Letter with gear elements */}
                   <g>
-                    <path d="M50 30 L110 140 L170 30" stroke="#F97316" strokeWidth="16" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
+                    {/* V shape base */}
+                    <path d="M50 30 L120 150 L190 30" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     
-                    {/* Tech elements */}
-                    <circle cx="80" cy="65" r="12" fill="#3B82F6" opacity="0.6" />
-                    <circle cx="80" cy="65" r="6" fill="white" />
+                    {/* Gear elements on V */}
+                    <circle cx="85" cy="70" r="15" fill="#3B82F6" opacity="0.8" />
+                    <circle cx="85" cy="70" r="8" fill="white" />
+                    <path d="M75 70 L95 70 M85 60 L85 80" stroke="#3B82F6" strokeWidth="2" />
                     
-                    <circle cx="140" cy="65" r="10" fill="#EC4899" opacity="0.6" />
-                    <circle cx="140" cy="65" r="5" fill="white" />
+                    <circle cx="155" cy="70" r="12" fill="#EC4899" opacity="0.8" />
+                    <circle cx="155" cy="70" r="6" fill="white" />
                     
                     {/* Circuit patterns */}
-                    <path d="M70 95 L90 95 L90 110 L110 110" stroke="#3B82F6" strokeWidth="2" fill="none" opacity="0.5" />
-                    <circle cx="90" cy="95" r="2" fill="#3B82F6" opacity="0.7" />
+                    <path d="M70 100 L100 100 L100 120 L130 120" stroke="#3B82F6" strokeWidth="3" fill="none" />
+                    <circle cx="100" cy="100" r="3" fill="#3B82F6" />
+                    <circle cx="130" cy="120" r="3" fill="#3B82F6" />
                   </g>
 
-                  {/* L Letter */}
+                  {/* L Letter with digital components */}
                   <g>
-                    <path d="M220 30 L220 140 L300 140" stroke="#F97316" strokeWidth="16" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
+                    {/* L shape base */}
+                    <path d="M250 30 L250 150 L340 150" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     
-                    {/* Digital components */}
-                    <rect x="215" y="75" width="16" height="12" fill="#3B82F6" rx="2" opacity="0.6" />
-                    <rect x="218" y="78" width="10" height="6" fill="white" rx="1" />
+                    {/* Digital components on L */}
+                    <rect x="240" y="80" width="20" height="15" fill="#3B82F6" rx="2" />
+                    <rect x="245" y="85" width="10" height="5" fill="white" rx="1" />
                     
-                    <circle cx="260" cy="55" r="8" fill="#EC4899" opacity="0.6" />
-                    <circle cx="260" cy="55" r="4" fill="white" />
+                    <circle cx="280" cy="60" r="10" fill="#EC4899" opacity="0.8" />
+                    <circle cx="280" cy="60" r="5" fill="white" />
                     
-                    <rect x="275" y="132" width="20" height="8" fill="#3B82F6" rx="2" opacity="0.6" />
-                    <rect x="278" y="134" width="14" height="4" fill="white" rx="1" />
+                    <rect x="300" y="140" width="25" height="10" fill="#3B82F6" rx="2" />
+                    <rect x="305" y="143" width="15" height="4" fill="white" rx="1" />
+                    
+                    {/* More circuit lines */}
+                    <path d="M270 90 L290 90 L290 110 L310 110" stroke="#EC4899" strokeWidth="3" fill="none" />
+                    <circle cx="290" cy="90" r="3" fill="#EC4899" />
                   </g>
                 </svg>
               </div>
             </div>
 
-            {/* Four blocks */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+            {/* Four surrounding blocks */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
               {/* Incubation Block */}
-              <div className="text-center group">
-                <div className="bg-orange-50 p-8 rounded-3xl border border-orange-100 mb-4 group-hover:shadow-lg group-hover:shadow-orange-100/50 transition-all duration-300 group-hover:-translate-y-1">
-                  <Building2 className="w-10 h-10 text-orange-500 mx-auto mb-6" />
-                  <h3 className="text-lg font-medium text-orange-600 mb-4 tracking-wide">INCUBATION</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-light">
-                    State-of-the-art physical infrastructure, training programs, and access to a network of like-minded collaborators.
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-orange-50 p-6 rounded-2xl border border-orange-200 mb-4 group-hover:shadow-lg transition-shadow">
+                  <Building2 className="w-12 h-12 text-orange-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-orange-600 mb-2">INCUBATION</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    State-of-the-art physical infrastructure, training programs, and access to a network of like-minded collaborators and partners.
                   </p>
+                  <div className="text-xs text-orange-500 font-medium mt-2">→ More</div>
                 </div>
               </div>
 
               {/* Acceleration Block */}
-              <div className="text-center group">
-                <div className="bg-blue-50 p-8 rounded-3xl border border-blue-100 mb-4 group-hover:shadow-lg group-hover:shadow-blue-100/50 transition-all duration-300 group-hover:-translate-y-1">
-                  <Zap className="w-10 h-10 text-blue-500 mx-auto mb-6" />
-                  <h3 className="text-lg font-medium text-blue-600 mb-4 tracking-wide">ACCELERATION</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-light">
-                    Workshops, diagnostics, problem-solving, and bespoke coaching curated to your startup's goals and stage.
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-blue-50 p-6 rounded-2xl border border-blue-200 mb-4 group-hover:shadow-lg transition-shadow">
+                  <Zap className="w-12 h-12 text-blue-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-blue-600 mb-2">ACCELERATION</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Workshops, diagnostics, problem-solving, bespoke coaching, and support, curated to the startups' goals and stages.
                   </p>
+                  <div className="text-xs text-blue-500 font-medium mt-2">→ More</div>
                 </div>
               </div>
 
               {/* Insights Block */}
-              <div className="text-center group">
-                <div className="bg-pink-50 p-8 rounded-3xl border border-pink-100 mb-4 group-hover:shadow-lg group-hover:shadow-pink-100/50 transition-all duration-300 group-hover:-translate-y-1">
-                  <TrendingUp className="w-10 h-10 text-pink-500 mx-auto mb-6" />
-                  <h3 className="text-lg font-medium text-pink-600 mb-4 tracking-wide">INSIGHTS</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-light">
-                    Rigorous research, data-driven tools, learning resources and insights for entrepreneurs and their champions.
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-pink-50 p-6 rounded-2xl border border-pink-200 mb-4 group-hover:shadow-lg transition-shadow">
+                  <TrendingUp className="w-12 h-12 text-pink-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-pink-600 mb-2">INSIGHTS</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Rigorous research and data-driven tools, learning resources and insights for entrepreneurs and their champions.
                   </p>
+                  <div className="text-xs text-pink-500 font-medium mt-2">→ More</div>
                 </div>
               </div>
 
               {/* Fund Incubation Block */}
-              <div className="text-center group">
-                <div className="bg-teal-50 p-8 rounded-3xl border border-teal-100 mb-4 group-hover:shadow-lg group-hover:shadow-teal-100/50 transition-all duration-300 group-hover:-translate-y-1">
-                  <DollarSign className="w-10 h-10 text-teal-500 mx-auto mb-6" />
-                  <h3 className="text-lg font-medium text-teal-600 mb-4 tracking-wide">FUND INCUBATION</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-light">
-                    Incubating venture funds for the Indian early-stage market ecosystem.
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-teal-50 p-6 rounded-2xl border border-teal-200 mb-4 group-hover:shadow-lg transition-shadow">
+                  <DollarSign className="w-12 h-12 text-teal-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-teal-600 mb-2">FUND INCUBATION</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Incubating Venture Funds for the Indian Early-Stage Market.
                   </p>
+                  <div className="text-xs text-teal-500 font-medium mt-2">→ More</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Decorative elements */}
-        <div className="absolute top-32 left-16 w-24 h-24 bg-orange-100 rounded-full opacity-20 blur-2xl"></div>
-        <div className="absolute bottom-32 right-16 w-32 h-32 bg-blue-100 rounded-full opacity-20 blur-2xl"></div>
+        {/* Decorative background elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-orange-100 rounded-full opacity-50 blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-blue-100 rounded-full opacity-50 blur-xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-pink-100 rounded-full opacity-50 blur-xl"></div>
       </section>
     </>;
 };
