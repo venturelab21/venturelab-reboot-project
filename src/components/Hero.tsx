@@ -1,27 +1,19 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
-
 const Hero = () => {
   const scrollToPrograms = () => {
     const programsSection = document.getElementById('programs-section');
     if (programsSection) {
-      programsSection.scrollIntoView({ behavior: 'smooth' });
+      programsSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-r from-slate-50 to-blue-50">
+  return <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-r from-slate-50 to-blue-50">
       {/* Background pattern - animated grid */}
-      <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
-        className="[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]"
-      />
+      <AnimatedGridPattern numSquares={30} maxOpacity={0.1} duration={3} repeatDelay={1} className="[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]" />
       
       <div className="w-full px-0 md:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto items-center">
@@ -54,12 +46,7 @@ const Hero = () => {
                   Pitch to us <ArrowRight className="ml-2" size={18} />
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8 py-4"
-                onClick={scrollToPrograms}
-              >
+              <Button size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 rounded-full px-8 py-4" onClick={scrollToPrograms}>
                 Explore Programs
               </Button>
             </div>
@@ -68,20 +55,13 @@ const Hero = () => {
           {/* Right side - Hero Image */}
           <div className="relative flex justify-center lg:justify-end px-6 md:px-8 lg:px-0">
             <div className="relative w-full max-w-lg lg:max-w-xl">
-              <img 
-                src="/lovable-uploads/228f9097-334d-4599-9d41-6a5cab0ba4a5.png"
-                alt="VentureLab startup ecosystem illustration showing mentorship, learning center, co-working space, and innovation"
-                className="w-full h-auto object-contain drop-shadow-2xl"
-                loading="eager"
-              />
+              
               {/* Subtle background circle for additional depth */}
               <div className="absolute inset-0 -z-10 w-full h-full bg-gradient-to-br from-blue-100/30 to-teal-100/30 rounded-full blur-3xl transform scale-110"></div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
