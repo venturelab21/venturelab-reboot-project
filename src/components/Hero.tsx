@@ -26,7 +26,7 @@ const Hero = () => {
       {/* Large circle background elements */}
       <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-teal-100 to-teal-300 opacity-20 z-0"></div>
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="w-full px-6 md:px-8 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto lg:mx-0">
           {/* Institute label - Updated with elegant icon */}
           <div className="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-full mb-8">
