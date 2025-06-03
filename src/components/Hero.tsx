@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, Zap, TrendingUp, DollarSign } from "lucide-react";
@@ -15,83 +14,113 @@ const Hero = () => {
   };
 
   return <>
-      {/* Hero Banner with Blue-Purple Gradient */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900">
-        {/* Animated grid background pattern */}
+      {/* Modern Tech-Inspired Hero Banner */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
+        {/* Animated tech grid background */}
         <AnimatedGridPattern 
-          numSquares={40} 
-          maxOpacity={0.1} 
-          duration={4} 
-          repeatDelay={2} 
-          className="[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]" 
+          numSquares={60} 
+          maxOpacity={0.15} 
+          duration={3} 
+          repeatDelay={1} 
+          className="[mask-image:radial-gradient(1200px_circle_at_center,white,transparent)]" 
         />
         
-        {/* Geometric grid overlay */}
+        {/* Abstract tech background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Grid pattern */}
+          {/* Digital grid pattern */}
           <div className="absolute inset-0" style={{
             backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px)
             `,
-            backgroundSize: '50px 50px'
+            backgroundSize: '60px 60px'
           }}></div>
           
-          {/* Floating geometric elements */}
-          <div className="absolute top-1/4 left-1/6 w-16 h-16 border border-blue-400 rotate-45 opacity-20"></div>
-          <div className="absolute top-1/3 right-1/4 w-12 h-12 border border-blue-300 rounded-full opacity-15"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-8 h-8 bg-blue-400 rotate-45 opacity-10"></div>
-          <div className="absolute bottom-1/4 right-1/5 w-6 h-6 bg-purple-400 rounded-full opacity-15"></div>
+          {/* Floating digital nodes */}
+          <div className="absolute top-1/4 left-1/6 w-3 h-3 bg-blue-400 rounded-full opacity-60 animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-purple-400 rounded-full opacity-50 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-1/3 left-1/3 w-4 h-4 bg-cyan-400 rounded-full opacity-40 animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-1/4 right-1/5 w-2 h-2 bg-indigo-400 rounded-full opacity-70 animate-pulse" style={{animationDelay: '0.5s'}}></div>
           
-          {/* Abstract connection lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 800">
-            <path d="M200 300 L400 300 L400 500" stroke="#3B82F6" strokeWidth="2" fill="none" />
-            <path d="M600 200 L600 400 L800 400" stroke="#8B5CF6" strokeWidth="2" fill="none" />
-            <circle cx="400" cy="300" r="4" fill="#3B82F6" />
-            <circle cx="600" cy="400" r="3" fill="#8B5CF6" />
+          {/* Digital connection lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1200 800">
+            <defs>
+              <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3B82F6" stopOpacity="0" />
+                <stop offset="50%" stopColor="#3B82F6" stopOpacity="1" />
+                <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0" />
+                <stop offset="50%" stopColor="#8B5CF6" stopOpacity="1" />
+                <stop offset="100%" stopColor="#06B6D4" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            
+            {/* Network connection lines */}
+            <path d="M200 300 Q400 200 600 300 T1000 350" stroke="url(#lineGradient1)" strokeWidth="2" fill="none" />
+            <path d="M300 150 Q400 300 500 450 T800 600" stroke="url(#lineGradient2)" strokeWidth="2" fill="none" />
+            
+            {/* Node connection points */}
+            <circle cx="200" cy="300" r="4" fill="#3B82F6" opacity="0.8" />
+            <circle cx="600" cy="300" r="3" fill="#8B5CF6" opacity="0.6" />
+            <circle cx="1000" cy="350" r="3" fill="#06B6D4" opacity="0.7" />
+            <circle cx="300" cy="150" r="3" fill="#8B5CF6" opacity="0.5" />
+            <circle cx="500" cy="450" r="4" fill="#06B6D4" opacity="0.8" />
+            <circle cx="800" cy="600" r="3" fill="#3B82F6" opacity="0.6" />
           </svg>
+          
+          {/* Abstract startup/innovation icons floating */}
+          <div className="absolute top-20 left-20 opacity-10">
+            <div className="w-8 h-8 border-2 border-blue-400 rounded rotate-45"></div>
+          </div>
+          <div className="absolute top-32 right-32 opacity-15">
+            <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"></div>
+          </div>
+          <div className="absolute bottom-40 left-40 opacity-10">
+            <div className="w-10 h-10 border border-cyan-400 rounded-lg rotate-12"></div>
+          </div>
+          <div className="absolute bottom-20 right-20 opacity-12">
+            <svg width="24" height="24" viewBox="0 0 24 24" className="text-indigo-400">
+              <path fill="currentColor" d="M12 2L13.09 5.26L16 4L14.74 7.09L18 8L14.74 10.91L16 14L13.09 12.74L12 16L10.91 12.74L8 14L9.26 10.91L6 8L9.26 7.09L8 4L10.91 5.26L12 2Z"/>
+            </svg>
+          </div>
         </div>
 
-        {/* Main content */}
-        <div className="relative z-10 text-center px-6 md:px-8 lg:px-12 max-w-5xl mx-auto">
-          {/* Thapar Innovate Badge */}
-          <div className="mb-8">
-            <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-2 backdrop-blur-sm">
-              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-              <span className="text-blue-100 text-sm font-medium">Thapar Innovate</span>
-            </div>
-          </div>
+        {/* Main hero content */}
+        <div className="relative z-10 text-center px-6 md:px-8 lg:px-12 max-w-6xl mx-auto">
           
-          {/* Brand name */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-4">
-              <span className="text-white font-normal">Venture</span>
-              <span className="text-green-400 font-medium">Lab</span>
-              <span className="block text-2xl md:text-3xl lg:text-4xl font-light text-blue-200 mt-2 tracking-wide">THAPAR</span>
+          {/* Main headline - clean and impactful */}
+          <div className="mb-8 space-y-4">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-light leading-tight text-white">
+              Your next big business idea
             </h1>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-normal leading-tight">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-medium">
+                gets shape here.
+              </span>
+            </h2>
           </div>
-          
-          {/* Main headline */}
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-relaxed max-w-4xl mx-auto">
-            Your next big business idea gets shape here.
-          </h2>
           
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-blue-200 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Learn, Build & Grow with VentureLab Thapar.
+          <p className="text-xl md:text-2xl lg:text-3xl text-blue-100 mb-4 font-light leading-relaxed">
+            Learn, Build & Grow with
+          </p>
+          <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-12 tracking-wide">
+            VentureLab Thapar
           </p>
           
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full font-normal px-8 py-3 text-base border-0">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-full font-medium px-10 py-4 text-lg border-0 transform hover:scale-105">
               <Link to="/apply" className="flex items-center justify-center">
-                Pitch to us <ArrowRight className="ml-2" size={18} />
+                Pitch to us <ArrowRight className="ml-3" size={20} />
               </Link>
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-green-400/50 text-green-400 hover:bg-green-400/10 hover:border-green-400 rounded-full px-8 py-3 text-base font-normal shadow-sm hover:shadow-md transition-all duration-300 bg-transparent" 
+              className="border-2 border-cyan-400/60 text-cyan-300 hover:bg-cyan-400/10 hover:border-cyan-300 hover:text-cyan-200 rounded-full px-10 py-4 text-lg font-medium shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 bg-transparent backdrop-blur-sm transform hover:scale-105" 
               onClick={scrollToPrograms}
             >
               Explore Programs
@@ -99,15 +128,18 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-60">
-          <div className="w-5 h-8 border border-blue-300 rounded-full flex justify-center">
-            <div className="w-0.5 h-2 bg-blue-300 rounded-full mt-2 animate-pulse"></div>
+        {/* Modern scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-60">
+          <div className="flex flex-col items-center">
+            <div className="w-6 h-10 border-2 border-blue-300 rounded-full flex justify-center animate-bounce">
+              <div className="w-1 h-3 bg-gradient-to-b from-blue-300 to-purple-400 rounded-full mt-2 animate-pulse"></div>
+            </div>
+            <div className="text-blue-300 text-xs mt-2 font-light tracking-wider">SCROLL</div>
           </div>
         </div>
       </section>
 
-      {/* VentureLab Graphic Section */}
+      {/* VentureLab Graphic Section - keeping existing functionality */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
