@@ -1,9 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, Building2, Zap, TrendingUp, DollarSign } from "lucide-react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
-
 const Hero = () => {
   const scrollToPrograms = () => {
     const programsSection = document.getElementById('programs-section');
@@ -13,9 +11,7 @@ const Hero = () => {
       });
     }
   };
-
-  return (
-    <>
+  return <>
       <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-r from-slate-50 to-blue-50">
         {/* Background pattern - animated grid */}
         <AnimatedGridPattern numSquares={30} maxOpacity={0.1} duration={3} repeatDelay={1} className="[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]" />
@@ -60,11 +56,7 @@ const Hero = () => {
             {/* Right side - Hero Image */}
             <div className="relative flex justify-center lg:justify-end px-6 md:px-8 lg:px-0">
               <div className="relative w-full max-w-lg lg:max-w-xl">
-                <img
-                  src="/lovable-uploads/228f9097-334d-4599-9d41-6a5cab0ba4a5.png"
-                  alt="VentureLab Innovation"
-                  className="w-full h-auto object-contain"
-                />
+                
                 {/* Subtle background circle for additional depth */}
                 <div className="absolute inset-0 -z-10 w-full h-full bg-gradient-to-br from-blue-100/30 to-teal-100/30 rounded-full blur-3xl transform scale-110"></div>
               </div>
@@ -96,40 +88,40 @@ const Hero = () => {
                   {/* V Letter with gear elements */}
                   <g>
                     {/* V shape base */}
-                    <path d="M50 30 L120 150 L190 30" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M50 30 L120 150 L190 30" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     
                     {/* Gear elements on V */}
-                    <circle cx="85" cy="70" r="15" fill="#3B82F6" opacity="0.8"/>
-                    <circle cx="85" cy="70" r="8" fill="white"/>
-                    <path d="M75 70 L95 70 M85 60 L85 80" stroke="#3B82F6" strokeWidth="2"/>
+                    <circle cx="85" cy="70" r="15" fill="#3B82F6" opacity="0.8" />
+                    <circle cx="85" cy="70" r="8" fill="white" />
+                    <path d="M75 70 L95 70 M85 60 L85 80" stroke="#3B82F6" strokeWidth="2" />
                     
-                    <circle cx="155" cy="70" r="12" fill="#EC4899" opacity="0.8"/>
-                    <circle cx="155" cy="70" r="6" fill="white"/>
+                    <circle cx="155" cy="70" r="12" fill="#EC4899" opacity="0.8" />
+                    <circle cx="155" cy="70" r="6" fill="white" />
                     
                     {/* Circuit patterns */}
-                    <path d="M70 100 L100 100 L100 120 L130 120" stroke="#3B82F6" strokeWidth="3" fill="none"/>
-                    <circle cx="100" cy="100" r="3" fill="#3B82F6"/>
-                    <circle cx="130" cy="120" r="3" fill="#3B82F6"/>
+                    <path d="M70 100 L100 100 L100 120 L130 120" stroke="#3B82F6" strokeWidth="3" fill="none" />
+                    <circle cx="100" cy="100" r="3" fill="#3B82F6" />
+                    <circle cx="130" cy="120" r="3" fill="#3B82F6" />
                   </g>
 
                   {/* L Letter with digital components */}
                   <g>
                     {/* L shape base */}
-                    <path d="M250 30 L250 150 L340 150" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M250 30 L250 150 L340 150" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     
                     {/* Digital components on L */}
-                    <rect x="240" y="80" width="20" height="15" fill="#3B82F6" rx="2"/>
-                    <rect x="245" y="85" width="10" height="5" fill="white" rx="1"/>
+                    <rect x="240" y="80" width="20" height="15" fill="#3B82F6" rx="2" />
+                    <rect x="245" y="85" width="10" height="5" fill="white" rx="1" />
                     
-                    <circle cx="280" cy="60" r="10" fill="#EC4899" opacity="0.8"/>
-                    <circle cx="280" cy="60" r="5" fill="white"/>
+                    <circle cx="280" cy="60" r="10" fill="#EC4899" opacity="0.8" />
+                    <circle cx="280" cy="60" r="5" fill="white" />
                     
-                    <rect x="300" y="140" width="25" height="10" fill="#3B82F6" rx="2"/>
-                    <rect x="305" y="143" width="15" height="4" fill="white" rx="1"/>
+                    <rect x="300" y="140" width="25" height="10" fill="#3B82F6" rx="2" />
+                    <rect x="305" y="143" width="15" height="4" fill="white" rx="1" />
                     
                     {/* More circuit lines */}
-                    <path d="M270 90 L290 90 L290 110 L310 110" stroke="#EC4899" strokeWidth="3" fill="none"/>
-                    <circle cx="290" cy="90" r="3" fill="#EC4899"/>
+                    <path d="M270 90 L290 90 L290 110 L310 110" stroke="#EC4899" strokeWidth="3" fill="none" />
+                    <circle cx="290" cy="90" r="3" fill="#EC4899" />
                   </g>
                 </svg>
               </div>
@@ -193,8 +185,6 @@ const Hero = () => {
         <div className="absolute bottom-20 right-10 w-32 h-32 bg-blue-100 rounded-full opacity-50 blur-xl"></div>
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-pink-100 rounded-full opacity-50 blur-xl"></div>
       </section>
-    </>
-  );
+    </>;
 };
-
 export default Hero;
