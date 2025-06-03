@@ -15,60 +15,74 @@ const Hero = () => {
   };
 
   return <>
-      {/* Refined Hero Banner */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-        {/* Subtle animated background pattern */}
+      {/* Hero Banner with Blue-Purple Gradient */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900">
+        {/* Animated grid background pattern */}
         <AnimatedGridPattern 
-          numSquares={30} 
-          maxOpacity={0.03} 
+          numSquares={40} 
+          maxOpacity={0.1} 
           duration={4} 
           repeatDelay={2} 
-          className="[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]" 
+          className="[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]" 
         />
         
-        {/* Minimal geometric elements */}
+        {/* Geometric grid overlay */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Subtle floating elements */}
-          <div className="absolute top-32 left-1/4 w-2 h-2 bg-blue-300 rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-64 right-1/3 w-1 h-1 bg-indigo-400 rounded-full opacity-30 animate-ping"></div>
-          <div className="absolute bottom-40 left-1/3 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-25 animate-pulse"></div>
+          {/* Grid pattern */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px'
+          }}></div>
           
-          {/* Minimal circuit-like lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-8" viewBox="0 0 1000 800">
-            <path d="M200 300 L400 300 L400 500" stroke="#3B82F6" strokeWidth="1" fill="none" opacity="0.1" />
-            <path d="M600 200 L600 400 L800 400" stroke="#6366F1" strokeWidth="1" fill="none" opacity="0.1" />
-            <circle cx="400" cy="300" r="3" fill="#3B82F6" opacity="0.15" />
-            <circle cx="600" cy="400" r="2" fill="#6366F1" opacity="0.2" />
+          {/* Floating geometric elements */}
+          <div className="absolute top-1/4 left-1/6 w-16 h-16 border border-blue-400 rotate-45 opacity-20"></div>
+          <div className="absolute top-1/3 right-1/4 w-12 h-12 border border-blue-300 rounded-full opacity-15"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-8 h-8 bg-blue-400 rotate-45 opacity-10"></div>
+          <div className="absolute bottom-1/4 right-1/5 w-6 h-6 bg-purple-400 rounded-full opacity-15"></div>
+          
+          {/* Abstract connection lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 800">
+            <path d="M200 300 L400 300 L400 500" stroke="#3B82F6" strokeWidth="2" fill="none" />
+            <path d="M600 200 L600 400 L800 400" stroke="#8B5CF6" strokeWidth="2" fill="none" />
+            <circle cx="400" cy="300" r="4" fill="#3B82F6" />
+            <circle cx="600" cy="400" r="3" fill="#8B5CF6" />
           </svg>
-          
-          {/* Soft geometric shapes */}
-          <div className="absolute top-1/3 left-1/5 w-20 h-20 border border-blue-200 rotate-45 opacity-10 rounded-lg"></div>
-          <div className="absolute bottom-1/4 right-1/5 w-16 h-16 border border-indigo-200 rounded-full opacity-15"></div>
         </div>
 
-        {/* Main content with fade-in animation */}
-        <div className="relative z-10 text-center px-6 md:px-8 lg:px-12 max-w-5xl mx-auto animate-fade-in">
-          {/* Brand name with refined typography */}
-          <div className="mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              <span className="text-slate-700 font-normal">Venture</span>
-              <span className="text-blue-600 font-medium">Lab</span>
-              <span className="block text-2xl md:text-3xl lg:text-4xl font-light text-slate-600 mt-4 tracking-wide">THAPAR</span>
+        {/* Main content */}
+        <div className="relative z-10 text-center px-6 md:px-8 lg:px-12 max-w-5xl mx-auto">
+          {/* Thapar Innovate Badge */}
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-2 backdrop-blur-sm">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              <span className="text-blue-100 text-sm font-medium">Thapar Innovate</span>
+            </div>
+          </div>
+          
+          {/* Brand name */}
+          <div className="mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-4">
+              <span className="text-white font-normal">Venture</span>
+              <span className="text-green-400 font-medium">Lab</span>
+              <span className="block text-2xl md:text-3xl lg:text-4xl font-light text-blue-200 mt-2 tracking-wide">THAPAR</span>
             </h1>
           </div>
           
-          {/* Main headline with conversational tone */}
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-700 mb-8 leading-relaxed max-w-4xl mx-auto">
-            Your next big business idea gets shape here
+          {/* Main headline */}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-relaxed max-w-4xl mx-auto">
+            Your next big business idea gets shape here.
           </h2>
           
-          {/* Subheading with better spacing */}
-          <p className="text-lg md:text-xl text-slate-500 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Learn, build & grow with VentureLab Thapar
+          {/* Subheading */}
+          <p className="text-lg md:text-xl text-blue-200 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+            Learn, Build & Grow with VentureLab Thapar.
           </p>
           
-          {/* Refined CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-1">
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full font-normal px-8 py-3 text-base border-0">
               <Link to="/apply" className="flex items-center justify-center">
                 Pitch to us <ArrowRight className="ml-2" size={18} />
@@ -77,26 +91,26 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-slate-300 text-slate-600 hover:bg-slate-50 hover:border-slate-400 rounded-full px-8 py-3 text-base font-normal shadow-sm hover:shadow-md transition-all duration-300" 
+              className="border-green-400/50 text-green-400 hover:bg-green-400/10 hover:border-green-400 rounded-full px-8 py-3 text-base font-normal shadow-sm hover:shadow-md transition-all duration-300 bg-transparent" 
               onClick={scrollToPrograms}
             >
-              Explore programs
+              Explore Programs
             </Button>
           </div>
         </div>
 
-        {/* Subtle scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-40">
-          <div className="w-5 h-8 border border-slate-400 rounded-full flex justify-center">
-            <div className="w-0.5 h-2 bg-slate-400 rounded-full mt-2 animate-pulse"></div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-60">
+          <div className="w-5 h-8 border border-blue-300 rounded-full flex justify-center">
+            <div className="w-0.5 h-2 bg-blue-300 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
 
-      {/* Refined VentureLab Graphic Section */}
+      {/* VentureLab Graphic Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header with refined typography */}
+          {/* Header */}
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl font-light mb-6 text-slate-800">
               We give <span className="text-orange-500 font-normal">everything</span> it takes
@@ -106,33 +120,33 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Refined VL Graphic */}
+          {/* VL Graphic */}
           <div className="relative max-w-6xl mx-auto">
-            {/* Central VL Logo - more refined */}
+            {/* Central VL Logo */}
             <div className="flex justify-center items-center mb-12">
               <div className="relative">
                 <svg width="360" height="180" viewBox="0 0 360 180" className="drop-shadow-sm">
-                  {/* V Letter - more elegant */}
+                  {/* V Letter */}
                   <g>
                     <path d="M50 30 L110 140 L170 30" stroke="#F97316" strokeWidth="16" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
                     
-                    {/* Subtle tech elements */}
+                    {/* Tech elements */}
                     <circle cx="80" cy="65" r="12" fill="#3B82F6" opacity="0.6" />
                     <circle cx="80" cy="65" r="6" fill="white" />
                     
                     <circle cx="140" cy="65" r="10" fill="#EC4899" opacity="0.6" />
                     <circle cx="140" cy="65" r="5" fill="white" />
                     
-                    {/* Minimal circuit patterns */}
+                    {/* Circuit patterns */}
                     <path d="M70 95 L90 95 L90 110 L110 110" stroke="#3B82F6" strokeWidth="2" fill="none" opacity="0.5" />
                     <circle cx="90" cy="95" r="2" fill="#3B82F6" opacity="0.7" />
                   </g>
 
-                  {/* L Letter - refined */}
+                  {/* L Letter */}
                   <g>
                     <path d="M220 30 L220 140 L300 140" stroke="#F97316" strokeWidth="16" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
                     
-                    {/* Elegant digital components */}
+                    {/* Digital components */}
                     <rect x="215" y="75" width="16" height="12" fill="#3B82F6" rx="2" opacity="0.6" />
                     <rect x="218" y="78" width="10" height="6" fill="white" rx="1" />
                     
@@ -146,7 +160,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Four refined blocks */}
+            {/* Four blocks */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
               {/* Incubation Block */}
               <div className="text-center group">
@@ -195,7 +209,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Subtle decorative elements */}
+        {/* Decorative elements */}
         <div className="absolute top-32 left-16 w-24 h-24 bg-orange-100 rounded-full opacity-20 blur-2xl"></div>
         <div className="absolute bottom-32 right-16 w-32 h-32 bg-blue-100 rounded-full opacity-20 blur-2xl"></div>
       </section>
