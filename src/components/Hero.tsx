@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Building2, Zap, TrendingUp, DollarSign } from "lucide-react";
+import { ArrowRight, Sparkles, DollarSign, Users, Headphones, Database, Brain, Building2 } from "lucide-react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 
 const Hero = () => {
@@ -165,51 +165,75 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Four surrounding blocks */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-              {/* Incubation Block */}
+            {/* Six surrounding blocks */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+              {/* Seed Funding Block */}
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-green-50 p-6 rounded-2xl border border-green-200 mb-4 group-hover:shadow-lg transition-shadow">
+                  <DollarSign className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-green-600 mb-2">SEED FUNDING</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Early capital support to help startups get off the ground.
+                  </p>
+                  <div className="text-xs text-green-500 font-medium mt-2">→ More</div>
+                </div>
+              </div>
+
+              {/* Co-working Space Block */}
               <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
                 <div className="bg-orange-50 p-6 rounded-2xl border border-orange-200 mb-4 group-hover:shadow-lg transition-shadow">
                   <Building2 className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-orange-600 mb-2">INCUBATION</h3>
+                  <h3 className="text-lg font-bold text-orange-600 mb-2">CO-WORKING SPACE</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    State-of-the-art physical infrastructure, training programs, and access to a network of like-minded collaborators and partners.
+                    Access to vibrant and collaborative workspaces.
                   </p>
                   <div className="text-xs text-orange-500 font-medium mt-2">→ More</div>
                 </div>
               </div>
 
-              {/* Acceleration Block */}
+              {/* Mentorship Block */}
               <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
                 <div className="bg-blue-50 p-6 rounded-2xl border border-blue-200 mb-4 group-hover:shadow-lg transition-shadow">
-                  <Zap className="w-12 h-12 text-blue-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-blue-600 mb-2">ACCELERATION</h3>
+                  <Users className="w-12 h-12 text-blue-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-blue-600 mb-2">MENTORSHIP</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Workshops, diagnostics, problem-solving, bespoke coaching, and support, curated to the startups' goals and stages.
+                    One-on-one and group guidance from industry experts.
                   </p>
                   <div className="text-xs text-blue-500 font-medium mt-2">→ More</div>
                 </div>
               </div>
 
-              {/* Insights Block */}
+              {/* NVIDIA Data Centres Block */}
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-purple-50 p-6 rounded-2xl border border-purple-200 mb-4 group-hover:shadow-lg transition-shadow">
+                  <Database className="w-12 h-12 text-purple-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-purple-600 mb-2">NVIDIA DATA CENTRES</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    High-performance computing infrastructure for startups.
+                  </p>
+                  <div className="text-xs text-purple-500 font-medium mt-2">→ More</div>
+                </div>
+              </div>
+
+              {/* AI/ML Labs Block */}
               <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
                 <div className="bg-pink-50 p-6 rounded-2xl border border-pink-200 mb-4 group-hover:shadow-lg transition-shadow">
-                  <TrendingUp className="w-12 h-12 text-pink-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-pink-600 mb-2">INSIGHTS</h3>
+                  <Brain className="w-12 h-12 text-pink-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-pink-600 mb-2">AI/ML LABS</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Rigorous research and data-driven tools, learning resources and insights for entrepreneurs and their champions.
+                    Advanced labs to experiment, build, and test AI/ML models.
                   </p>
                   <div className="text-xs text-pink-500 font-medium mt-2">→ More</div>
                 </div>
               </div>
 
-              {/* Fund Incubation Block */}
+              {/* VC Connect Block */}
               <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
                 <div className="bg-teal-50 p-6 rounded-2xl border border-teal-200 mb-4 group-hover:shadow-lg transition-shadow">
-                  <DollarSign className="w-12 h-12 text-teal-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-teal-600 mb-2">FUND INCUBATION</h3>
+                  <Headphones className="w-12 h-12 text-teal-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-teal-600 mb-2">VC CONNECT</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Incubating Venture Funds for the Indian Early-Stage Market.
+                    Direct connections to leading venture capital firms.
                   </p>
                   <div className="text-xs text-teal-500 font-medium mt-2">→ More</div>
                 </div>
