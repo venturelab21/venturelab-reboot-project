@@ -109,10 +109,10 @@ const Hero = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              We Give <span className="text-orange-500">Everything</span> It Takes
+              We Empower <span className="text-orange-500">Bold Ideas</span> from Day One
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              We back fearless entrepreneurs building disruptive solutions. We stand with the startups at their risky early stages, when they need most support while there is hardly any available.
+              At VentureLab Thapar, we champion visionary entrepreneurs ready to challenge the status quo. We provide critical support at the riskiest, earliest stages of their journey—when belief, resources, and guidance matter the most.
             </p>
           </div>
 
