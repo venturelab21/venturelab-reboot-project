@@ -2,7 +2,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Sparkles, ExternalLink, TrendingUp } from "lucide-react";
+import { Sparkles, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface DisplayCardProps {
@@ -106,17 +106,9 @@ function DisplayCard({
         </p>
       )}
       
-      {/* Footer with Funding and CTA */}
+      {/* Footer with CTA */}
       <div className="flex items-center justify-between mt-auto">
         <div className="flex flex-col gap-2">
-          {funding && (
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-semibold text-green-600">
-                {funding}
-              </span>
-            </div>
-          )}
           {date && !funding && (
             <div className="text-xs text-gray-500">
               {date}
