@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight, Sparkles } from "lucide-react";
@@ -33,16 +34,16 @@ const InvestmentThesisSection = () => {
       ),
     },
     {
-      title: "Lifestyle",
-      description: "Enhancing everyday life through wellness, learning, travel, productivity, and culture",
-      tagline: "Life Enhanced",
+      title: "B2B SaaS",
+      description: "Building software solutions that help businesses optimize operations, enhance productivity, and scale efficiently",
+      tagline: "Business Innovation",
       gradient: "from-purple-50 to-violet-100",
       iconBg: "bg-purple-500",
       textColor: "text-purple-700",
       hoverGradient: "hover:from-purple-100 hover:to-violet-200",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
       ),
     },
@@ -110,7 +111,7 @@ const InvestmentThesisSection = () => {
               We invest at the pre-seed stage in technology products, services, or processes across{" "}
               <span className="font-bold text-blue-600">FinTech</span>,{" "}
               <span className="font-bold text-green-600">Consumer Internet</span>,{" "}
-              <span className="font-bold text-pink-600">HealthTech</span>, Lifestyle, and Deep Tech.
+              <span className="font-bold text-pink-600">HealthTech</span>, B2B SaaS, and Deep Tech.
             </p>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
               We also back{" "}
