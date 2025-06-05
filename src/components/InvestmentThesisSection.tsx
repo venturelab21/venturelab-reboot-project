@@ -62,7 +62,7 @@ const InvestmentThesisSection = () => {
       ),
     },
     {
-      title: "HealthTech",
+      title: "Healthcare",
       description: "Building platforms for preventive care, digital health, and longevity",
       tagline: "Digital Wellness",
       gradient: "from-pink-50 to-rose-100",
@@ -111,7 +111,7 @@ const InvestmentThesisSection = () => {
               We invest at the pre-seed stage in technology products, services, or processes across{" "}
               <span className="font-bold text-blue-600">FinTech</span>,{" "}
               <span className="font-bold text-green-600">Consumer Internet</span>,{" "}
-              <span className="font-bold text-pink-600">HealthTech</span>, B2B SaaS, and Deep Tech.
+              <span className="font-bold text-pink-600">Healthcare</span>, B2B SaaS, and Deep Tech.
             </p>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
               We also back{" "}
