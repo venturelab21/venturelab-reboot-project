@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star } from "lucide-react";
 import DisplayCards from "@/components/ui/display-cards";
-import { useState } from "react";
 
 interface StartupProps {
   id: string;
@@ -104,10 +103,6 @@ const startups: StartupProps[] = [
 ];
 
 const PortfolioSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  
-  const featuredStartups = startups.filter(startup => startup.featured);
-  
   // Convert startups to enhanced display cards format
   const startupCards = startups.slice(0, 6).map(startup => ({
     title: startup.name,
@@ -119,14 +114,6 @@ const PortfolioSection = () => {
     ctaText: "Know More",
     featured: startup.featured
   }));
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % featuredStartups.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + featuredStartups.length) % featuredStartups.length);
-  };
 
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -144,90 +131,6 @@ const PortfolioSection = () => {
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
             Discover the innovative companies we've backed from day one—transforming bold ideas into market-leading solutions.
           </p>
-        </div>
-
-        {/* Featured Startups Carousel */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">Featured Startups</h3>
-          <div className="relative max-w-4xl mx-auto">
-            <div className="overflow-hidden rounded-2xl bg-white shadow-xl">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {featuredStartups.map((startup, index) => (
-                  <div key={startup.id} className="w-full flex-shrink-0">
-                    <div className="flex flex-col md:flex-row items-center p-8 md:p-12">
-                      <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
-                        <div className="flex items-center gap-4 mb-4">
-                          {startup.logo && (
-                            <img 
-                              src={startup.logo} 
-                              alt={`${startup.name} logo`} 
-                              className="h-12 w-auto object-contain"
-                            />
-                          )}
-                          <div>
-                            <span className="inline-block px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded-full mb-2">
-                              {startup.category}
-                            </span>
-                            <h4 className="text-2xl font-bold text-gray-900">{startup.name}</h4>
-                          </div>
-                        </div>
-                        <p className="text-gray-600 text-lg leading-relaxed mb-4">{startup.description}</p>
-                        <div className="flex items-center gap-4">
-                          <span className="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">
-                            Funding: {startup.funding}
-                          </span>
-                          <Button variant="outline" size="sm" className="group">
-                            Know More 
-                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </div>
-                      </div>
-                      <div className="md:w-1/2">
-                        <img 
-                          src={startup.image} 
-                          alt={startup.name}
-                          className="w-full h-64 object-cover rounded-xl"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Carousel Controls */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors"
-              aria-label="Previous startup"
-            >
-              <ArrowRight className="w-5 h-5 rotate-180" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors"
-              aria-label="Next startup"
-            >
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            
-            {/* Carousel Indicators */}
-            <div className="flex justify-center mt-6 gap-2">
-              {featuredStartups.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-blue-500' : 'bg-gray-300'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
         </div>
         
         {/* Startups Grid */}
