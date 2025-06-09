@@ -7,7 +7,6 @@ import MentorSection from "@/components/MentorSection";
 import Footer from "@/components/Footer";
 import InvestmentThesisSection from "@/components/InvestmentThesisSection";
 import PartnersSection from "@/components/PartnersSection";
-import StatisticsSection from "@/components/StatisticsSection";
 
 const Index = () => {
   console.log("Index page is rendering");
@@ -19,7 +18,6 @@ const Index = () => {
         <Hero />
         <ProgramsSection />
         <InvestmentThesisSection />
-        <StatisticsSection />
         <PortfolioSection />
         <PartnersSection />
         <MentorSection />
