@@ -10,6 +10,7 @@ import PartnersSection from "@/components/PartnersSection";
 
 const Index = () => {
   console.log("Index page is rendering");
+  console.log("All components imported successfully");
   
   return (
     <div className="min-h-screen flex flex-col">
