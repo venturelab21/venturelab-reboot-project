@@ -20,16 +20,16 @@ const InvestmentThesisSection = () => {
       ),
     },
     {
-      title: "CleanTech",
-      description: "Powering sustainability through energy innovation, mobility, and circular models",
-      tagline: "Clean Energy Future",
+      title: "Consumer Internet",
+      description: "Building engaging platforms, marketplaces, and digital experiences for everyday consumers",
+      tagline: "Connected Experiences",
       gradient: "from-green-50 to-emerald-100",
       iconBg: "bg-green-500",
       textColor: "text-green-700",
       hoverGradient: "hover:from-green-100 hover:to-emerald-200",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
         </svg>
       ),
     },
@@ -48,23 +48,23 @@ const InvestmentThesisSection = () => {
       ),
     },
     {
-      title: "Industry 4.0",
-      description: "Enabling smart manufacturing, automation, IoT, and industrial intelligence",
-      tagline: "Smart Manufacturing",
+      title: "Deep Tech",
+      description: "Advancing breakthrough technologies in AI, quantum computing, biotechnology, and emerging sciences",
+      tagline: "Future Innovation",
       gradient: "from-orange-50 to-amber-100",
       iconBg: "bg-orange-500",
       textColor: "text-orange-700",
       hoverGradient: "hover:from-orange-100 hover:to-amber-200",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
         </svg>
       ),
     },
     {
-      title: "HealthTech",
-      description: "Building platforms for preventive care, digital health, and longevity",
-      tagline: "Digital Wellness",
+      title: "Healthcare",
+      description: "Building platforms for preventive care, digital health solutions, and medical innovation",
+      tagline: "Health Innovation",
       gradient: "from-pink-50 to-rose-100",
       iconBg: "bg-pink-500",
       textColor: "text-pink-700",
@@ -110,8 +110,8 @@ const InvestmentThesisSection = () => {
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
               We invest at the pre-seed stage in technology products, services, or processes across{" "}
               <span className="font-bold text-blue-600">FinTech</span>,{" "}
-              <span className="font-bold text-green-600">CleanTech</span>,{" "}
-              <span className="font-bold text-pink-600">HealthTech</span>, B2B SaaS, and Industry 4.0.
+              <span className="font-bold text-green-600">Consumer Internet</span>,{" "}
+              <span className="font-bold text-pink-600">Healthcare</span>, B2B SaaS, and Deep Tech.
             </p>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
               We also back{" "}
