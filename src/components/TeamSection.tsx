@@ -3,7 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { ExternalLink, User, Building2, Award, MapPin, Calendar } from "lucide-react";
+import { ExternalLink, MapPin, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 interface TeamMemberProps {
@@ -105,30 +106,6 @@ const teamMembers: TeamMemberProps[] = [
   }
 ];
 
-const roleConfig = {
-  leadership: {
-    title: "Executive Leadership",
-    subtitle: "Visionary leaders shaping the future of entrepreneurship",
-    icon: Award,
-    color: "from-blue-600 to-blue-700",
-    badgeColor: "bg-blue-100 text-blue-800 border-blue-200"
-  },
-  management: {
-    title: "Program Management",
-    subtitle: "Experienced managers driving program excellence",
-    icon: Building2,
-    color: "from-teal-600 to-teal-700",
-    badgeColor: "bg-teal-100 text-teal-800 border-teal-200"
-  },
-  coordinators: {
-    title: "Coordination Team",
-    subtitle: "Dedicated coordinators ensuring seamless operations",
-    icon: User,
-    color: "from-purple-600 to-purple-700",
-    badgeColor: "bg-purple-100 text-purple-800 border-purple-200"
-  }
-};
-
 const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -136,52 +113,45 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
     <HoverCard>
       <HoverCardTrigger asChild>
         <Card 
-          className="group relative overflow-hidden bg-white border border-gray-200 transition-all duration-500 transform cursor-pointer hover:shadow-2xl hover:-translate-y-4 hover:border-gray-300"
+          className="group relative overflow-hidden bg-white border border-gray-200 transition-all duration-500 transform cursor-pointer hover:shadow-2xl hover:-translate-y-2 hover:border-gray-300"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* Image with consistent aspect ratio */}
-          <div className="relative w-full aspect-[4/5] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+          {/* Consistent Image Container */}
+          <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
             <img 
               src={member.image} 
               alt={member.name} 
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-              style={{ objectPosition: '50% 15%' }}
+              className="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
             />
             
-            {/* Gradient overlay */}
+            {/* Gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             {/* LinkedIn button */}
             {member.linkedinUrl && (
-              <button
+              <Button
+                size="sm"
+                variant="secondary"
                 onClick={(e) => {
                   e.stopPropagation();
                   window.open(member.linkedinUrl, '_blank', 'noopener,noreferrer');
                 }}
-                className={`absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-3 rounded-full transition-all duration-500 hover:bg-blue-50 hover:scale-110 ${
+                className={`absolute top-4 right-4 h-10 w-10 p-0 bg-white/95 backdrop-blur-sm transition-all duration-500 hover:bg-blue-50 hover:scale-110 ${
                   isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                 }`}
                 aria-label={`View ${member.name}'s LinkedIn profile`}
               >
-                <ExternalLink size={18} className="text-blue-600" />
-              </button>
+                <ExternalLink size={16} className="text-blue-600" />
+              </Button>
             )}
-
-            {/* Role badge */}
-            <div className={`absolute top-4 left-4 transition-all duration-500 ${
-              isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-            }`}>
-              <Badge className={`${roleConfig[member.role].badgeColor} font-medium text-xs px-3 py-1`}>
-                {roleConfig[member.role].title.split(' ')[0]}
-              </Badge>
-            </div>
           </div>
           
-          {/* Content */}
+          {/* Content Section */}
           <div className="p-6">
+            {/* Name and Title */}
             <div className="mb-4">
-              <h3 className="font-bold text-xl text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+              <h3 className="font-bold text-xl text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 line-clamp-1">
                 {member.name}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-3 line-clamp-2">
@@ -195,20 +165,20 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
                 <Badge 
                   key={index} 
                   variant="secondary" 
-                  className="text-xs px-3 py-1 bg-gray-50 text-gray-700 hover:bg-gray-100 transition-colors"
+                  className="text-xs px-3 py-1 bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 transition-colors"
                 >
                   {skill}
                 </Badge>
               ))}
               {member.expertise.length > 2 && (
-                <Badge variant="outline" className="text-xs px-2 py-1 text-gray-500">
+                <Badge variant="outline" className="text-xs px-2 py-1 text-gray-500 border-gray-300">
                   +{member.expertise.length - 2}
                 </Badge>
               )}
             </div>
 
-            {/* Location and year */}
-            <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-gray-100">
+            {/* Footer with location and year */}
+            <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-gray-100">
               {member.location && (
                 <div className="flex items-center gap-1">
                   <MapPin size={12} />
@@ -226,7 +196,7 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
         </Card>
       </HoverCardTrigger>
       
-      {/* Hover card with detailed info */}
+      {/* Detailed hover card */}
       <HoverCardContent className="w-80 p-6 bg-white border border-gray-200 shadow-xl">
         <div className="flex gap-4">
           <Avatar className="h-16 w-16">
@@ -260,56 +230,29 @@ const TeamMemberCard = ({ member }: { member: TeamMemberProps }) => {
 };
 
 const TeamSection = () => {
-  const groupedMembers = {
-    leadership: teamMembers.filter(member => member.role === 'leadership'),
-    management: teamMembers.filter(member => member.role === 'management'),
-    coordinators: teamMembers.filter(member => member.role === 'coordinators'),
-  };
-
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         {/* Section introduction */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-lg text-gray-600 leading-relaxed">
-            Our team combines decades of experience in entrepreneurship, technology, and business development 
+            Our diverse team combines decades of experience in entrepreneurship, technology, and business development 
             to provide comprehensive support for startups at every stage of their journey.
           </p>
         </div>
 
-        {Object.entries(groupedMembers).map(([roleKey, members], sectionIndex) => {
-          const role = roleConfig[roleKey as keyof typeof roleConfig];
-          const RoleIcon = role.icon;
-          
-          return (
-            <div key={roleKey} className={`mb-20 last:mb-0 animate-fade-in-delay-${sectionIndex + 1}`}>
-              {/* Enhanced section header */}
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center mb-6">
-                  <div className={`p-4 bg-gradient-to-r ${role.color} rounded-2xl shadow-lg`}>
-                    <RoleIcon className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-                <h2 className="heading-lg text-gray-900 mb-3">{role.title}</h2>
-                <p className="text-gray-600 text-lg max-w-2xl mx-auto">{role.subtitle}</p>
-                <div className="mt-6 w-16 h-1 bg-gradient-to-r from-gray-300 to-gray-400 rounded-full mx-auto"></div>
-              </div>
-
-              {/* Team grid with consistent sizing */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                {members.map((member, index) => (
-                  <div 
-                    key={member.id} 
-                    className="animate-fade-in"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <TeamMemberCard member={member} />
-                  </div>
-                ))}
-              </div>
+        {/* Unified team grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {teamMembers.map((member, index) => (
+            <div 
+              key={member.id} 
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <TeamMemberCard member={member} />
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );
