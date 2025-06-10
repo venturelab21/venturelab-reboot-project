@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight, Sparkles } from "lucide-react";
@@ -105,18 +104,13 @@ const InvestmentThesisSection = () => {
             Sector Focus
           </h2>
           
-          {/* Improved text hierarchy with line breaks */}
+          {/* Updated text without color highlighting */}
           <div className="max-w-4xl mx-auto space-y-4">
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-              We invest at the pre-seed stage in technology products, services, or processes across{" "}
-              <span className="font-bold text-blue-600">FinTech</span>,{" "}
-              <span className="font-bold text-green-600">Consumer Internet</span>,{" "}
-              <span className="font-bold text-pink-600">Healthcare</span>, B2B SaaS, and Deep Tech.
+              We invest at the pre-seed stage in technology products, services, or processes across FinTech, Consumer Internet, Healthcare, B2B SaaS, and Deep Tech.
             </p>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              We also back{" "}
-              <span className="font-bold text-indigo-600">Moonshot Opportunities</span>{" "}
-              that challenge the status quo and reshape industries.
+              We also back Moonshot Opportunities that challenge the status quo and reshape industries.
             </p>
           </div>
         </div>
