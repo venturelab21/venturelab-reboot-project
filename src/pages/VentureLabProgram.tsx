@@ -403,5 +403,3 @@ const VentureLabProgram = () => {
 };
 
 export default VentureLabProgram;
-
-</edits_to_apply>
