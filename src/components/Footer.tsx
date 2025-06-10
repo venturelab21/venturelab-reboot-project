@@ -1,4 +1,5 @@
 
+
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
@@ -36,6 +37,7 @@ const Footer = () => {
               <li><Link to="/portfolio" className="text-gray-400 hover:text-white">Portfolio</Link></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-white">Contact</Link></li>
               <li><Link to="/careers" className="text-gray-400 hover:text-white">Careers</Link></li>
+              <li><Link to="/blog" className="text-gray-400 hover:text-white">Blog</Link></li>
             </ul>
           </div>
           
@@ -84,3 +86,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
