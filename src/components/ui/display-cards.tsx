@@ -2,8 +2,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Sparkles, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Sparkles } from "lucide-react";
 
 interface DisplayCardProps {
   className?: string;
@@ -15,10 +14,7 @@ interface DisplayCardProps {
   titleClassName?: string;
   logo?: string;
   category?: string;
-  funding?: string;
   onClick?: () => void;
-  ctaText?: string;
-  featured?: boolean;
 }
 
 function DisplayCard({
@@ -31,109 +27,56 @@ function DisplayCard({
   titleClassName = "text-blue-500",
   logo,
   category,
-  funding,
-  onClick,
-  ctaText = "Learn More",
-  featured = false
+  onClick
 }: DisplayCardProps) {
   return (
     <div 
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-xl group",
-        featured && "ring-2 ring-blue-200 bg-gradient-to-br from-blue-50 to-white",
+        "relative overflow-hidden rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-lg",
         className
       )}
       onClick={onClick}
       role={onClick ? "button" : undefined}
-      tabIndex={onClick ? 0 : undefined}
-      onKeyDown={(e) => {
-        if (onClick && (e.key === 'Enter' || e.key === ' ')) {
-          e.preventDefault();
-          onClick();
-        }
-      }}
-      aria-label={onClick ? `Visit ${title}` : undefined}
     >
-      {/* Featured Badge */}
-      {featured && (
-        <div className="absolute top-4 right-4">
-          <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
-            <Sparkles className="w-3 h-3" />
-            Featured
-          </div>
-        </div>
-      )}
-
-      {/* Category Badge */}
       {category && (
-        <div className="mb-4">
-          <span className="inline-block px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-700 rounded-full group-hover:bg-blue-100 group-hover:text-blue-700 transition-colors">
+        <div className="mb-3">
+          <span className="inline-block px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full">
             {category}
           </span>
         </div>
       )}
       
-      {/* Header with Logo and Title */}
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex-1 min-w-0">
-          <h3 className={cn(
-            "text-xl font-bold line-clamp-2 group-hover:text-blue-600 transition-colors mb-2", 
-            titleClassName
-          )}>
-            {title}
-          </h3>
-        </div>
+      <div className="flex items-center justify-between mt-2">
+        <h3 className={cn("text-xl font-semibold line-clamp-2 max-w-[60%] group-hover:text-blue-600 transition-colors", titleClassName)}>
+          {title}
+        </h3>
         
         {logo ? (
-          <div className="flex-shrink-0 w-16 h-16 ml-4 flex items-center justify-center bg-gray-50 rounded-xl group-hover:bg-white transition-colors">
+          <div className="flex-shrink-0 w-24 h-16 flex items-center justify-center">
             <img 
               src={logo} 
               alt={`${title} logo`} 
-              className="max-h-14 max-w-14 object-contain" 
+              className="max-h-16 max-w-24 object-contain" 
             />
           </div>
         ) : (
-          <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gray-100 group-hover:bg-blue-100 transition-colors">
+          <div className="flex items-center justify-center h-12 w-12 rounded-full bg-gray-100">
             {icon}
           </div>
         )}
       </div>
       
-      {/* Description */}
       {description && (
-        <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2 mt-3">
           {description}
         </p>
       )}
       
-      {/* Footer with CTA */}
-      <div className="flex items-center justify-between mt-auto">
-        <div className="flex flex-col gap-2">
-          {date && !funding && (
-            <div className="text-xs text-gray-500">
-              {date}
-            </div>
-          )}
+      {date && (
+        <div className="text-xs text-gray-500 mt-auto">
+          {date}
         </div>
-        
-        {onClick && (
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border-blue-200 text-blue-600 hover:bg-blue-50"
-            onClick={(e) => {
-              e.stopPropagation();
-              onClick();
-            }}
-          >
-            {ctaText}
-            <ExternalLink className="w-3 h-3 ml-2" />
-          </Button>
-        )}
-      </div>
-      
-      {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+      )}
     </div>
   );
 }
@@ -147,11 +90,11 @@ interface DisplayCardsProps {
 export default function DisplayCards({
   cards = [],
   className,
-  gridClassName = "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+  gridClassName
 }: DisplayCardsProps) {
   return (
     <div className={cn("opacity-100 animate-in fade-in-0 duration-700", className)}>
-      <div className={cn("grid gap-8", gridClassName)}>
+      <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", gridClassName)}>
         {cards.map((cardProps, index) => (
           <DisplayCard key={index} {...cardProps} />
         ))}

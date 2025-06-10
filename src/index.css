@@ -92,53 +92,21 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
     font-weight: 400;
-    font-optical-sizing: auto;
-    line-height: 1.6;
-    letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1.2;
-    font-optical-sizing: auto;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
   .font-display {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    font-weight: 900;
-    letter-spacing: -0.05em;
-    line-height: 1.1;
-    font-optical-sizing: auto;
-  }
-
-  .font-black {
-    font-weight: 900;
-    letter-spacing: -0.04em;
-  }
-
-  .font-extrabold {
+    font-family: 'Inter', sans-serif;
     font-weight: 800;
     letter-spacing: -0.03em;
-  }
-
-  .font-bold {
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .font-semibold {
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  .font-medium {
-    font-weight: 500;
-    letter-spacing: 0;
   }
 }
 
@@ -247,51 +215,38 @@ a.rounded-full {
   color: #F97316; /* Bright Orange */
 }
 
-/* Enhanced Typography for VC-Friendly Design */
-.heading-hero {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-  font-optical-sizing: auto;
-}
-
+/* Professional Typography Enhancements */
 .heading-xl {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-size: 3.5rem;
+  font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.04em;
-  font-optical-sizing: auto;
 }
 
 .heading-lg {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: 2.5rem;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.03em;
-  font-optical-sizing: auto;
 }
 
 .heading-md {
-  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  font-size: 1.875rem;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.025em;
-  font-optical-sizing: auto;
 }
 
 .text-lg-medium {
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.6;
-  letter-spacing: -0.01em;
 }
 
 .text-base-medium {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: 0;
 }
 
 /* Enhanced card styles */
@@ -312,26 +267,4 @@ a.rounded-full {
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 24px;
-}
-
-/* Professional number formatting */
-.metric-number {
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1;
-}
-
-/* Enhanced contrast for better readability */
-.high-contrast {
-  color: #111827;
-  font-weight: 600;
-}
-
-.medium-contrast {
-  color: #374151;
-  font-weight: 500;
-}
-
-.low-contrast {
-  color: #6B7280;
-  font-weight: 400;
 }

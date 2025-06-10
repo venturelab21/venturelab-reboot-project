@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight, Sparkles } from "lucide-react";
@@ -19,49 +20,49 @@ const InvestmentThesisSection = () => {
       ),
     },
     {
-      title: "Consumer Internet",
-      description: "Building scalable platforms that connect users, create communities, and enhance digital experiences",
-      tagline: "Digital Connection",
+      title: "CleanTech",
+      description: "Powering sustainability through energy innovation, mobility, and circular models",
+      tagline: "Clean Energy Future",
       gradient: "from-green-50 to-emerald-100",
       iconBg: "bg-green-500",
       textColor: "text-green-700",
       hoverGradient: "hover:from-green-100 hover:to-emerald-200",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
     },
     {
-      title: "B2B SaaS",
-      description: "Building software solutions that help businesses optimize operations, enhance productivity, and scale efficiently",
-      tagline: "Business Innovation",
+      title: "Lifestyle",
+      description: "Enhancing everyday life through wellness, learning, travel, productivity, and culture",
+      tagline: "Life Enhanced",
       gradient: "from-purple-50 to-violet-100",
       iconBg: "bg-purple-500",
       textColor: "text-purple-700",
       hoverGradient: "hover:from-purple-100 hover:to-violet-200",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
     },
     {
-      title: "Deep Tech",
-      description: "Advancing cutting-edge technologies including AI, quantum computing, biotech, and emerging sciences",
-      tagline: "Frontier Innovation",
+      title: "Industry 4.0",
+      description: "Enabling smart manufacturing, automation, IoT, and industrial intelligence",
+      tagline: "Smart Manufacturing",
       gradient: "from-orange-50 to-amber-100",
       iconBg: "bg-orange-500",
       textColor: "text-orange-700",
       hoverGradient: "hover:from-orange-100 hover:to-amber-200",
       icon: (
         <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
     },
     {
-      title: "Healthcare",
+      title: "HealthTech",
       description: "Building platforms for preventive care, digital health, and longevity",
       tagline: "Digital Wellness",
       gradient: "from-pink-50 to-rose-100",
@@ -104,13 +105,18 @@ const InvestmentThesisSection = () => {
             Sector Focus
           </h2>
           
-          {/* Updated text with consistent formatting */}
+          {/* Improved text hierarchy with line breaks */}
           <div className="max-w-4xl mx-auto space-y-4">
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-              We invest at the pre-seed stage in technology products, services, or processes across FinTech, Consumer Internet, Healthcare, B2B SaaS, and Deep Tech.
+              We invest at the pre-seed stage in technology products, services, or processes across{" "}
+              <span className="font-bold text-blue-600">FinTech</span>,{" "}
+              <span className="font-bold text-green-600">CleanTech</span>,{" "}
+              <span className="font-bold text-pink-600">HealthTech</span>, Lifestyle, and Industry 4.0.
             </p>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              We also back Moonshot Opportunities that challenge the status quo and reshape industries.
+              We also back{" "}
+              <span className="font-bold text-indigo-600">Moonshot Opportunities</span>{" "}
+              that challenge the status quo and reshape industries.
             </p>
           </div>
         </div>
