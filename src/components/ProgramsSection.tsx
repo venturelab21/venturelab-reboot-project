@@ -51,11 +51,11 @@ const Program = ({ title, label, description, icon, link, colorTheme }: ProgramP
   const theme = themeClasses[colorTheme];
 
   return (
-    <Card className={`relative bg-gray-900/95 backdrop-blur-sm rounded-2xl overflow-hidden border ${theme.border} shadow-xl ${theme.cardShadow} hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] min-h-[280px] sm:min-h-[320px]`}>
+    <Card className={`relative bg-gray-900/95 backdrop-blur-sm rounded-2xl overflow-hidden border ${theme.border} shadow-xl ${theme.cardShadow} hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] flex flex-col h-full`}>
       <div className={`absolute inset-0 h-full w-full bg-gradient-to-br ${theme.gradient} transform scale-[0.80] rounded-full blur-3xl`} />
       <div className={`h-2 ${theme.topBar} relative z-10`}></div>
       
-      <CardHeader className="pt-6 pb-4 relative z-10 px-4 sm:px-6">
+      <CardHeader className="pt-6 pb-4 relative z-10 px-4 sm:px-6 flex-grow">
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1">
             <div className="flex items-center mb-3">
@@ -78,7 +78,7 @@ const Program = ({ title, label, description, icon, link, colorTheme }: ProgramP
         </p>
       </CardHeader>
       
-      <CardFooter className="relative z-10 px-4 sm:px-6 pb-6">
+      <CardFooter className="relative z-10 px-4 sm:px-6 pb-6 mt-auto">
         <Button 
           asChild 
           variant="outline" 
