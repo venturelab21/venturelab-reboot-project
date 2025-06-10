@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
@@ -44,7 +45,12 @@ const Footer = () => {
               <p>Thapar Institute of Engineering & Technology</p>
               <p>Patiala, Punjab, 147004</p>
               <p>India</p>
-              <p className="mt-2">Email: <a href="mailto:manager_step@thapar.edu" className="hover:text-white">manager_step@thapar.edu</a></p>
+              <div className="mt-4 pt-4 border-t border-gray-700">
+                <p>TIET, 2nd Floor, Orchid Centre,</p>
+                <p>Rapid Metro Sector 54 Station,</p>
+                <p>Gurugram, Haryana</p>
+              </div>
+              <p className="mt-4">Email: <a href="mailto:manager_step@thapar.edu" className="hover:text-white">manager_step@thapar.edu</a></p>
               <p>Phone: <a href="tel:+919799777370" className="hover:text-white">+91 97997 77370</a></p>
             </address>
           </div>
