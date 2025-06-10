@@ -103,7 +103,7 @@ const startups: StartupProps[] = [
 ];
 
 const PortfolioSection = () => {
-  // Convert startups to enhanced display cards format
+  // Convert startups to enhanced display cards format - removed featured property
   const startupCards = startups.slice(0, 6).map(startup => ({
     title: startup.name,
     description: startup.description,
@@ -112,7 +112,7 @@ const PortfolioSection = () => {
     funding: startup.funding,
     className: "group cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-gray-100 hover:border-blue-200",
     ctaText: "Know More",
-    featured: startup.featured
+    featured: false // Explicitly set to false to remove featured badges
   }));
 
   return (
