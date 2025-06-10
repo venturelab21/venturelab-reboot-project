@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Spotlight } from "@/components/ui/spotlight";
-import DisplayCards from "@/components/ui/display-cards";
+import { EnhancedCard } from "@/components/ui/enhanced-card";
+import { FilterBar } from "@/components/ui/filter-bar";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Filter, Grid, List } from "lucide-react";
+import { TrendingUp, Award, Building2 } from "lucide-react";
 
 interface Company {
   id: number;
@@ -14,6 +15,7 @@ interface Company {
   logo?: string;
   description?: string;
   funding?: string;
+  featured?: boolean;
 }
 
 const companies: Company[] = [
@@ -23,26 +25,28 @@ const companies: Company[] = [
     website: "https://www.visar.co.in/", 
     category: "Deep Tech", 
     logo: "https://www.visar.co.in/assets/logo-CgcTpD-z.svg",
-    description: "Advanced technology solutions driving digital transformation across industries.",
-    funding: "₹5.2 Cr"
+    description: "Advanced technology solutions driving digital transformation across industries with AI and machine learning capabilities.",
+    funding: "₹5.2 Cr",
+    featured: true
   },
   { 
     id: 21, 
     name: "Eternz", 
     website: "https://www.eternz.com/", 
-    category: "Others", 
+    category: "FinTech", 
     logo: "/lovable-uploads/d88bb36a-2af7-4d92-a981-3b843abf2943.png",
-    description: "Democratizing premium asset investment through fractional ownership and AI optimization.",
+    description: "Democratizing premium asset investment through fractional ownership and AI optimization for better returns.",
     funding: "₹2.0 Cr"
   },
   { 
     id: 23, 
     name: "Foxo", 
     website: "https://www.foxo.club/", 
-    category: "Digitization", 
+    category: "HealthTech", 
     logo: "/lovable-uploads/f806cfe2-f1ff-4e33-9013-a68caf43e589.png",
-    description: "Remote patient monitoring platform for chronic diseases using wearable technology.",
-    funding: "₹3.8 Cr"
+    description: "Remote patient monitoring platform for chronic diseases using advanced wearable technology and AI analytics.",
+    funding: "₹3.8 Cr",
+    featured: true
   },
   { 
     id: 22, 
@@ -244,159 +248,162 @@ const companies: Company[] = [
 ];
 
 const Portfolio = () => {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [selectedSort, setSelectedSort] = useState("Latest");
   
-  const categories = ["All", "Deep Tech", "Digitization", "Climate Tech", "Others"];
+  const categories = ["All", "Deep Tech", "HealthTech", "FinTech", "Climate Tech", "EdTech"];
+  const sortOptions = ["Latest", "Funding Amount", "Alphabetical", "Featured First"];
   
-  const filteredCompanies = activeCategory === "All"
-    ? companies
-    : companies.filter(company => company.category === activeCategory);
+  const filteredAndSortedCompanies = useMemo(() => {
+    let filtered = companies.filter(company => {
+      const matchesSearch = company.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                           company.description?.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = selectedCategory === "All" || company.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+
+    // Sort companies
+    filtered.sort((a, b) => {
+      switch (selectedSort) {
+        case "Funding Amount":
+          const fundingA = parseFloat(a.funding?.replace(/[^\d.]/g, '') || '0');
+          const fundingB = parseFloat(b.funding?.replace(/[^\d.]/g, '') || '0');
+          return fundingB - fundingA;
+        case "Alphabetical":
+          return a.name.localeCompare(b.name);
+        case "Featured First":
+          if (a.featured && !b.featured) return -1;
+          if (!a.featured && b.featured) return 1;
+          return 0;
+        default:
+          return b.id - a.id; // Latest first
+      }
+    });
+
+    return filtered;
+  }, [searchTerm, selectedCategory, selectedSort]);
 
   const visitWebsite = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
-  // Transform companies data to enhanced DisplayCard format
-  const companyCards = filteredCompanies.map(company => ({
-    title: company.name,
-    description: company.description || "Innovative company driving change in their industry.",
-    logo: company.logo,
-    category: company.category,
-    funding: company.funding,
-    className: `group cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 hover:border-blue-200 ${
-      viewMode === "list" ? "h-auto" : "h-[220px]"
-    }`,
-    onClick: () => visitWebsite(company.website),
-    ctaText: "Visit Website"
-  }));
-
-  const getCategoryCount = (category: string) => {
-    if (category === "All") return companies.length;
-    return companies.filter(company => company.category === category).length;
-  };
+  const stats = [
+    { label: "Portfolio Companies", value: companies.length, icon: Building2 },
+    { label: "Total Funding", value: "₹50+ Cr", icon: TrendingUp },
+    { label: "Success Stories", value: "15+", icon: Award }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section */}
+        {/* Enhanced Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-24 relative overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
-            <div className="flex justify-center mb-3">
-              <div className="w-24 h-1 bg-blue-500 rounded-full"></div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-8 text-gray-900">
-              Our Portfolio Companies
-            </h1>
-            <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12 leading-relaxed">
-              Meet the innovative companies that have grown with our support and are now making an impact in their industries. 
-              From deep tech to climate solutions, discover the future we're building together.
-            </p>
-            
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center gap-8 mb-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">{companies.length}+</div>
-                <div className="text-gray-600">Portfolio Companies</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600">₹50+ Cr</div>
-                <div className="text-gray-600">Total Funding</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600">{categories.length - 1}</div>
-                <div className="text-gray-600">Key Sectors</div>
-              </div>
-            </div>
-          </div>
-          <Spotlight 
-            className="from-blue-500/20 via-blue-500/10 to-transparent" 
-            size={400}
-          />
-        </section>
-
-        {/* Portfolio Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            {/* Enhanced Filter Controls */}
-            <div className="mb-12">
-              <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-8">
-                <div className="flex items-center gap-3">
-                  <Filter className="w-5 h-5 text-gray-600" />
-                  <span className="text-lg font-semibold text-gray-800">Filter by Category:</span>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-lg">
-                    <Button
-                      variant={viewMode === "grid" ? "default" : "ghost"}
-                      size="sm"
-                      onClick={() => setViewMode("grid")}
-                      className="px-3"
-                      aria-label="Grid view"
-                    >
-                      <Grid className="w-4 h-4" />
-                    </Button>
-                    <Button
-                      variant={viewMode === "list" ? "default" : "ghost"}
-                      size="sm"
-                      onClick={() => setViewMode("list")}
-                      className="px-3"
-                      aria-label="List view"
-                    >
-                      <List className="w-4 h-4" />
-                    </Button>
-                  </div>
-                </div>
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <Building2 className="w-4 h-4" />
+                Innovation Portfolio
               </div>
               
-              {/* Category Filter Buttons */}
-              <div className="flex flex-wrap justify-center gap-3">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setActiveCategory(category)}
-                    className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
-                      activeCategory === category
-                        ? "bg-blue-600 text-white shadow-lg scale-105"
-                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105"
-                    }`}
-                    aria-label={`Filter by ${category}`}
-                  >
-                    {category}
-                    <span className="ml-2 text-xs opacity-75">
-                      ({getCategoryCount(category)})
-                    </span>
-                  </button>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+                Our Portfolio
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Companies</span>
+              </h1>
+              
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Discover the innovative companies we've supported on their journey from 
+                startup to success. Each represents our commitment to fostering breakthrough technologies.
+              </p>
+
+              {/* Stats */}
+              <div className="flex flex-wrap justify-center gap-8 mb-8">
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center group">
+                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <stat.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
+                    <div className="text-gray-600">{stat.label}</div>
+                  </div>
                 ))}
               </div>
             </div>
-            
-            {/* Results Count */}
-            <div className="text-center mb-8">
-              <p className="text-lg text-gray-600">
-                Showing <span className="font-semibold text-gray-900">{filteredCompanies.length}</span> companies
-                {activeCategory !== "All" && (
-                  <span> in <span className="font-semibold text-blue-600">{activeCategory}</span></span>
-                )}
-              </p>
-            </div>
-            
-            {/* Display Cards Grid */}
-            <DisplayCards 
-              cards={companyCards} 
-              gridClassName={viewMode === "list" ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}
-            />
-            
-            {/* Empty State */}
-            {filteredCompanies.length === 0 && (
+          </div>
+          <Spotlight className="from-blue-500/20 via-blue-500/10 to-transparent" size={400} />
+        </section>
+
+        {/* Filter Bar */}
+        <FilterBar
+          searchTerm={searchTerm}
+          onSearchChange={setSearchTerm}
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
+          viewMode={viewMode}
+          onViewModeChange={setViewMode}
+          sortOptions={sortOptions}
+          selectedSort={selectedSort}
+          onSortChange={setSelectedSort}
+          resultCount={filteredAndSortedCompanies.length}
+        />
+
+        {/* Portfolio Grid */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            {filteredAndSortedCompanies.length === 0 ? (
               <div className="text-center py-16">
                 <div className="text-gray-400 text-6xl mb-4">🔍</div>
                 <h3 className="text-xl font-semibold text-gray-600 mb-2">No companies found</h3>
-                <p className="text-gray-500">Try selecting a different category or view all companies.</p>
+                <p className="text-gray-500">Try adjusting your search or filter criteria.</p>
+              </div>
+            ) : (
+              <div className={`grid gap-8 ${
+                viewMode === "list" 
+                  ? "grid-cols-1" 
+                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              }`}>
+                {filteredAndSortedCompanies.map((company) => (
+                  <EnhancedCard
+                    key={company.id}
+                    title={company.name}
+                    description={company.description}
+                    image={company.logo}
+                    category={company.category}
+                    funding={company.funding}
+                    featured={company.featured}
+                    type="portfolio"
+                    ctaText="Visit Website"
+                    onClick={() => visitWebsite(company.website)}
+                    className={viewMode === "list" ? "flex-row" : ""}
+                  />
+                ))}
               </div>
             )}
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Join Our Portfolio?
+              </h2>
+              <p className="text-xl text-blue-100 mb-8">
+                We're always looking for the next generation of innovative startups to support and grow with.
+              </p>
+              <Button 
+                size="lg" 
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full"
+                onClick={() => window.open('/apply', '_blank')}
+              >
+                Apply Now
+                <TrendingUp className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </section>
       </main>
@@ -406,3 +413,5 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
+```
