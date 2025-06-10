@@ -7,7 +7,7 @@ import ProgramOverview from "@/components/programs/sisfs/ProgramOverview";
 
 const SISFSProgram = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
       <main className="flex-grow">
         <Breadcrumbs />
