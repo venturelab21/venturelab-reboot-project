@@ -69,7 +69,7 @@ const Hero = () => {
           
           {/* Main headline */}
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-relaxed max-w-4xl mx-auto">
-            Your next big business idea gets shape here.
+            Seeking excellence, empowering entrepreneurs and enterprises in an effective ecosystem
           </h2>
           
           {/* Subheading */}
