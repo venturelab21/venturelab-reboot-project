@@ -24,10 +24,20 @@ import {
   TrendingUp,
   Heart,
   Award,
-  Handshake
+  Handshake,
+  Download
 } from "lucide-react";
 
 const VentureLabProgram = () => {
+  const scrollToAbout = () => {
+    const aboutSection = document.querySelector('.about-program-section');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -62,9 +72,11 @@ const VentureLabProgram = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg rounded-full backdrop-blur-sm"
+                  className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg rounded-full backdrop-blur-sm transition-all duration-300 transform hover:-translate-y-1"
+                  onClick={scrollToAbout}
                 >
-                  Learn More
+                  Explore Program
+                  <BookOpen className="ml-2 w-5 h-5" />
                 </Button>
               </div>
             </div>
@@ -120,7 +132,7 @@ const VentureLabProgram = () => {
         </section>
 
         {/* Enhanced About the program */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white about-program-section">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -391,3 +403,5 @@ const VentureLabProgram = () => {
 };
 
 export default VentureLabProgram;
+
+</edits_to_apply>
