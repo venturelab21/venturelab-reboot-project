@@ -1,3 +1,4 @@
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -316,13 +317,13 @@ const VentureLabProgram = () => {
                 
                 <TabsContent value="value" className="pt-8">
                   
-                  <h3 className="text-xl font-semibold mb-4">Organizational Capital Framework</h3>
-                  <p className="text-gray-700 mb-6">For accelerated business growth through strategic capital development</p>
+                  <h3 className="text-xl font-semibold mb-4">VentureLab Ecosystem</h3>
+                  <p className="text-gray-700 mb-6">Comprehensive startup development framework targeting 90 startups per year from 2025</p>
                   
                   <div className="flex justify-center mb-6">
                     <img 
-                      src="/lovable-uploads/435cd590-d5db-4afc-b706-94875c512b17.png" 
-                      alt="Organizational Capital Framework showing Strategic, Economic, Cultural and Social Capital interconnected through Opportunity Recognition, Preparation and Exploitation" 
+                      src="/lovable-uploads/29f0753b-546e-410b-a67e-107fd958571e.png" 
+                      alt="VentureLab Ecosystem showing the complete startup development journey from Business Developers through VentureLab Program to Venturebuilder with target of 90 startups per year" 
                       className="max-w-full h-auto rounded-lg shadow-lg"
                     />
                   </div>
