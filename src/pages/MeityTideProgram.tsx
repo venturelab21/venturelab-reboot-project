@@ -6,24 +6,61 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SmartphoneNfc, Brain, Cpu, Car, Smartphone, Activity, CheckCircle, DollarSign, Users, Cloud } from "lucide-react";
+import { SmartphoneNfc, Brain, Cpu, Car, Smartphone, Activity, CheckCircle, DollarSign, Users, Cloud, Target, TrendingUp, Calendar, Zap } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const MeityTideProgram = () => {
   const focusAreas = [
-    { icon: <SmartphoneNfc size={20} />, title: "Internet of Things (IoT)" },
-    { icon: <Brain size={20} />, title: "Artificial Intelligence & Machine Learning (AI-ML)" },
-    { icon: <Cpu size={20} />, title: "Blockchain" },
-    { icon: <Car size={20} />, title: "E-mobility" },
-    { icon: <Smartphone size={20} />, title: "Smart Infrastructure" },
-    { icon: <Activity size={20} />, title: "CleanTech & HealthTech" }
+    { 
+      icon: <Brain size={24} />, 
+      title: "AI & Machine Learning", 
+      description: "Developing intelligent systems and automated solutions for various industries",
+      color: "bg-blue-50 hover:bg-blue-100 border-blue-200"
+    },
+    { 
+      icon: <Cpu size={24} />, 
+      title: "Blockchain", 
+      description: "Creating decentralized solutions for secure and transparent transactions",
+      color: "bg-purple-50 hover:bg-purple-100 border-purple-200"
+    },
+    { 
+      icon: <SmartphoneNfc size={24} />, 
+      title: "Internet of Things", 
+      description: "Building connected devices and smart sensor networks",
+      color: "bg-green-50 hover:bg-green-100 border-green-200"
+    },
+    { 
+      icon: <Car size={24} />, 
+      title: "E-mobility", 
+      description: "Innovative electric vehicle solutions and charging infrastructure",
+      color: "bg-orange-50 hover:bg-orange-100 border-orange-200"
+    },
+    { 
+      icon: <Smartphone size={24} />, 
+      title: "Smart Infrastructure", 
+      description: "Technology solutions for smart cities and digital infrastructure",
+      color: "bg-indigo-50 hover:bg-indigo-100 border-indigo-200"
+    },
+    { 
+      icon: <Activity size={24} />, 
+      title: "CleanTech & HealthTech", 
+      description: "Sustainable technology and healthcare innovation solutions",
+      color: "bg-teal-50 hover:bg-teal-100 border-teal-200"
+    }
   ];
 
   const benefits = [
-    { icon: <DollarSign size={20} />, title: "EIR Grant", desc: "INR 4 Lakhs for prototype validation and development" },
-    { icon: <DollarSign size={20} />, title: "MVP Grant", desc: "INR 7 Lakhs for product development support" },
-    { icon: <Users size={20} />, title: "Tailored Support", desc: "6 months of customized hand-holding" },
-    { icon: <Cloud size={20} />, title: "Cloud Credits", desc: "₹5,000 worth of cloud credit support" }
+    { icon: <DollarSign size={24} />, title: "EIR Grant", desc: "INR 4 Lakhs for prototype validation and development", color: "text-blue-600" },
+    { icon: <DollarSign size={24} />, title: "MVP Grant", desc: "INR 7 Lakhs for product development support", color: "text-green-600" },
+    { icon: <Users size={24} />, title: "Tailored Support", desc: "6 months of customized hand-holding", color: "text-purple-600" },
+    { icon: <Cloud size={24} />, title: "Cloud Credits", desc: "₹5,000 worth of cloud credit support", color: "text-orange-600" }
+  ];
+
+  const eligibilityCriteria = [
+    { icon: <Target size={20} />, title: "Tech Innovator", desc: "Working full-time on developing solutions with required expertise." },
+    { icon: <Zap size={20} />, title: "Focus Area Match", desc: "Product/solution catering to our focus areas." },
+    { icon: <TrendingUp size={20} />, title: "India-based", desc: "Startup registered or will be registered in India." },
+    { icon: <CheckCircle size={20} />, title: "First Time", desc: "Haven't availed TIDE 2.0 support previously." }
   ];
 
   return (
@@ -51,266 +88,257 @@ const MeityTideProgram = () => {
           </div>
         </div>
 
-        {/* Compact program header */}
-        <section className="py-8 bg-gradient-to-r from-blue-900 to-blue-700">
+        {/* Modern Hero Section */}
+        <section className="relative py-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-5xl mx-auto text-center">
+              <span className="inline-block bg-blue-200/20 backdrop-blur-sm text-blue-100 px-4 py-2 rounded-full mb-6 text-sm font-medium border border-blue-300/30">
+                Ministry of Electronics & Information Technology
+              </span>
+              <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-white leading-tight">
+                MeitY TIDE 2.0
+              </h1>
+              <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
+                Empowering technology entrepreneurs to build innovative solutions for tomorrow's digital India
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-white text-blue-900 hover:bg-blue-50 rounded-full px-8 py-3 text-lg font-semibold"
+                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeyMtKDE9QoME77OQw8OkcW0WteTAyQsdEYFohHG690MKEAUg/viewform', '_blank')}
+                >
+                  Apply Now
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-blue-200 text-blue-100 hover:bg-blue-800/50 rounded-full px-8 py-3 text-lg"
+                  onClick={() => document.getElementById('program-details')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Program Impact Section */}
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <span className="inline-block bg-blue-200 text-blue-800 px-3 py-1 rounded-full mb-3 text-sm font-medium">Ministry of Electronics & IT</span>
-              <h1 className="text-3xl md:text-4xl font-display font-bold mb-3 text-white">MeitY TIDE 2.0 Program</h1>
-              <p className="text-lg text-blue-100">Supporting technology entrepreneurs building solutions for tomorrow</p>
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-900">Program Impact</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Supporting the startup ecosystem across India with comprehensive funding and mentorship
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card className="text-center p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="text-blue-600" size={32} />
+                  </div>
+                  <h3 className="text-4xl font-bold text-blue-600 mb-2">52+</h3>
+                  <p className="text-gray-600 font-medium">Incubators Partnered</p>
+                </Card>
+                
+                <Card className="text-center p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="text-green-600" size={32} />
+                  </div>
+                  <h3 className="text-4xl font-bold text-green-600 mb-2">2000+</h3>
+                  <p className="text-gray-600 font-medium">Startups Supported</p>
+                </Card>
+                
+                <Card className="text-center p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="text-purple-600" size={32} />
+                  </div>
+                  <h3 className="text-4xl font-bold text-purple-600 mb-2">5</h3>
+                  <p className="text-gray-600 font-medium">Years Duration</p>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Focus Areas Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-900">Focus Areas</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  We support startups working across cutting-edge technology domains
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {focusAreas.map((area, index) => (
+                  <Card 
+                    key={index} 
+                    className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-2 ${area.color}`}
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="text-blue-600 flex-shrink-0 mt-1">
+                        {area.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">{area.title}</h3>
+                        <p className="text-sm text-gray-600 leading-relaxed">{area.description}</p>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* Main content */}
-        <section className="py-12">
+        <section id="program-details" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               
-              {/* About section - more compact */}
-              <div className="grid lg:grid-cols-3 gap-8 mb-10">
-                <div className="lg:col-span-2">
-                  <h2 className="text-2xl font-display font-bold mb-4">About The Scheme</h2>
-                  <p className="text-gray-700 mb-4">
-                    TIDE 2.0 scheme by MeitY aims to support technology startups working in emerging technologies through financial and technical support. The scheme empowers 52+ incubators in India and supports nearly 2000 tech start-ups over 5 years.
-                  </p>
-                </div>
-                
-                {/* Key stats card */}
-                <Card className="lg:col-span-1">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg">Program Impact</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-600">Incubators</span>
-                      <span className="font-semibold text-blue-600">52+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-600">Startups Supported</span>
-                      <span className="font-semibold text-blue-600">2000+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-600">Duration</span>
-                      <span className="font-semibold text-blue-600">5 Years</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Focus Areas - more compact grid */}
-              <Card className="mb-8">
-                <CardHeader>
-                  <CardTitle className="text-xl">Focus Areas</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {focusAreas.map((area, index) => (
-                      <div key={index} className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
-                        <div className="text-blue-600 flex-shrink-0">
-                          {area.icon}
-                        </div>
-                        <span className="text-sm font-medium text-gray-800">{area.title}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Tabs defaultValue="eligibility" className="mb-10">
-                <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
-                  <TabsTrigger value="eligibility">Eligibility</TabsTrigger>
-                  <TabsTrigger value="benefits">Benefits</TabsTrigger>
-                  <TabsTrigger value="process">Process</TabsTrigger>
-                  <TabsTrigger value="faq">FAQ</TabsTrigger>
+              <Tabs defaultValue="eligibility" className="mb-12">
+                <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
+                  <TabsTrigger value="eligibility" className="text-sm font-medium">Eligibility</TabsTrigger>
+                  <TabsTrigger value="benefits" className="text-sm font-medium">Benefits</TabsTrigger>
+                  <TabsTrigger value="process" className="text-sm font-medium">Process</TabsTrigger>
+                  <TabsTrigger value="faq" className="text-sm font-medium">FAQ</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="eligibility" className="pt-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <Card>
-                      <CardContent className="pt-4">
-                        <div className="flex items-start space-x-3">
-                          <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                  <Card className="p-8">
+                    <h3 className="text-2xl font-bold mb-6 text-gray-900">Eligibility Criteria</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {eligibilityCriteria.map((criterion, index) => (
+                        <div key={index} className="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
+                          <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <CheckCircle className="text-green-600" size={20} />
+                          </div>
                           <div>
-                            <h4 className="font-medium text-blue-600 mb-1">Tech Innovator</h4>
-                            <p className="text-sm text-gray-700">Working full-time on developing solutions with required expertise.</p>
+                            <h4 className="font-semibold text-gray-900 mb-2">{criterion.title}</h4>
+                            <p className="text-sm text-gray-600 leading-relaxed">{criterion.desc}</p>
                           </div>
                         </div>
-                      </CardContent>
-                    </Card>
-                    
-                    <Card>
-                      <CardContent className="pt-4">
-                        <div className="flex items-start space-x-3">
-                          <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                          <div>
-                            <h4 className="font-medium text-blue-600 mb-1">Focus Area Match</h4>
-                            <p className="text-sm text-gray-700">Product/solution catering to our focus areas.</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                    
-                    <Card>
-                      <CardContent className="pt-4">
-                        <div className="flex items-start space-x-3">
-                          <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                          <div>
-                            <h4 className="font-medium text-blue-600 mb-1">India-based</h4>
-                            <p className="text-sm text-gray-700">Startup registered or will be registered in India.</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                    
-                    <Card>
-                      <CardContent className="pt-4">
-                        <div className="flex items-start space-x-3">
-                          <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                          <div>
-                            <h4 className="font-medium text-blue-600 mb-1">First Time</h4>
-                            <p className="text-sm text-gray-700">Haven't availed TIDE 2.0 support previously.</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
+                      ))}
+                    </div>
+                  </Card>
                 </TabsContent>
                 
                 <TabsContent value="benefits" className="pt-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {benefits.map((benefit, index) => (
-                      <Card key={index}>
-                        <CardContent className="pt-4">
-                          <div className="flex items-start space-x-3">
-                            <div className="text-blue-600 mt-1 flex-shrink-0">
-                              {benefit.icon}
-                            </div>
-                            <div>
-                              <h4 className="font-medium text-blue-600 mb-1">{benefit.title}</h4>
-                              <p className="text-sm text-gray-700">{benefit.desc}</p>
-                            </div>
+                  <Card className="p-8">
+                    <h3 className="text-2xl font-bold mb-6 text-gray-900">Program Benefits</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {benefits.map((benefit, index) => (
+                        <div key={index} className="flex items-start space-x-4 p-6 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+                          <div className={`w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 ${benefit.color}`}>
+                            {benefit.icon}
                           </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                    
-                    {/* Additional benefits */}
-                    <Card className="md:col-span-2">
-                      <CardContent className="pt-4">
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div className="flex items-start space-x-3">
-                            <Users className="text-blue-600 mt-1 flex-shrink-0" size={20} />
-                            <div>
-                              <h4 className="font-medium text-blue-600 mb-1">Co-working Space</h4>
-                              <p className="text-sm text-gray-700">Access to co-working facilities if based in Ahmedabad</p>
-                            </div>
-                          </div>
-                          <div className="flex items-start space-x-3">
-                            <Activity className="text-blue-600 mt-1 flex-shrink-0" size={20} />
-                            <div>
-                              <h4 className="font-medium text-blue-600 mb-1">Network Access</h4>
-                              <p className="text-sm text-gray-700">Access to mentor network and industry connections</p>
-                            </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+                            <p className="text-sm text-gray-600 leading-relaxed">{benefit.desc}</p>
                           </div>
                         </div>
-                      </CardContent>
-                    </Card>
-                  </div>
+                      ))}
+                      
+                      <div className="md:col-span-2 grid md:grid-cols-2 gap-6 mt-4">
+                        <div className="flex items-start space-x-4 p-6 bg-white rounded-lg border border-gray-200">
+                          <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <Users className="text-indigo-600" size={24} />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-2">Co-working Space</h4>
+                            <p className="text-sm text-gray-600">Access to co-working facilities if based in Ahmedabad</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start space-x-4 p-6 bg-white rounded-lg border border-gray-200">
+                          <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <Activity className="text-pink-600" size={24} />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-2">Network Access</h4>
+                            <p className="text-sm text-gray-600">Access to mentor network and industry connections</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
                 </TabsContent>
                 
                 <TabsContent value="process" className="pt-4">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-4">
-                        <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full flex-shrink-0">
-                          <span className="text-blue-800 font-bold text-sm">1</span>
+                  <Card className="p-8">
+                    <h3 className="text-2xl font-bold mb-6 text-gray-900">Application Process</h3>
+                    <div className="space-y-8">
+                      {[
+                        { step: 1, title: "Submit Application", desc: "Complete online application with startup details", icon: <Target size={24} /> },
+                        { step: 2, title: "Screening", desc: "Review based on innovation and market potential", icon: <CheckCircle size={24} /> },
+                        { step: 3, title: "Pitch Presentation", desc: "Present to expert panel of judges", icon: <Users size={24} /> },
+                        { step: 4, title: "Selection & Onboarding", desc: "Begin receiving program support", icon: <TrendingUp size={24} /> }
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start space-x-6">
+                          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span className="text-blue-800 font-bold text-lg">{item.step}</span>
+                          </div>
+                          <div className="pt-3">
+                            <h4 className="text-xl font-semibold mb-2 text-gray-900">{item.title}</h4>
+                            <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-semibold mb-1">Submit Application</h4>
-                          <p className="text-sm text-gray-600">Complete online application with startup details</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-4">
-                        <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full flex-shrink-0">
-                          <span className="text-blue-800 font-bold text-sm">2</span>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-1">Screening</h4>
-                          <p className="text-sm text-gray-600">Review based on innovation and market potential</p>
-                        </div>
-                      </div>
+                      ))}
                     </div>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-4">
-                        <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full flex-shrink-0">
-                          <span className="text-blue-800 font-bold text-sm">3</span>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-1">Pitch Presentation</h4>
-                          <p className="text-sm text-gray-600">Present to expert panel of judges</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-4">
-                        <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full flex-shrink-0">
-                          <span className="text-blue-800 font-bold text-sm">4</span>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-1">Selection & Onboarding</h4>
-                          <p className="text-sm text-gray-600">Begin receiving program support</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  </Card>
                 </TabsContent>
                 
                 <TabsContent value="faq" className="pt-4">
-                  <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="item-1">
-                      <AccordionTrigger className="text-left">What kind of startups does MeitY TIDE 2.0 support?</AccordionTrigger>
-                      <AccordionContent>
-                        Technology startups working in IoT, AI/ML, Blockchain, Smart Infrastructure, CleanTech, HealthTech, and E-mobility.
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2">
-                      <AccordionTrigger className="text-left">What stage should my startup be in?</AccordionTrigger>
-                      <AccordionContent>
-                        Early-stage startups with MVP or proof of concept looking for support to develop and scale.
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-3">
-                      <AccordionTrigger className="text-left">Is there equity dilution?</AccordionTrigger>
-                      <AccordionContent>
-                        No, the support is grant-based and does not involve equity dilution.
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-4">
-                      <AccordionTrigger className="text-left">How long is the program?</AccordionTrigger>
-                      <AccordionContent>
-                        Typically 6 months, which may be extended based on performance and requirements.
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
+                  <Card className="p-8">
+                    <h3 className="text-2xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h3>
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger className="text-left">What kind of startups does MeitY TIDE 2.0 support?</AccordionTrigger>
+                        <AccordionContent>
+                          Technology startups working in IoT, AI/ML, Blockchain, Smart Infrastructure, CleanTech, HealthTech, and E-mobility.
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="item-2">
+                        <AccordionTrigger className="text-left">What stage should my startup be in?</AccordionTrigger>
+                        <AccordionContent>
+                          Early-stage startups with MVP or proof of concept looking for support to develop and scale.
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="item-3">
+                        <AccordionTrigger className="text-left">Is there equity dilution?</AccordionTrigger>
+                        <AccordionContent>
+                          No, the support is grant-based and does not involve equity dilution.
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="item-4">
+                        <AccordionTrigger className="text-left">How long is the program?</AccordionTrigger>
+                        <AccordionContent>
+                          Typically 6 months, which may be extended based on performance and requirements.
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </Card>
                 </TabsContent>
               </Tabs>
 
-              {/* Compact call to action */}
-              <Card className="bg-blue-50 border-blue-200">
-                <CardContent className="pt-6">
-                  <div className="text-center">
-                    <h3 className="text-xl font-bold mb-2">Ready to Apply?</h3>
-                    <p className="text-gray-700 mb-4">Join 2000+ startups being supported by MeitY TIDE 2.0</p>
-                    <Button 
-                      size="lg" 
-                      className="bg-blue-600 hover:bg-blue-700 rounded-full"
-                      onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeyMtKDE9QoME77OQw8OkcW0WteTAyQsdEYFohHG690MKEAUg/viewform', '_blank')}
-                    >
-                      Apply Now
-                    </Button>
-                  </div>
+              {/* Strong Call to Action */}
+              <Card className="bg-gradient-to-r from-blue-600 to-blue-700 text-white border-0 shadow-2xl">
+                <CardContent className="p-12 text-center">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4">Ready to Apply?</h3>
+                  <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Join 2000+ innovative startups being supported by MeitY TIDE 2.0. Transform your tech idea into a thriving business.
+                  </p>
+                  <Button 
+                    size="lg" 
+                    className="bg-white text-blue-700 hover:bg-blue-50 rounded-full px-12 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+                    onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeyMtKDE9QoME77OQw8OkcW0WteTAyQsdEYFohHG690MKEAUg/viewform', '_blank')}
+                  >
+                    Apply Now →
+                  </Button>
                 </CardContent>
               </Card>
             </div>
