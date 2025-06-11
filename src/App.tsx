@@ -15,6 +15,8 @@ import MeetOurTeam from "./pages/MeetOurTeam";
 import GoverningCouncil from "./pages/GoverningCouncil";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 // Create a QueryClient instance
 const queryClient = new QueryClient();
@@ -39,6 +41,9 @@ const App = () => (
         <Route path="/mentors" element={<NotFound />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<Careers />} />
+        {/* Blog Routes */}
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
