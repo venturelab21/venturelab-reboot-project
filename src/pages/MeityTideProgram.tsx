@@ -1,4 +1,3 @@
-
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -102,21 +101,19 @@ const MeityTideProgram = () => {
               <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
                 Empowering technology entrepreneurs to build innovative solutions for tomorrow's digital India
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <Button 
                   size="lg" 
-                  className="bg-white text-blue-900 hover:bg-blue-50 rounded-full px-8 py-3 text-lg font-semibold"
+                  className="group relative bg-white text-blue-900 hover:bg-blue-50 hover:text-blue-800 rounded-full px-12 py-4 text-xl font-black shadow-2xl hover:shadow-white/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-2 border-white/20 hover:border-white/40 min-h-[64px] backdrop-blur-sm"
                   onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeyMtKDE9QoME77OQw8OkcW0WteTAyQsdEYFohHG690MKEAUg/viewform', '_blank')}
                 >
-                  Apply Now
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-blue-200 text-blue-100 hover:bg-blue-800/50 rounded-full px-8 py-3 text-lg"
-                  onClick={() => document.getElementById('program-details')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Learn More
+                  <span className="relative z-10 flex items-center font-black tracking-wide">
+                    Apply Now
+                    <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1 text-2xl">→</span>
+                  </span>
+                  {/* Enhanced button glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-white/20 opacity-0 group-hover:opacity-30 transition-opacity duration-300 blur-xl scale-110"></div>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/10 to-blue-100/20 opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
                 </Button>
               </div>
             </div>
@@ -351,3 +348,5 @@ const MeityTideProgram = () => {
 };
 
 export default MeityTideProgram;
+
+</edits_to_apply>
