@@ -35,52 +35,79 @@ const VentureLabProgram = () => {
         {/* Breadcrumb navigation */}
         <ProgramsBreadcrumb currentProgram="VentureLab Program" />
 
-        {/* Hero Section with Professional Gradient */}
-        <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-20 w-40 h-40 bg-teal-300 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-blue-300 rounded-full blur-3xl"></div>
+        {/* Enhanced Hero Section */}
+        <section className="relative py-20 md:py-24 lg:py-28 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
+          {/* Enhanced Background Pattern */}
+          <div className="absolute inset-0">
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-indigo-900/95"></div>
+            
+            {/* Subtle geometric pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-20 right-20 w-40 h-40 bg-teal-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-blue-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            </div>
+            
+            {/* Grid pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="h-full w-full" style={{
+                backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+                backgroundSize: '40px 40px'
+              }}></div>
+            </div>
           </div>
           
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-block bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-6 border border-white/20">
-                <span className="flex items-center text-sm">
-                  <Award className="w-4 h-4 mr-2" />
+              {/* Enhanced Badge */}
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-full mb-8 border border-white/20 shadow-lg">
+                <Award className="w-5 h-5 mr-3 text-teal-300" />
+                <span className="text-sm font-medium tracking-wide">
                   Thapar Institute of Engineering & Technology
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-white leading-tight">
+              {/* Enhanced Typography Hierarchy */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-8 text-white leading-tight tracking-tight">
                 VentureLab Program
               </h1>
-              <div className="w-24 h-1 bg-teal-400 mx-auto mb-6"></div>
               
-              <p className="text-xl md:text-2xl text-blue-100 mb-4 font-medium">
-                Launch your thriving business in a year
-              </p>
-              <p className="text-lg text-blue-200 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Transform your innovative ideas into successful ventures with comprehensive mentorship, strategic funding, and expert guidance
-              </p>
+              {/* Enhanced Accent Line */}
+              <div className="flex justify-center mb-8">
+                <div className="w-24 h-1.5 bg-gradient-to-r from-teal-400 to-blue-300 rounded-full shadow-lg"></div>
+              </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* Enhanced Description with Better Spacing */}
+              <div className="space-y-6 mb-12">
+                <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 font-semibold leading-relaxed">
+                  Launch your thriving business in a year
+                </p>
+                <p className="text-lg sm:text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed font-medium">
+                  Transform your innovative ideas into successful ventures with comprehensive mentorship, strategic funding, and expert guidance
+                </p>
+              </div>
+              
+              {/* Enhanced Single CTA Button */}
+              <div className="flex justify-center">
                 <Button 
                   size="lg" 
-                  className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="group relative bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500 text-white rounded-full px-12 py-6 text-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border-2 border-teal-400/30 hover:border-teal-300/50"
                   onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSf9RnajMtd43Pj3-XxbSnN5Gc8Ze93a1XkOvrcb9WQ5HG17qQ/viewform', '_blank')}
                 >
-                  Apply Now
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 py-4 text-lg backdrop-blur-sm"
-                >
-                  Learn More
+                  <span className="relative z-10 flex items-center">
+                    Apply Now
+                    <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </span>
+                  {/* Button glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400 to-blue-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300 blur-xl"></div>
                 </Button>
               </div>
+              
+              {/* Trust indicator */}
+              <p className="text-blue-300/80 text-sm mt-6 font-medium">
+                Join 100+ successful entrepreneurs who transformed their ideas into thriving businesses
+              </p>
             </div>
           </div>
         </section>
@@ -465,3 +492,5 @@ const VentureLabProgram = () => {
 };
 
 export default VentureLabProgram;
+
+</edits_to_apply>
