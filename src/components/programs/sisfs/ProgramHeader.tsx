@@ -16,21 +16,21 @@ const ProgramHeader = () => {
           <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
             Empowering early-stage startups with financial support for idea validation, market entry, and commercialization
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button 
               size="lg" 
-              className="bg-white text-blue-900 hover:bg-blue-50 rounded-full px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+              className="group relative bg-white text-blue-900 hover:bg-blue-50 hover:text-blue-800 rounded-full px-14 py-5 text-xl font-black shadow-2xl hover:shadow-white/40 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2 border-2 border-white/30 hover:border-white/50 min-h-[70px] backdrop-blur-sm"
               onClick={() => window.open('https://seedfund.startupindia.gov.in/', '_blank')}
             >
-              Apply Now
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-blue-200 text-blue-100 hover:bg-blue-800/50 rounded-full px-8 py-3 text-lg backdrop-blur-sm"
-              onClick={() => document.getElementById('program-overview')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Learn More
+              <span className="relative z-10 flex items-center font-black tracking-wide">
+                Apply Now
+                <span className="ml-4 transition-transform duration-300 group-hover:translate-x-2 text-2xl">→</span>
+              </span>
+              {/* Enhanced button glow effects */}
+              <div className="absolute inset-0 rounded-full bg-white/30 opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-xl scale-110"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/20 to-blue-100/30 opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+              {/* Subtle pulse animation */}
+              <div className="absolute inset-0 rounded-full bg-white/10 animate-pulse opacity-30"></div>
             </Button>
           </div>
         </div>
