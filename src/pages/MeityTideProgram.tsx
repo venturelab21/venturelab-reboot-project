@@ -348,5 +348,3 @@ const MeityTideProgram = () => {
 };
 
 export default MeityTideProgram;
-
-</edits_to_apply>
