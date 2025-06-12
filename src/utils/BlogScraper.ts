@@ -28,16 +28,19 @@ class BlogScraper {
       // First scrape the main blog page to get blog post links
       const mainPageResult = await this.firecrawl.scrapeUrl('https://venturelab.org.in/blog', {
         formats: ['markdown', 'html'],
-        onlyMainContent: true
+        onlyMainContent: true,
+        includeTags: ['article', 'main', 'section', 'div'],
+        excludeTags: ['nav', 'footer', 'header', 'aside']
       });
 
-      if (!mainPageResult.success || !mainPageResult.markdown) {
+      if (!mainPageResult.success || !mainPageResult.html) {
         console.error('Failed to scrape main blog page');
         return this.getFallbackBlogPosts();
       }
 
       // Extract blog post URLs from the main page
-      const blogUrls = this.extractBlogUrls(mainPageResult.html || '');
+      const blogUrls = this.extractBlogUrls(mainPageResult.html);
+      console.log(`Found ${blogUrls.length} blog URLs:`, blogUrls);
       
       if (blogUrls.length === 0) {
         console.log('No blog URLs found, using fallback content');
@@ -47,17 +50,21 @@ class BlogScraper {
       const blogPosts: ScrapedBlogPost[] = [];
 
       // Scrape each individual blog post
-      for (const url of blogUrls.slice(0, 10)) { // Limit to 10 posts for now
+      for (const url of blogUrls.slice(0, 15)) { // Increased limit to get more posts
         try {
+          console.log(`Scraping blog post: ${url}`);
           const postResult = await this.firecrawl.scrapeUrl(url, {
             formats: ['markdown', 'html'],
-            onlyMainContent: true
+            onlyMainContent: true,
+            includeTags: ['article', 'main', 'section', 'div', 'h1', 'h2', 'h3', 'p', 'img'],
+            excludeTags: ['nav', 'footer', 'header', 'aside', 'script']
           });
 
-          if (postResult.success && postResult.markdown) {
+          if (postResult.success && postResult.html) {
             const post = this.extractBlogData(postResult, url);
             if (post) {
               blogPosts.push(post);
+              console.log(`Successfully scraped: ${post.title}`);
             }
           }
         } catch (error) {
@@ -76,19 +83,37 @@ class BlogScraper {
 
   private extractBlogUrls(html: string): string[] {
     const urls: string[] = [];
-    const linkRegex = /href="([^"]*\/blog\/[^"]*[^\/])"/g;
-    let match;
     
-    while ((match = linkRegex.exec(html)) !== null) {
-      const url = match[1];
-      if (url.startsWith('http') && !urls.includes(url)) {
-        urls.push(url);
-      } else if (url.startsWith('/') && !urls.includes(url)) {
-        urls.push(`https://venturelab.org.in${url}`);
+    // Multiple patterns to catch different URL structures
+    const patterns = [
+      /href="(https:\/\/venturelab\.org\.in\/blog\/[^"]+)"/g,
+      /href="(\/blog\/[^"]+)"/g,
+      /href="([^"]*\/blog\/[^"]*[^\/])"/g
+    ];
+    
+    patterns.forEach(pattern => {
+      let match;
+      while ((match = pattern.exec(html)) !== null) {
+        let url = match[1];
+        
+        // Normalize URLs
+        if (url.startsWith('/')) {
+          url = `https://venturelab.org.in${url}`;
+        }
+        
+        // Filter out unwanted URLs and duplicates
+        if (url.includes('/blog/') && 
+            !url.includes('#') && 
+            !url.includes('?') &&
+            !url.endsWith('/blog') &&
+            !url.endsWith('/blog/') &&
+            !urls.includes(url)) {
+          urls.push(url);
+        }
       }
-    }
+    });
     
-    return urls;
+    return [...new Set(urls)]; // Remove duplicates
   }
 
   private extractBlogData(data: any, url: string): ScrapedBlogPost | null {
@@ -96,38 +121,101 @@ class BlogScraper {
       const html = data.html || '';
       const markdown = data.markdown || '';
       
-      // Extract title
-      const titleMatch = html.match(/<h1[^>]*>(.*?)<\/h1>/i) || 
-                        html.match(/<title[^>]*>(.*?)<\/title>/i);
-      const title = titleMatch ? titleMatch[1].replace(/<[^>]*>/g, '').trim() : 'Untitled Post';
-
-      // Extract content from markdown (cleaner format)
-      let content = markdown || data.text || '';
+      // Extract title with multiple fallback methods
+      let title = '';
+      const titlePatterns = [
+        /<h1[^>]*class="[^"]*title[^"]*"[^>]*>(.*?)<\/h1>/i,
+        /<h1[^>]*>(.*?)<\/h1>/i,
+        /<title[^>]*>(.*?)<\/title>/i,
+        /<meta[^>]*property="og:title"[^>]*content="([^"]*)"[^>]*>/i
+      ];
       
-      // If markdown is not available, extract from HTML
-      if (!content) {
-        content = html.replace(/<script[^>]*>.*?<\/script>/gi, '')
-                     .replace(/<style[^>]*>.*?<\/style>/gi, '')
-                     .replace(/<[^>]*>/g, ' ')
-                     .replace(/\s+/g, ' ')
-                     .trim();
+      for (const pattern of titlePatterns) {
+        const match = html.match(pattern);
+        if (match) {
+          title = this.cleanText(match[1]);
+          if (title && title.length > 5) break;
+        }
+      }
+      
+      if (!title) {
+        title = 'Untitled Post';
       }
 
-      // Extract meta information
-      const authorMatch = html.match(/author[^>]*>([^<]+)/i) || 
-                         html.match(/by\s+([^<\n]+)/i);
-      const author = authorMatch ? authorMatch[1].trim() : 'VentureLab Team';
+      // Extract content with better cleaning
+      let content = '';
+      if (markdown) {
+        content = this.cleanMarkdown(markdown);
+      } else {
+        content = this.extractContentFromHtml(html);
+      }
 
-      const dateMatch = html.match(/(\d{1,2}[-\/]\d{1,2}[-\/]\d{4})|(\d{4}[-\/]\d{1,2}[-\/]\d{1,2})/);
-      const date = dateMatch ? this.formatDate(dateMatch[0]) : new Date().toLocaleDateString('en-US', {
+      // Extract author with multiple patterns
+      let author = 'VentureLab Team';
+      const authorPatterns = [
+        /author[^>]*>([^<]+)/i,
+        /by\s+([^<\n\|]+)/i,
+        /<meta[^>]*name="author"[^>]*content="([^"]*)"[^>]*>/i,
+        /written\s+by\s+([^<\n\|]+)/i
+      ];
+      
+      for (const pattern of authorPatterns) {
+        const match = html.match(pattern);
+        if (match) {
+          const foundAuthor = this.cleanText(match[1]);
+          if (foundAuthor && foundAuthor.length > 2 && foundAuthor.length < 50) {
+            author = foundAuthor;
+            break;
+          }
+        }
+      }
+
+      // Extract date with multiple patterns
+      let date = new Date().toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       });
+      
+      const datePatterns = [
+        /(\d{1,2}[-\/]\d{1,2}[-\/]\d{4})/,
+        /(\d{4}[-\/]\d{1,2}[-\/]\d{1,2})/,
+        /(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}/i,
+        /<time[^>]*datetime="([^"]*)"[^>]*>/i,
+        /<meta[^>]*property="article:published_time"[^>]*content="([^"]*)"[^>]*>/i
+      ];
+      
+      for (const pattern of datePatterns) {
+        const match = html.match(pattern);
+        if (match) {
+          date = this.formatDate(match[1]);
+          break;
+        }
+      }
 
-      // Extract image
-      const imgMatch = html.match(/<img[^>]+src="([^"]+)"/i);
-      const image = imgMatch ? imgMatch[1] : `https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`;
+      // Extract image with multiple patterns
+      let image = '';
+      const imagePatterns = [
+        /<meta[^>]*property="og:image"[^>]*content="([^"]*)"[^>]*>/i,
+        /<img[^>]*class="[^"]*featured[^"]*"[^>]*src="([^"]*)"[^>]*>/i,
+        /<img[^>]*src="([^"]*)"[^>]*class="[^"]*featured[^"]*"[^>]*>/i,
+        /<img[^>]+src="([^"]+)"[^>]*>/i
+      ];
+      
+      for (const pattern of imagePatterns) {
+        const match = html.match(pattern);
+        if (match) {
+          image = match[1];
+          if (image.startsWith('/')) {
+            image = `https://venturelab.org.in${image}`;
+          }
+          break;
+        }
+      }
+      
+      if (!image) {
+        image = `https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`;
+      }
 
       const slug = this.generateSlug(title);
       const excerpt = this.generateExcerpt(content);
@@ -140,13 +228,76 @@ class BlogScraper {
         excerpt,
         slug,
         category: 'Innovation',
-        tags: ['Startups', 'Innovation'],
+        tags: this.extractTags(content),
         image
       };
     } catch (error) {
       console.error('Error extracting blog data:', error);
       return null;
     }
+  }
+
+  private cleanText(text: string): string {
+    return text
+      .replace(/<[^>]*>/g, '')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  private cleanMarkdown(markdown: string): string {
+    return markdown
+      .replace(/^#{1,6}\s*/gm, '') // Remove markdown headers for content
+      .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold markers for content extraction
+      .replace(/\*(.*?)\*/g, '$1') // Remove italic markers
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Convert links to just text
+      .trim();
+  }
+
+  private extractContentFromHtml(html: string): string {
+    // Remove unwanted elements
+    let content = html
+      .replace(/<script[^>]*>.*?<\/script>/gi, '')
+      .replace(/<style[^>]*>.*?<\/style>/gi, '')
+      .replace(/<nav[^>]*>.*?<\/nav>/gi, '')
+      .replace(/<header[^>]*>.*?<\/header>/gi, '')
+      .replace(/<footer[^>]*>.*?<\/footer>/gi, '')
+      .replace(/<aside[^>]*>.*?<\/aside>/gi, '');
+
+    // Extract main content area
+    const contentPatterns = [
+      /<article[^>]*>(.*?)<\/article>/is,
+      /<main[^>]*>(.*?)<\/main>/is,
+      /<div[^>]*class="[^"]*content[^"]*"[^>]*>(.*?)<\/div>/is
+    ];
+
+    for (const pattern of contentPatterns) {
+      const match = content.match(pattern);
+      if (match) {
+        content = match[1];
+        break;
+      }
+    }
+
+    return this.cleanText(content);
+  }
+
+  private extractTags(content: string): string[] {
+    const commonTags = ['Startups', 'Innovation', 'Technology', 'Entrepreneurship', 'Business'];
+    const tags: string[] = [];
+    
+    const lowerContent = content.toLowerCase();
+    commonTags.forEach(tag => {
+      if (lowerContent.includes(tag.toLowerCase())) {
+        tags.push(tag);
+      }
+    });
+    
+    return tags.length > 0 ? tags : ['Innovation'];
   }
 
   private formatContent(content: string): string {
@@ -205,11 +356,7 @@ class BlogScraper {
 <p>Our methodology focuses on three core pillars: mentorship, funding, and market access. By combining these elements, we create an environment where startups can thrive and scale effectively.</p>
 
 <h3>Key Programs and Initiatives</h3>
-<ul>
-<li><strong>SISFS Program:</strong> Supporting early-stage startups with seed funding and mentorship</li>
-<li><strong>MeitY TIDE 2.0:</strong> Technology incubation for deep-tech startups</li>
-<li><strong>VentureLab Accelerator:</strong> Comprehensive support for growth-stage companies</li>
-</ul>
+<p>Our comprehensive programs include the SISFS Program for early-stage funding, MeitY TIDE 2.0 for deep-tech startups, and the VentureLab Accelerator for growth-stage companies.</p>
 
 <p>As we continue to evolve and expand our programs, we remain committed to our mission of building a robust startup ecosystem that can compete globally while addressing local challenges.</p>`,
         author: "VentureLab Team",

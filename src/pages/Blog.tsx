@@ -6,14 +6,16 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Search, Calendar, User, ArrowRight, Key } from "lucide-react";
+import { Search, Calendar, User, ArrowRight, Key, RefreshCw } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { getAllBlogPosts, addBlogPosts } from "@/data/blogPosts";
 import type { BlogPost } from "@/data/blogPosts";
 import BlogScraper from "@/utils/BlogScraper";
+import BlogPagination from "@/components/BlogPagination";
 import { useToast } from "@/components/ui/use-toast";
 
 const categories = ["All", "Innovation", "FinTech", "CleanTech", "Funding", "Mentorship", "HealthTech", "Culture"];
+const POSTS_PER_PAGE = 9;
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,6 +24,7 @@ const Blog = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showApiKeyInput, setShowApiKeyInput] = useState(false);
   const [apiKey, setApiKey] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -55,6 +58,11 @@ const Blog = () => {
             // Add new posts to existing data
             addBlogPosts(formattedPosts);
             setBlogPosts(formattedPosts);
+            toast({
+              title: "Success!",
+              description: `Successfully loaded ${scrapedPosts.length} blog posts from VentureLab website`,
+              duration: 5000,
+            });
           } else {
             setBlogPosts(getAllBlogPosts());
           }
@@ -122,6 +130,7 @@ const Blog = () => {
         
         setBlogPosts(formattedPosts);
         setShowApiKeyInput(false);
+        setCurrentPage(1);
         toast({
           title: "Success!",
           description: `Successfully scraped ${scrapedPosts.length} blog posts from VentureLab website`,
@@ -152,6 +161,16 @@ const Blog = () => {
     const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const paginatedPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+
+  // Reset to page 1 when search or category changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -190,7 +209,7 @@ const Blog = () => {
                       disabled={isLoading}
                       className="bg-orange-500 hover:bg-orange-600 text-white"
                     >
-                      Scrape
+                      {isLoading ? <RefreshCw className="animate-spin" size={16} /> : 'Scrape'}
                     </Button>
                   </div>
                 </div>
@@ -236,8 +255,9 @@ const Blog = () => {
             <div className="max-w-7xl mx-auto">
               {isLoading ? (
                 <div className="text-center py-12">
+                  <RefreshCw className="animate-spin mx-auto mb-4" size={32} />
                   <h3 className="text-2xl font-semibold text-gray-600 mb-4">Loading articles...</h3>
-                  <p className="text-gray-500">Fetching the latest content for you</p>
+                  <p className="text-gray-500">Fetching the latest content from VentureLab website</p>
                 </div>
               ) : filteredPosts.length === 0 ? (
                 <div className="text-center py-12">
@@ -245,60 +265,69 @@ const Blog = () => {
                   <p className="text-gray-500">Try adjusting your search or filter criteria</p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filteredPosts.map((post) => (
-                    <Card key={post.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white">
-                      <div className="relative overflow-hidden">
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                          loading="lazy"
-                        />
-                        <Badge className="absolute top-4 left-4 bg-blue-600 text-white">
-                          {post.category}
-                        </Badge>
-                      </div>
-                      
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                          <div className="flex items-center gap-1">
-                            <User size={14} />
-                            <span>{post.author}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar size={14} />
-                            <span>{post.date}</span>
-                          </div>
-                          <span>{post.readTime}</span>
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {paginatedPosts.map((post) => (
+                      <Card key={post.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white">
+                        <div className="relative overflow-hidden">
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                          <Badge className="absolute top-4 left-4 bg-blue-600 text-white">
+                            {post.category}
+                          </Badge>
                         </div>
                         
-                        <h2 className="text-xl font-bold mb-3 text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                          {post.title}
-                        </h2>
-                        
-                        <p className="text-gray-600 mb-4 line-clamp-3">
-                          {post.excerpt}
-                        </p>
-                        
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {post.tags.slice(0, 2).map((tag) => (
-                            <Badge key={tag} variant="secondary" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                        
-                        <Button asChild className="w-full rounded-full group">
-                          <Link to={`/blog/${post.slug}`}>
-                            Read More
-                            <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-                          </Link>
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+                        <CardContent className="p-6">
+                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <div className="flex items-center gap-1">
+                              <User size={14} />
+                              <span>{post.author}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Calendar size={14} />
+                              <span>{post.date}</span>
+                            </div>
+                            <span>{post.readTime}</span>
+                          </div>
+                          
+                          <h2 className="text-xl font-bold mb-3 text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                            {post.title}
+                          </h2>
+                          
+                          <p className="text-gray-600 mb-4 line-clamp-3">
+                            {post.excerpt}
+                          </p>
+                          
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {post.tags.slice(0, 2).map((tag) => (
+                              <Badge key={tag} variant="secondary" className="text-xs">
+                                {tag}
+                              </Badge>
+                            ))}
+                          </div>
+                          
+                          <Button asChild className="w-full rounded-full group">
+                            <Link to={`/blog/${post.slug}`}>
+                              Read More
+                              <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                            </Link>
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+
+                  {/* Pagination */}
+                  <BlogPagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={setCurrentPage}
+                  />
+                </>
               )}
             </div>
           </div>
