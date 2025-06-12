@@ -1,4 +1,3 @@
-
 import FirecrawlApp from '@mendable/firecrawl-js';
 
 interface ScrapedBlogPost {
@@ -32,13 +31,13 @@ class BlogScraper {
         onlyMainContent: true
       });
 
-      if (!mainPageResult.success || !mainPageResult.data) {
+      if (!mainPageResult.success || !mainPageResult.markdown) {
         console.error('Failed to scrape main blog page');
         return this.getFallbackBlogPosts();
       }
 
       // Extract blog post URLs from the main page
-      const blogUrls = this.extractBlogUrls(mainPageResult.data.html || '');
+      const blogUrls = this.extractBlogUrls(mainPageResult.html || '');
       
       if (blogUrls.length === 0) {
         console.log('No blog URLs found, using fallback content');
@@ -55,8 +54,8 @@ class BlogScraper {
             onlyMainContent: true
           });
 
-          if (postResult.success && postResult.data) {
-            const post = this.extractBlogData(postResult.data, url);
+          if (postResult.success && postResult.markdown) {
+            const post = this.extractBlogData(postResult, url);
             if (post) {
               blogPosts.push(post);
             }
