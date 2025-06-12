@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,101 +7,59 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search, Calendar, User, ArrowRight } from "lucide-react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { getAllBlogPosts } from "@/data/blogPosts";
+import type { BlogPost } from "@/data/blogPosts";
+import BlogScraper from "@/utils/BlogScraper";
 
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  date: string;
-  category: string;
-  image: string;
-  slug: string;
-  readTime: string;
-  tags: string[];
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: "1",
-    title: "The Future of FinTech: How Indian Startups are Revolutionizing Digital Payments",
-    excerpt: "Exploring the innovative solutions that Indian fintech startups are bringing to digital payments and financial inclusion.",
-    author: "Dr. Rajesh Kumar",
-    date: "June 8, 2025",
-    category: "FinTech",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    slug: "future-of-fintech-indian-startups",
-    readTime: "5 min read",
-    tags: ["FinTech", "Digital Payments", "Innovation"]
-  },
-  {
-    id: "2",
-    title: "Building Sustainable CleanTech Solutions: Lessons from VentureLab Portfolio",
-    excerpt: "Insights from our portfolio companies on creating environmentally sustainable technology solutions that scale.",
-    author: "Priya Sharma",
-    date: "June 5, 2025",
-    category: "CleanTech",
-    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    slug: "building-sustainable-cleantech-solutions",
-    readTime: "7 min read",
-    tags: ["CleanTech", "Sustainability", "Portfolio"]
-  },
-  {
-    id: "3",
-    title: "Funding Strategies for Early-Stage Startups: A Complete Guide",
-    excerpt: "Navigate the complex world of startup funding with our comprehensive guide to securing investment at every stage.",
-    author: "Arjun Patel",
-    date: "June 2, 2025",
-    category: "Funding",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    slug: "funding-strategies-early-stage-startups",
-    readTime: "10 min read",
-    tags: ["Funding", "Investment", "Startups"]
-  },
-  {
-    id: "4",
-    title: "The Role of Mentorship in Startup Success: Building Strong Advisory Networks",
-    excerpt: "How strategic mentorship and advisory relationships can accelerate startup growth and help navigate challenges.",
-    author: "Neha Gupta",
-    date: "May 30, 2025",
-    category: "Mentorship",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    slug: "role-of-mentorship-startup-success",
-    readTime: "6 min read",
-    tags: ["Mentorship", "Advisory", "Growth"]
-  },
-  {
-    id: "5",
-    title: "AI and Machine Learning in Healthcare: Transforming Patient Care",
-    excerpt: "Examining how AI-powered healthcare startups are revolutionizing patient care and medical diagnostics.",
-    author: "Dr. Amit Singh",
-    date: "May 28, 2025",
-    category: "HealthTech",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    slug: "ai-machine-learning-healthcare",
-    readTime: "8 min read",
-    tags: ["AI", "HealthTech", "Innovation"]
-  },
-  {
-    id: "6",
-    title: "Building a Strong Company Culture in Remote-First Startups",
-    excerpt: "Best practices for creating and maintaining a positive company culture in distributed startup teams.",
-    author: "Kavya Reddy",
-    date: "May 25, 2025",
-    category: "Culture",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    slug: "building-company-culture-remote-startups",
-    readTime: "5 min read",
-    tags: ["Culture", "Remote Work", "Team Building"]
-  }
-];
-
-const categories = ["All", "FinTech", "CleanTech", "Funding", "Mentorship", "HealthTech", "Culture"];
+const categories = ["All", "Innovation", "FinTech", "CleanTech", "Funding", "Mentorship", "HealthTech", "Culture"];
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadBlogPosts = async () => {
+      try {
+        // Try to scrape new content
+        const scraper = new BlogScraper();
+        const scrapedPosts = await scraper.scrapeBlogList();
+        
+        if (scrapedPosts.length > 0) {
+          // Convert scraped posts to our format
+          const formattedPosts: BlogPost[] = scrapedPosts.map((post, index) => ({
+            id: (index + 1).toString(),
+            title: post.title,
+            excerpt: post.excerpt || '',
+            author: post.author || 'VentureLab Team',
+            date: post.date || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+            category: post.category || 'Innovation',
+            image: `https://images.unsplash.com/photo-${1552664730 + index}?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`,
+            slug: post.slug,
+            readTime: `${Math.max(2, Math.ceil(post.content.length / 200))} min read`,
+            tags: post.tags || ['Innovation'],
+            content: post.content,
+            authorBio: `${post.author || 'VentureLab Team'} is a contributor to VentureLab's innovation ecosystem.`,
+            authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+          }));
+          setBlogPosts(formattedPosts);
+        } else {
+          // Fallback to existing posts
+          setBlogPosts(getAllBlogPosts());
+        }
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
+        // Fallback to existing posts
+        setBlogPosts(getAllBlogPosts());
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadBlogPosts();
+  }, []);
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -182,7 +140,12 @@ const Blog = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
-              {filteredPosts.length === 0 ? (
+              {isLoading ? (
+                <div className="text-center py-12">
+                  <h3 className="text-2xl font-semibold text-gray-600 mb-4">Loading articles...</h3>
+                  <p className="text-gray-500">Fetching the latest content for you</p>
+                </div>
+              ) : filteredPosts.length === 0 ? (
                 <div className="text-center py-12">
                   <h3 className="text-2xl font-semibold text-gray-600 mb-4">No articles found</h3>
                   <p className="text-gray-500">Try adjusting your search or filter criteria</p>
