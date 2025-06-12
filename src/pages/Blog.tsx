@@ -6,11 +6,12 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Search, Calendar, User, ArrowRight } from "lucide-react";
+import { Search, Calendar, User, ArrowRight, Key } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { getAllBlogPosts } from "@/data/blogPosts";
+import { getAllBlogPosts, addBlogPosts } from "@/data/blogPosts";
 import type { BlogPost } from "@/data/blogPosts";
 import BlogScraper from "@/utils/BlogScraper";
+import { useToast } from "@/components/ui/use-toast";
 
 const categories = ["All", "Innovation", "FinTech", "CleanTech", "Funding", "Mentorship", "HealthTech", "Culture"];
 
@@ -19,47 +20,131 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showApiKeyInput, setShowApiKeyInput] = useState(false);
+  const [apiKey, setApiKey] = useState("");
+  const { toast } = useToast();
 
   useEffect(() => {
     const loadBlogPosts = async () => {
       try {
-        // Try to scrape new content
-        const scraper = new BlogScraper();
-        const scrapedPosts = await scraper.scrapeBlogList();
+        // Check if we have an API key in environment
+        const hasApiKey = import.meta.env.VITE_FIRECRAWL_API_KEY;
         
-        if (scrapedPosts.length > 0) {
-          // Convert scraped posts to our format
-          const formattedPosts: BlogPost[] = scrapedPosts.map((post, index) => ({
-            id: (index + 1).toString(),
-            title: post.title,
-            excerpt: post.excerpt || '',
-            author: post.author || 'VentureLab Team',
-            date: post.date || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-            category: post.category || 'Innovation',
-            image: `https://images.unsplash.com/photo-${1552664730 + index}?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`,
-            slug: post.slug,
-            readTime: `${Math.max(2, Math.ceil(post.content.length / 200))} min read`,
-            tags: post.tags || ['Innovation'],
-            content: post.content,
-            authorBio: `${post.author || 'VentureLab Team'} is a contributor to VentureLab's innovation ecosystem.`,
-            authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-          }));
-          setBlogPosts(formattedPosts);
+        if (hasApiKey) {
+          console.log('Using environment API key to scrape content...');
+          const scraper = new BlogScraper();
+          const scrapedPosts = await scraper.scrapeBlogList();
+          
+          if (scrapedPosts.length > 0) {
+            const formattedPosts: BlogPost[] = scrapedPosts.map((post, index) => ({
+              id: (index + 1).toString(),
+              title: post.title,
+              excerpt: post.excerpt || '',
+              author: post.author || 'VentureLab Team',
+              date: post.date || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+              category: post.category || 'Innovation',
+              image: post.image || `https://images.unsplash.com/photo-${1552664730 + index}?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`,
+              slug: post.slug,
+              readTime: `${Math.max(2, Math.ceil(post.content.length / 200))} min read`,
+              tags: post.tags || ['Innovation'],
+              content: post.content,
+              authorBio: `${post.author || 'VentureLab Team'} is a contributor to VentureLab's innovation ecosystem.`,
+              authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+            }));
+            
+            // Add new posts to existing data
+            addBlogPosts(formattedPosts);
+            setBlogPosts(formattedPosts);
+          } else {
+            setBlogPosts(getAllBlogPosts());
+          }
         } else {
-          // Fallback to existing posts
+          console.log('No API key found, showing existing posts');
           setBlogPosts(getAllBlogPosts());
+          setShowApiKeyInput(true);
         }
       } catch (error) {
         console.error('Error loading blog posts:', error);
-        // Fallback to existing posts
         setBlogPosts(getAllBlogPosts());
+        toast({
+          title: "Notice",
+          description: "Using sample blog content. Set FIRECRAWL_API_KEY to scrape live content.",
+          duration: 5000,
+        });
       } finally {
         setIsLoading(false);
       }
     };
 
     loadBlogPosts();
-  }, []);
+  }, [toast]);
+
+  const handleManualScrape = async () => {
+    if (!apiKey) {
+      toast({
+        title: "Error",
+        description: "Please enter your Firecrawl API key",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      // Temporarily set the API key
+      const originalEnv = import.meta.env.VITE_FIRECRAWL_API_KEY;
+      (import.meta.env as any).VITE_FIRECRAWL_API_KEY = apiKey;
+      
+      const scraper = new BlogScraper();
+      const scrapedPosts = await scraper.scrapeBlogList();
+      
+      // Restore original env
+      if (originalEnv) {
+        (import.meta.env as any).VITE_FIRECRAWL_API_KEY = originalEnv;
+      }
+
+      if (scrapedPosts.length > 0) {
+        const formattedPosts: BlogPost[] = scrapedPosts.map((post, index) => ({
+          id: (Date.now() + index).toString(),
+          title: post.title,
+          excerpt: post.excerpt || '',
+          author: post.author || 'VentureLab Team',
+          date: post.date || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+          category: post.category || 'Innovation',
+          image: post.image || `https://images.unsplash.com/photo-${1552664730 + index}?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`,
+          slug: post.slug,
+          readTime: `${Math.max(2, Math.ceil(post.content.length / 200))} min read`,
+          tags: post.tags || ['Innovation'],
+          content: post.content,
+          authorBio: `${post.author || 'VentureLab Team'} is a contributor to VentureLab's innovation ecosystem.`,
+          authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+        }));
+        
+        setBlogPosts(formattedPosts);
+        setShowApiKeyInput(false);
+        toast({
+          title: "Success!",
+          description: `Successfully scraped ${scrapedPosts.length} blog posts from VentureLab website`,
+          duration: 5000,
+        });
+      } else {
+        toast({
+          title: "Warning",
+          description: "No blog posts could be scraped. Using existing content.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error('Manual scrape error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to scrape blog posts. Check your API key and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -72,23 +157,6 @@ const Blog = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      {/* SEO Meta Tags */}
-      <div className="hidden">
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            "name": "VentureLab Thapar Blog",
-            "description": "Ideas, insights, and innovation from the startup ecosystem",
-            "url": `${window.location.origin}/blog`,
-            "publisher": {
-              "@type": "Organization",
-              "name": "VentureLab Thapar"
-            }
-          })}
-        </script>
-      </div>
-
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 overflow-hidden">
@@ -101,6 +169,32 @@ const Blog = () => {
               <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
                 Explore the latest trends, strategies, and stories from the startup ecosystem
               </p>
+              
+              {/* API Key Input */}
+              {showApiKeyInput && (
+                <div className="max-w-md mx-auto mb-8 p-4 bg-white/10 backdrop-blur-sm rounded-lg">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Key size={16} className="text-blue-100" />
+                    <span className="text-sm text-blue-100">Enter Firecrawl API Key to scrape live content:</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <Input
+                      type="password"
+                      placeholder="Your Firecrawl API key"
+                      value={apiKey}
+                      onChange={(e) => setApiKey(e.target.value)}
+                      className="bg-white/20 border-white/30 text-white placeholder:text-white/70"
+                    />
+                    <Button 
+                      onClick={handleManualScrape}
+                      disabled={isLoading}
+                      className="bg-orange-500 hover:bg-orange-600 text-white"
+                    >
+                      Scrape
+                    </Button>
+                  </div>
+                </div>
+              )}
               
               {/* Search and Filter */}
               <div className="max-w-2xl mx-auto space-y-6">
