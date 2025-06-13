@@ -134,10 +134,10 @@ const MeityTideProgram = () => {
               <div className="grid md:grid-cols-3 gap-8">
                 <Card className="text-center p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="text-blue-600" size={32} />
+                    <DollarSign className="text-blue-600" size={32} />
                   </div>
-                  <h3 className="text-4xl font-bold text-blue-600 mb-2">52+</h3>
-                  <p className="text-gray-600 font-medium">Incubators Partnered</p>
+                  <h3 className="text-4xl font-bold text-blue-600 mb-2">3cr</h3>
+                  <p className="text-gray-600 font-medium">Funds received and utilized</p>
                 </Card>
                 
                 <Card className="text-center p-8 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
