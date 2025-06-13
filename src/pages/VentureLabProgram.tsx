@@ -159,7 +159,7 @@ const VentureLabProgram = () => {
                       <div className="text-center">
                         <div className="w-32 h-32 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center backdrop-blur-sm">
                           <img 
-                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                            src="/lovable-uploads/2695e536-81e5-4ddd-b5d2-da43d89e3007.png"
                             alt="Managing Director"
                             className="w-28 h-28 rounded-full object-cover border-4 border-white/30"
                           />
