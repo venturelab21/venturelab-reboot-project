@@ -452,13 +452,13 @@ const VentureLabProgram = () => {
                 </TabsContent>
                 
                 <TabsContent value="value" className="pt-4">
-                  <h3 className="text-xl font-semibold mb-4">Organizational Capital Framework</h3>
-                  <p className="text-gray-700 mb-6">For accelerated business growth through strategic capital development</p>
+                  <h3 className="text-xl font-semibold mb-4">VentureLab Program Overview</h3>
+                  <p className="text-gray-700 mb-6">Comprehensive pathway from startup idea to successful business venture</p>
                   
-                  <div className="flex justify-center mb-6">
+                  <div className="flex justify-center mb-6 bg-gradient-to-br from-blue-50 to-teal-50 p-6 rounded-xl">
                     <img 
-                      src="/lovable-uploads/435cd590-d5db-4afc-b706-94875c512b17.png" 
-                      alt="Organizational Capital Framework showing Strategic, Economic, Cultural and Social Capital interconnected through Opportunity Recognition, Preparation and Exploitation" 
+                      src="/lovable-uploads/3ffeba4c-270a-447c-b1ec-1fbe9a32681e.png" 
+                      alt="VentureLab Program Overview showing the complete entrepreneurship ecosystem from business developers to venture builders with focus areas in Health, Energy, Gaming, IT/AI, Agri/Food, Social, and Chemistry sectors" 
                       className="max-w-full h-auto rounded-lg shadow-lg"
                     />
                   </div>
