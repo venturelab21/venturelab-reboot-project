@@ -14,7 +14,7 @@ import BlogPagination from "@/components/BlogPagination";
 import { useToast } from "@/components/ui/use-toast";
 
 const categories = ["All Blogs", "Technology", "Innovation", "Finance", "Start-Up", "Mentorship", "HealthTech"];
-const POSTS_PER_PAGE = 9;
+const POSTS_PER_PAGE = 6;
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -64,18 +64,18 @@ const Blog = () => {
 
   const getCategoryColor = (category: string) => {
     const colors = {
-      'Technology': 'bg-blue-100 text-blue-800',
-      'Innovation': 'bg-purple-100 text-purple-800',
-      'Finance': 'bg-green-100 text-green-800',
-      'Funding': 'bg-green-100 text-green-800',
-      'Start-Up': 'bg-orange-100 text-orange-800',
-      'Mentorship': 'bg-yellow-100 text-yellow-800',
-      'HealthTech': 'bg-red-100 text-red-800',
-      'FinTech': 'bg-indigo-100 text-indigo-800',
-      'CleanTech': 'bg-emerald-100 text-emerald-800',
-      'Culture': 'bg-pink-100 text-pink-800'
+      'Technology': 'bg-blue-500 text-white',
+      'Innovation': 'bg-purple-500 text-white',
+      'Finance': 'bg-green-500 text-white',
+      'Funding': 'bg-green-500 text-white',
+      'Start-Up': 'bg-orange-500 text-white',
+      'Mentorship': 'bg-yellow-500 text-white',
+      'HealthTech': 'bg-red-500 text-white',
+      'FinTech': 'bg-indigo-500 text-white',
+      'CleanTech': 'bg-emerald-500 text-white',
+      'Culture': 'bg-pink-500 text-white'
     };
-    return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[category as keyof typeof colors] || 'bg-gray-500 text-white';
   };
 
   return (
@@ -83,15 +83,14 @@ const Blog = () => {
       <Navbar />
       
       <main className="flex-grow">
-        {/* Modern Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="container mx-auto px-4 relative">
+        {/* Clean Hero Section */}
+        <section className="relative py-12 bg-gradient-to-br from-slate-50 to-blue-50">
+          <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 leading-tight">
                 Recent News & Blogs
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
                 Explore the latest insights, trends, and stories from the startup ecosystem at VentureLab Thapar
               </p>
               
@@ -104,21 +103,21 @@ const Blog = () => {
                     placeholder="Search articles..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-12 py-4 text-lg bg-white/95 backdrop-blur-sm border-0 rounded-full shadow-lg"
+                    className="pl-12 py-3 text-base bg-white border-gray-200 rounded-full shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
               </div>
               
-              {/* Pill-shaped Category Filters */}
-              <div className="flex flex-wrap gap-3 justify-center">
+              {/* Category Pills */}
+              <div className="flex flex-wrap gap-2 justify-center">
                 {categories.map((category) => (
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                       selectedCategory === category 
-                        ? "bg-white text-purple-900 shadow-lg transform scale-105" 
-                        : "bg-white/20 text-white hover:bg-white/30 hover:scale-105"
+                        ? "bg-blue-600 text-white shadow-md" 
+                        : "bg-white text-gray-600 border border-gray-200 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200"
                     }`}
                   >
                     {category}
@@ -130,68 +129,67 @@ const Blog = () => {
         </section>
 
         {/* Blog Posts Grid */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               {isLoading ? (
                 <div className="text-center py-12">
-                  <div className="animate-spin mx-auto mb-4 w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full"></div>
-                  <h3 className="text-2xl font-semibold text-gray-600 mb-4">Loading articles...</h3>
+                  <div className="animate-spin mx-auto mb-4 w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full"></div>
+                  <h3 className="text-xl font-semibold text-gray-600 mb-2">Loading articles...</h3>
                   <p className="text-gray-500">Fetching the latest content</p>
                 </div>
               ) : filteredPosts.length === 0 ? (
                 <div className="text-center py-12">
-                  <h3 className="text-2xl font-semibold text-gray-600 mb-4">No articles found</h3>
+                  <h3 className="text-xl font-semibold text-gray-600 mb-2">No articles found</h3>
                   <p className="text-gray-500">Try adjusting your search or filter criteria</p>
                 </div>
               ) : (
                 <>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {paginatedPosts.map((post) => (
-                      <Card key={post.id} className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white border-0 shadow-lg">
+                      <Card key={post.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border border-gray-100 rounded-2xl">
                         <div className="relative overflow-hidden">
                           <img
                             src={post.image}
                             alt={post.title}
-                            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                            className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                             loading="lazy"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          <Badge className={`absolute top-4 left-4 ${getCategoryColor(post.category)} border-0 font-medium`}>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <Badge className={`absolute top-3 left-3 ${getCategoryColor(post.category)} rounded-full px-3 py-1 text-xs font-medium`}>
                             {post.category}
                           </Badge>
                         </div>
                         
                         <CardContent className="p-6">
-                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                            <div className="flex items-center gap-2">
-                              <Calendar size={16} className="text-purple-600" />
-                              <span className="font-medium">{post.date}</span>
+                          <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                            <div className="flex items-center gap-1">
+                              <Calendar size={14} className="text-blue-500" />
+                              <span>{post.date}</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                              <Clock size={16} className="text-purple-600" />
+                            <div className="flex items-center gap-1">
+                              <Clock size={14} className="text-blue-500" />
                               <span>{post.readTime}</span>
                             </div>
                           </div>
                           
-                          <h2 className="text-xl font-bold mb-3 text-gray-900 line-clamp-2 group-hover:text-purple-700 transition-colors leading-tight">
+                          <h2 className="text-lg font-bold mb-3 text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors leading-snug">
                             {post.title}
                           </h2>
                           
-                          <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">
+                          <p className="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed">
                             {post.excerpt}
                           </p>
                           
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
-                              <User size={16} className="text-purple-600" />
-                              <span className="text-sm font-medium text-gray-700">{post.author}</span>
+                              <User size={14} className="text-blue-500" />
+                              <span className="text-xs font-medium text-gray-700">{post.author}</span>
                             </div>
                             
-                            <Button asChild size="sm" className="bg-purple-600 hover:bg-purple-700 rounded-full group/btn">
+                            <Button asChild size="sm" variant="ghost" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-full p-2 h-auto group/btn">
                               <Link to={`/blog/${post.slug}`}>
-                                Read More
-                                <ArrowRight size={16} className="ml-2 transition-transform group-hover/btn:translate-x-1" />
+                                <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
                               </Link>
                             </Button>
                           </div>
@@ -201,11 +199,13 @@ const Blog = () => {
                   </div>
 
                   {/* Pagination */}
-                  <BlogPagination
-                    currentPage={currentPage}
-                    totalPages={totalPages}
-                    onPageChange={setCurrentPage}
-                  />
+                  {totalPages > 1 && (
+                    <BlogPagination
+                      currentPage={currentPage}
+                      totalPages={totalPages}
+                      onPageChange={setCurrentPage}
+                    />
+                  )}
                 </>
               )}
             </div>
@@ -213,20 +213,20 @@ const Blog = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="py-16 bg-gradient-to-r from-purple-900 to-blue-900">
+        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h3 className="text-3xl font-bold text-white mb-4">Stay Updated with VentureLab</h3>
-              <p className="text-purple-100 mb-8 text-lg">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Stay Updated with VentureLab</h3>
+              <p className="text-blue-100 mb-8 text-lg">
                 Get the latest insights and stories delivered directly to your inbox
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <Input
                   type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 rounded-full py-3 px-6 border-0 bg-white/90"
+                  placeholder="Enter your email"
+                  className="flex-1 rounded-full py-3 px-6 border-0 bg-white/90 focus:bg-white"
                 />
-                <Button className="bg-white text-purple-900 hover:bg-gray-100 rounded-full px-8 py-3 font-semibold">
+                <Button className="bg-white text-blue-600 hover:bg-gray-50 rounded-full px-8 py-3 font-semibold">
                   Subscribe
                 </Button>
               </div>
