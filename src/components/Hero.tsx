@@ -162,32 +162,32 @@ const Hero = () => {
                     <circle cx="290" cy="90" r="3" fill="#EC4899" />
                   </g>
 
-                  {/* T Letter with tech elements */}
+                  {/* T Letter with tech elements - moved left */}
                   <g>
-                    {/* T shape base */}
-                    <path d="M420 30 L520 30 M470 30 L470 150" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    {/* T shape base - shifted left by 40 units */}
+                    <path d="M380 30 L480 30 M430 30 L430 150" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     
-                    {/* Tech components on T */}
-                    <rect x="430" y="20" width="15" height="20" fill="#06B6D4" rx="3" />
-                    <rect x="435" y="25" width="5" height="10" fill="white" rx="1" />
+                    {/* Tech components on T - shifted left by 40 units */}
+                    <rect x="390" y="20" width="15" height="20" fill="#06B6D4" rx="3" />
+                    <rect x="395" y="25" width="5" height="10" fill="white" rx="1" />
                     
-                    <circle cx="500" cy="40" r="12" fill="#10B981" opacity="0.8" />
-                    <circle cx="500" cy="40" r="6" fill="white" />
-                    <path d="M494 40 L506 40 M500 34 L500 46" stroke="#10B981" strokeWidth="2" />
+                    <circle cx="460" cy="40" r="12" fill="#10B981" opacity="0.8" />
+                    <circle cx="460" cy="40" r="6" fill="white" />
+                    <path d="M454 40 L466 40 M460 34 L460 46" stroke="#10B981" strokeWidth="2" />
                     
-                    <rect x="460" y="90" width="20" height="12" fill="#8B5CF6" rx="2" />
-                    <rect x="465" y="93" width="10" height="6" fill="white" rx="1" />
+                    <rect x="420" y="90" width="20" height="12" fill="#8B5CF6" rx="2" />
+                    <rect x="425" y="93" width="10" height="6" fill="white" rx="1" />
                     
-                    <circle cx="485" cy="130" r="8" fill="#F59E0B" opacity="0.8" />
-                    <circle cx="485" cy="130" r="4" fill="white" />
+                    <circle cx="445" cy="130" r="8" fill="#F59E0B" opacity="0.8" />
+                    <circle cx="445" cy="130" r="4" fill="white" />
                     
-                    {/* Circuit connections for T */}
-                    <path d="M450 60 L470 60 L470 80 L490 80" stroke="#06B6D4" strokeWidth="3" fill="none" />
-                    <circle cx="470" cy="60" r="3" fill="#06B6D4" />
-                    <circle cx="490" cy="80" r="3" fill="#06B6D4" />
+                    {/* Circuit connections for T - shifted left by 40 units */}
+                    <path d="M410 60 L430 60 L430 80 L450 80" stroke="#06B6D4" strokeWidth="3" fill="none" />
+                    <circle cx="430" cy="60" r="3" fill="#06B6D4" />
+                    <circle cx="450" cy="80" r="3" fill="#06B6D4" />
                     
-                    <path d="M480 110 L500 110 L500 120 L520 120" stroke="#8B5CF6" strokeWidth="3" fill="none" />
-                    <circle cx="500" cy="110" r="3" fill="#8B5CF6" />
+                    <path d="M440 110 L460 110 L460 120 L480 120" stroke="#8B5CF6" strokeWidth="3" fill="none" />
+                    <circle cx="460" cy="110" r="3" fill="#8B5CF6" />
                   </g>
                 </svg>
               </div>
