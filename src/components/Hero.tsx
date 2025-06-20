@@ -116,13 +116,13 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Main VL Graphic with surrounding blocks */}
+          {/* Main VLT Graphic with surrounding blocks */}
           <div className="relative max-w-6xl mx-auto">
-            {/* Central VL Logo */}
+            {/* Central VLT Logo */}
             <div className="flex justify-center items-center mb-8">
               <div className="relative">
-                {/* Large stylized VL made of gears and circuits */}
-                <svg width="400" height="200" viewBox="0 0 400 200" className="drop-shadow-sm">
+                {/* Large stylized VLT made of gears and circuits */}
+                <svg width="600" height="200" viewBox="0 0 600 200" className="drop-shadow-sm">
                   {/* V Letter with gear elements */}
                   <g>
                     {/* V shape base */}
@@ -160,6 +160,34 @@ const Hero = () => {
                     {/* More circuit lines */}
                     <path d="M270 90 L290 90 L290 110 L310 110" stroke="#EC4899" strokeWidth="3" fill="none" />
                     <circle cx="290" cy="90" r="3" fill="#EC4899" />
+                  </g>
+
+                  {/* T Letter with tech elements */}
+                  <g>
+                    {/* T shape base */}
+                    <path d="M420 30 L520 30 M470 30 L470 150" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    
+                    {/* Tech components on T */}
+                    <rect x="430" y="20" width="15" height="20" fill="#06B6D4" rx="3" />
+                    <rect x="435" y="25" width="5" height="10" fill="white" rx="1" />
+                    
+                    <circle cx="500" cy="40" r="12" fill="#10B981" opacity="0.8" />
+                    <circle cx="500" cy="40" r="6" fill="white" />
+                    <path d="M494 40 L506 40 M500 34 L500 46" stroke="#10B981" strokeWidth="2" />
+                    
+                    <rect x="460" y="90" width="20" height="12" fill="#8B5CF6" rx="2" />
+                    <rect x="465" y="93" width="10" height="6" fill="white" rx="1" />
+                    
+                    <circle cx="485" cy="130" r="8" fill="#F59E0B" opacity="0.8" />
+                    <circle cx="485" cy="130" r="4" fill="white" />
+                    
+                    {/* Circuit connections for T */}
+                    <path d="M450 60 L470 60 L470 80 L490 80" stroke="#06B6D4" strokeWidth="3" fill="none" />
+                    <circle cx="470" cy="60" r="3" fill="#06B6D4" />
+                    <circle cx="490" cy="80" r="3" fill="#06B6D4" />
+                    
+                    <path d="M480 110 L500 110 L500 120 L520 120" stroke="#8B5CF6" strokeWidth="3" fill="none" />
+                    <circle cx="500" cy="110" r="3" fill="#8B5CF6" />
                   </g>
                 </svg>
               </div>
