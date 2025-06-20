@@ -162,7 +162,7 @@ const Hero = () => {
                     <circle cx="290" cy="90" r="3" fill="#EC4899" />
                   </g>
 
-                  {/* T Letter with tech elements - moved left */}
+                  {/* T Letter with tech elements - shifted left by 40 units */}
                   <g>
                     {/* T shape base - shifted left by 40 units */}
                     <path d="M380 30 L480 30 M430 30 L430 150" stroke="#F97316" strokeWidth="20" fill="none" strokeLinecap="round" strokeLinejoin="round" />
@@ -193,8 +193,20 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Six surrounding blocks */}
+            {/* Six surrounding blocks - reordered with VentureLab Program first */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+              {/* VentureLab Program Block - moved to first position */}
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 mb-4 group-hover:shadow-md transition-shadow">
+                  <Users className="w-12 h-12 text-blue-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-blue-600 mb-2">VENTURELAB PROGRAM</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Comprehensive one-year program to launch your business.
+                  </p>
+                  <div className="text-xs text-blue-500 font-medium mt-2">→ More</div>
+                </div>
+              </div>
+
               {/* Seed Funding Block */}
               <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
                 <div className="bg-green-50 p-6 rounded-2xl border border-green-100 mb-4 group-hover:shadow-md transition-shadow">
@@ -216,18 +228,6 @@ const Hero = () => {
                     Access to vibrant and collaborative workspaces.
                   </p>
                   <div className="text-xs text-orange-500 font-medium mt-2">→ More</div>
-                </div>
-              </div>
-
-              {/* VentureLab Program Block */}
-              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-                <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 mb-4 group-hover:shadow-md transition-shadow">
-                  <Users className="w-12 h-12 text-blue-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-blue-600 mb-2">VENTURELAB PROGRAM</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Comprehensive one-year program to launch your business.
-                  </p>
-                  <div className="text-xs text-blue-500 font-medium mt-2">→ More</div>
                 </div>
               </div>
 
