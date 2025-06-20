@@ -201,7 +201,7 @@ const Hero = () => {
                   <Users className="w-12 h-12 text-blue-500 mx-auto mb-4" />
                   <h3 className="text-lg font-bold text-blue-600 mb-2">VENTURELAB PROGRAM</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Comprehensive one-year program to launch your business.
+                    Launch your thriving business in 3 stages, 10 weeks each.
                   </p>
                   <div className="text-xs text-blue-500 font-medium mt-2">→ More</div>
                 </div>

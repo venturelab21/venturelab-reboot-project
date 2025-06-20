@@ -125,7 +125,7 @@ const ProgramsSection = () => {
           <Program 
             title="VentureLab Program" 
             label="Application Open"
-            description="Launch your thriving business in 10 weeks with VentureLab's mentorship, network, skills, and funding support."
+            description="Launch your thriving business in 3 stages, 10 weeks each with VentureLab's mentorship, network, skills, and funding support."
             icon={<Briefcase size={24} strokeWidth={2} />}
             link="/programs/venture-lab"
             colorTheme="blue"
