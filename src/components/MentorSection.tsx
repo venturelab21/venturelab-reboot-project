@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -40,13 +39,6 @@ const mentors: MentorProps[] = [
     title: "CEO, Opoyi",
     image: "/lovable-uploads/ba39cb15-dab7-4d1e-923d-424ccc049d78.png",
     linkedin: "https://www.linkedin.com/in/rajivb1/"
-  },
-  {
-    id: "nikhil-agarwal",
-    name: "Dr. Nikhil Agarwal",
-    title: "MD, FITT",
-    image: "/lovable-uploads/be4c8dc7-04e9-4341-9ed0-024f5c8778e9.png",
-    linkedin: "https://www.linkedin.com/in/drnikhilagarwalindia/"
   }
 ];
 
