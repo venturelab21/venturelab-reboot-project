@@ -219,13 +219,13 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Mentorship Block */}
+              {/* VentureLab Program Block */}
               <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
                 <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 mb-4 group-hover:shadow-md transition-shadow">
                   <Users className="w-12 h-12 text-blue-500 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-blue-600 mb-2">MENTORSHIP</h3>
+                  <h3 className="text-lg font-bold text-blue-600 mb-2">VENTURELAB PROGRAM</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    One-on-one and group guidance from industry experts.
+                    Comprehensive one-year program to launch your business.
                   </p>
                   <div className="text-xs text-blue-500 font-medium mt-2">→ More</div>
                 </div>
